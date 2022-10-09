@@ -1,0 +1,6 @@
+framework module AdaptiveUI {
+  umbrella header "AdaptiveUI-umbrella.h"
+
+  export *
+  module * { export * }
+}

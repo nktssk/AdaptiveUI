@@ -1,0 +1,6 @@
+target 'AdaptiveUI-Example' do
+  use_frameworks!
+
+  pod 'AdaptiveUI', path: '../'
+
+end

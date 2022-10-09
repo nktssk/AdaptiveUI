@@ -1,0 +1,16 @@
+PODS:
+  - AdaptiveUI (0.1.0)
+
+DEPENDENCIES:
+  - AdaptiveUI (from `../`)
+
+EXTERNAL SOURCES:
+  AdaptiveUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AdaptiveUI: e21dcbd1bff67d2ca6df52da18ddc205e13866b7
+
+PODFILE CHECKSUM: 93cc86c21b304e29cecd5090c6ba371df773cc83
+
+COCOAPODS: 1.11.3
