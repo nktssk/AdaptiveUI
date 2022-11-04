@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.module_name           = 'AdaptiveUI'
   s.swift_version         = '5.5'
   s.ios.deployment_target = '13.0'
-  s.source_files          = "Sources/**/*.{swift}"
+  s.source_files          = "AdaptiveUI/**/*"
   s.framework             = 'AdaptiveUI'
   s.ios.framework         = 'UIKit'
   s.user_target_xcconfig = { 'ONLY_ACTIVE_ARCH[sdk=iphonesimulator*]' => 'YES' }

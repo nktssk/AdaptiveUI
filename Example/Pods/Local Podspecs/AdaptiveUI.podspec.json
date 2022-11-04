@@ -15,7 +15,7 @@
   "platforms": {
     "ios": "13.0"
   },
-  "source_files": "Sources/**/*.{swift}",
+  "source_files": "AdaptiveUI/**/*",
   "frameworks": "AdaptiveUI",
   "ios": {
     "frameworks": "UIKit"
