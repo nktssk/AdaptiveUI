@@ -12,13 +12,13 @@ final class AUISlider: AUIView {
     // MARK: Configuration
 
     @Convertible(default: .zero)
-    var minValue: Double
+    var minValue: Float
 
     @Convertible(default: .zero)
-    var currentValue: Double
+    var currentValue: Float
 
     @Convertible
-    var maxValue: Double
+    var maxValue: Float
 
     @Convertible
     var minImage: AUIImage?

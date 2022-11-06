@@ -19,14 +19,14 @@ final class AUIButton: AUIView {
     // MARK: Configuration
 
     @Convertible
-    var title: AUIText?
+    var text: AUIText?
 
     @Convertible
-    var backgroundImage: AUIImage?
+    var image: AUIImage?
 
     @Convertible(default: .defaultButtonTintColor)
     var tintColor: AUIColor
 
-    @Convertible(default: .left)
-    var imageAlignment: ImageAlignment
+    @Convertible(default: nil)
+    var textColor: AUIColor?
 }

@@ -43,6 +43,14 @@
 		B9BA6D1A259B260A7507F89F33C58C75 /* AUIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63066D7C8D0B6DFFCF557703C1228FA /* AUIImage.swift */; };
 		CDC547747E8743E840781DC0683E63CB /* SerializedCodingKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04386E2A2A14D17FB1529878646513AB /* SerializedCodingKeys.swift */; };
 		E4B58F82750E1A82CC720533EFBC2B30 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		E50FD9792917F16D007A5A91 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD9782917F16D007A5A91 /* SceneBuilder.swift */; };
+		E50FD97B291803C9007A5A91 /* ViewConfiguration+view.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD97A291803C9007A5A91 /* ViewConfiguration+view.swift */; };
+		E50FD97D291805FD007A5A91 /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD97C291805FD007A5A91 /* UIKit.swift */; };
+		E50FD980291807C8007A5A91 /* ViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD97F291807C8007A5A91 /* ViewParser.swift */; };
+		E50FD982291807D4007A5A91 /* LabelParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD981291807D4007A5A91 /* LabelParser.swift */; };
+		E50FD98429180C05007A5A91 /* SliderParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD98329180C05007A5A91 /* SliderParser.swift */; };
+		E50FD98629180E8B007A5A91 /* ButtonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD98529180E8B007A5A91 /* ButtonParser.swift */; };
+		E50FD989291838F1007A5A91 /* AsyncUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD988291838F1007A5A91 /* AsyncUIImageView.swift */; };
 		F3345874C8743E0ACB3232A88610A5D9 /* AUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6087F4230B9A09CC8353972FBF8501A /* AUISwitch.swift */; };
 		F48C29172A566E5FA72C9C28608D6A6C /* AUIText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28B8A7AFA399422E0F003E9DC657546 /* AUIText.swift */; };
 		FB1AD70B7EE60074837A5998D1015DF9 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31A35A4DB0B4555900D0FD18C4B071D0 /* Convertible.swift */; };
@@ -87,7 +95,7 @@
 		8C019C6598C56379083F41BD9B30A4A7 /* AUIProgressView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIProgressView.swift; sourceTree = "<group>"; };
 		936A6F149D94C8B6428622F8C0A05AF6 /* Pods-AdaptiveUI-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AdaptiveUI-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93FFD45A11FFE1D383C3271835911132 /* AUIWebView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIWebView.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5636198B77B3F59A604DE464592BD45 /* EncodableProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = EncodableProperty.swift; sourceTree = "<group>"; };
 		A6087F4230B9A09CC8353972FBF8501A /* AUISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUISwitch.swift; sourceTree = "<group>"; };
 		A9DEA710BC5C6254E521A7D542863C78 /* SerializableDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SerializableDecodable.swift; sourceTree = "<group>"; };
@@ -102,10 +110,18 @@
 		C71FBBC51BD9CA586181472D00117F11 /* SerializableEncodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SerializableEncodable.swift; sourceTree = "<group>"; };
 		D63066D7C8D0B6DFFCF557703C1228FA /* AUIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIImage.swift; sourceTree = "<group>"; };
 		D7A8587F7C92E04719FAA560DD8E3085 /* Transformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Transformable.swift; sourceTree = "<group>"; };
-		D81E047921C3368D684C03916E77C77A /* AdaptiveUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AdaptiveUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D81E047921C3368D684C03916E77C77A /* AdaptiveUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AdaptiveUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DBE14E3C4A2CCABF3E31EA51AC653739 /* Pods-AdaptiveUI-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AdaptiveUI-Example"; path = Pods_AdaptiveUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1AE92BAC706AFC07DC735EFEF9B6086 /* AdaptiveUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AdaptiveUI.debug.xcconfig; sourceTree = "<group>"; };
 		E4034C03FA2F7BF7E2112A8A8BCCD66C /* AUILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUILabel.swift; sourceTree = "<group>"; };
+		E50FD9782917F16D007A5A91 /* SceneBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneBuilder.swift; sourceTree = "<group>"; };
+		E50FD97A291803C9007A5A91 /* ViewConfiguration+view.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewConfiguration+view.swift"; sourceTree = "<group>"; };
+		E50FD97C291805FD007A5A91 /* UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
+		E50FD97F291807C8007A5A91 /* ViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewParser.swift; sourceTree = "<group>"; };
+		E50FD981291807D4007A5A91 /* LabelParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelParser.swift; sourceTree = "<group>"; };
+		E50FD98329180C05007A5A91 /* SliderParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderParser.swift; sourceTree = "<group>"; };
+		E50FD98529180E8B007A5A91 /* ButtonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonParser.swift; sourceTree = "<group>"; };
+		E50FD988291838F1007A5A91 /* AsyncUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUIImageView.swift; sourceTree = "<group>"; };
 		E6BAA558F89144035B240B05A13E0CD0 /* ViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
 		E7664A158E025588F7AC4908CCF9968C /* DecodableProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DecodableProperty.swift; sourceTree = "<group>"; };
 		E928C717318BEDB2B11BE2AF76F45F80 /* Pods-AdaptiveUI-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AdaptiveUI-Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -151,7 +167,6 @@
 			children = (
 				50E1EDF5941FB9A25017E7B8AEBA0049 /* AUIController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -161,7 +176,6 @@
 				7CFDBD0780B566FF4651C0FE784897F7 /* AUIConstraint.swift */,
 				C64583F4873C8967609C4828EB042D1B /* Base.swift */,
 			);
-			name = Layout;
 			path = Layout;
 			sourceTree = "<group>";
 		};
@@ -171,7 +185,6 @@
 				A5636198B77B3F59A604DE464592BD45 /* EncodableProperty.swift */,
 				C71FBBC51BD9CA586181472D00117F11 /* SerializableEncodable.swift */,
 			);
-			name = Encodable;
 			path = Encodable;
 			sourceTree = "<group>";
 		};
@@ -182,7 +195,6 @@
 				D63066D7C8D0B6DFFCF557703C1228FA /* AUIImage.swift */,
 				B28B8A7AFA399422E0F003E9DC657546 /* AUIText.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -214,13 +226,14 @@
 				4C3CA22E1873A80B9D0C3EA8CC25564D /* SerializedTransformable.swift */,
 				D7A8587F7C92E04719FAA560DD8E3085 /* Transformable.swift */,
 			);
-			name = Transformable;
 			path = Transformable;
 			sourceTree = "<group>";
 		};
 		5E1D21D7174CD7CFCB313A98474EDC7C /* AdaptiveUI */ = {
 			isa = PBXGroup;
 			children = (
+				E50FD987291838E3007A5A91 /* Views */,
+				E50FD9772917F152007A5A91 /* SceneBuilder */,
 				760FE13F81374BE5028A1DD6D0B7C1C7 /* CodableExtensions */,
 				34F79CF73D25893005537D1530B073EB /* Configurations */,
 				73B661182E225D13AE80A296F093463F /* Controller */,
@@ -269,7 +282,6 @@
 				E7664A158E025588F7AC4908CCF9968C /* DecodableProperty.swift */,
 				A9DEA710BC5C6254E521A7D542863C78 /* SerializableDecodable.swift */,
 			);
-			name = Decodable;
 			path = Decodable;
 			sourceTree = "<group>";
 		};
@@ -332,12 +344,44 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E50FD9772917F152007A5A91 /* SceneBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				E50FD97E291807B5007A5A91 /* Parsers */,
+				E50FD9782917F16D007A5A91 /* SceneBuilder.swift */,
+			);
+			name = SceneBuilder;
+			path = AdaptiveUI/SceneBuilder;
+			sourceTree = "<group>";
+		};
+		E50FD97E291807B5007A5A91 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				E50FD97F291807C8007A5A91 /* ViewParser.swift */,
+				E50FD981291807D4007A5A91 /* LabelParser.swift */,
+				E50FD98329180C05007A5A91 /* SliderParser.swift */,
+				E50FD98529180E8B007A5A91 /* ButtonParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		E50FD987291838E3007A5A91 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E50FD988291838F1007A5A91 /* AsyncUIImageView.swift */,
+			);
+			name = Views;
+			path = AdaptiveUI/Views;
+			sourceTree = "<group>";
+		};
 		F60AB93DF4632D07B7BEDA03274D4593 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E50FD97C291805FD007A5A91 /* UIKit.swift */,
 				7625C013B3195643BE285A5E59ADBDF1 /* Defaults.swift */,
 				3FBBC4C9828FEB1DAD13BAA63C53DD5B /* UIColor+hex.swift */,
 				BF5CD417C251E923384947ECE41FED67 /* UIColor+init.swift */,
+				E50FD97A291803C9007A5A91 /* ViewConfiguration+view.swift */,
 			);
 			name = Extensions;
 			path = AdaptiveUI/Extensions;
@@ -361,7 +405,6 @@
 				528D09791484E5F486619AA93314F27B /* AUIView.swift */,
 				93FFD45A11FFE1D383C3271835911132 /* AUIWebView.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -482,6 +525,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				586775977C12B85F63D8158B00BAC1E4 /* AdaptiveUI-dummy.m in Sources */,
+				E50FD989291838F1007A5A91 /* AsyncUIImageView.swift in Sources */,
 				27E2B10F02875AE32CE37E393CF00F74 /* AUIActivityIndicator.swift in Sources */,
 				394D05D01B50770A019F52F97D53E8AC /* AUIButton.swift in Sources */,
 				41544DB78E8C432AFE6F1399AD61EA1E /* AUIColor.swift in Sources */,
@@ -495,7 +539,10 @@
 				37B9AA005BBA402ABCAD6902497EB73D /* AUIProgressView.swift in Sources */,
 				7BD6645D2A247F5A076B3122F4E731EA /* AUISearchBar.swift in Sources */,
 				87AD47AEBF012A830D47848A37CF7005 /* AUISegmentedControl.swift in Sources */,
+				E50FD9792917F16D007A5A91 /* SceneBuilder.swift in Sources */,
+				E50FD980291807C8007A5A91 /* ViewParser.swift in Sources */,
 				746D99093117C25347DE21286EA285B2 /* AUISlider.swift in Sources */,
+				E50FD97B291803C9007A5A91 /* ViewConfiguration+view.swift in Sources */,
 				F3345874C8743E0ACB3232A88610A5D9 /* AUISwitch.swift in Sources */,
 				F48C29172A566E5FA72C9C28608D6A6C /* AUIText.swift in Sources */,
 				2C5C06DC486BB59B9F0A281A940398F0 /* AUITextField.swift in Sources */,
@@ -504,12 +551,16 @@
 				7F8150F757F5E233EE4333FFB099E253 /* AUIViewController.swift in Sources */,
 				77802E7E2142F1264A9182395DB3350D /* AUIWebView.swift in Sources */,
 				0441C0F375747E00229961835A181B5D /* Base.swift in Sources */,
+				E50FD98629180E8B007A5A91 /* ButtonParser.swift in Sources */,
 				FB1AD70B7EE60074837A5998D1015DF9 /* Convertible.swift in Sources */,
 				47A0396ECAF70B01B46A57ABEC950DB8 /* DecodableProperty.swift in Sources */,
 				00629BC3D25584C3A4DD51BF29030566 /* Defaults.swift in Sources */,
 				4A31DD40A1DADD1253D6803FC02299BB /* EncodableProperty.swift in Sources */,
+				E50FD98429180C05007A5A91 /* SliderParser.swift in Sources */,
 				A9EB66B0C86EFA161A7DCA8B3E16FED9 /* SerializableDecodable.swift in Sources */,
+				E50FD97D291805FD007A5A91 /* UIKit.swift in Sources */,
 				4581874B9610EA8E2006E87EA76FB7DC /* SerializableEncodable.swift in Sources */,
+				E50FD982291807D4007A5A91 /* LabelParser.swift in Sources */,
 				CDC547747E8743E840781DC0683E63CB /* SerializedCodingKeys.swift in Sources */,
 				B6316AEE9C12BD24D70C156F9F42CC0F /* SerializedTransformable.swift in Sources */,
 				8FC9A5DCDDED219439E5CB312AE4663E /* Transformable.swift in Sources */,

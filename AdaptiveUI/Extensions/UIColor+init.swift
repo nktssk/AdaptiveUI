@@ -8,7 +8,9 @@
 import UIKit
 
 extension UIColor {
-    convenience init(from color: AUIColor) {
+    convenience init?(from color: AUIColor?) {
+        guard let color = color else { return nil }
+
         guard #available(iOS 13, *) else { self.init(hex: color.lightThemeColor) }
 
         self.init() { (UITraitCollection: UITraitCollection) -> UIColor in

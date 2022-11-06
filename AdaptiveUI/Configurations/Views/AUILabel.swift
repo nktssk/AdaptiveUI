@@ -28,7 +28,7 @@ class AUILabel: AUIView {
     var color: AUIColor
 
     @Convertible
-    var shadowColor: String?
+    var shadowColor: AUIColor?
 
     @Convertible(default: .default)
     var shadowOffset: AUIOffset
@@ -40,5 +40,4 @@ class AUILabel: AUIView {
 
     @Convertible(default: 1)
     var maxNumberOfLines: Int
-
 }
