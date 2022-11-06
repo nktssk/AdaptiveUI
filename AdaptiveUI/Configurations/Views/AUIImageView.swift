@@ -29,10 +29,7 @@ final class AUIImageView: AUIView {
     // MARK: Representation
 
     @Convertible
-    var imageName: String?
-
-    @Convertible
-    var imageURL: String?
+    var image: AUIImageView
 
     @Convertible(default: .defaultImageBackgroundColor)
     var tintColor: AUIColor

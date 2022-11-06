@@ -9,18 +9,6 @@ import Foundation
 
 struct AUIConfiguration: Serializable {
 
-    // MARK: Nested Types
-
-    enum ViewRepresentation: Codable {
-        case view(configuration: AUIView)
-        case label(configuration: AUILabel)
-        case webView(configuration: AUIWebView)
-        case textView(configuration: AUITextView)
-        case imageView(configuration: AUIImageView)
-        case progressView(configuration: AUIProgressView)
-        case activityIndicator(configuration: AUIActivityIndicator)
-    }
-
     // MARK: AdaptiveUI Configuration
 
     @Convertible
@@ -29,7 +17,7 @@ struct AUIConfiguration: Serializable {
     // MARK: Representation
 
     @Convertible
-    var views: [ViewRepresentation]
+    var views: [ViewConfiguration]
 
     // MARK: Layout
 

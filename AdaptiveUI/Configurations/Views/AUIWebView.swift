@@ -9,6 +9,8 @@ import Foundation
 
 final class AUIWebView: AUIView {
 
+    // MARK: AdaptiveUI Configuration
+
     @Convertible
     var url: String
 }

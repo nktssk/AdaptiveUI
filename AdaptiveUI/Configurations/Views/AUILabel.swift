@@ -22,9 +22,6 @@ class AUILabel: AUIView {
     @Convertible
     var text: AUIText
 
-    @Convertible(default: .left)
-    var alignment: Alignment
-
     // MARK: Representation
 
     @Convertible(default: .defaultTextColor)
@@ -33,9 +30,15 @@ class AUILabel: AUIView {
     @Convertible
     var shadowColor: String?
 
-    @Convertible(default: .standard)
+    @Convertible(default: .default)
     var shadowOffset: AUIOffset
+
+    // MARK: Layout
+
+    @Convertible(default: .left)
+    var alignment: Alignment
 
     @Convertible(default: 1)
     var maxNumberOfLines: Int
+
 }

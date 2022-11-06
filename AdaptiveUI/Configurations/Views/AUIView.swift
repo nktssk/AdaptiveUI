@@ -30,12 +30,18 @@ class AUIView: Serializable {
     @Convertible
     var backgroundColor: AUIColor?
 
+    @Convertible(default: false)
+    var isHidden: Bool
+
+    @Convertible(default: [])
+    var subviews: [ViewConfiguration]
+
     // MARK: Layout
 
     @Convertible
     var size: AUISize?
 
-    @Convertible
+    @Convertible(default: .zero)
     var insets: AUIInsets
 
     required init() {}

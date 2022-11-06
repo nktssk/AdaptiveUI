@@ -1,5 +1,5 @@
 //
-//  AUIColor.swift
+//  AUIImage.swift
 //  AdaptiveUI
 //
 //  Created by n.sosyuk on 04.11.2022.
@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct AUIColor: Serializable {
+struct AUIImage: Serializable {
     @Convertible
-    var darkThemeColor: String
+    var imageName: String?
 
     @Convertible
-    var lightThemeColor: String
+    var imageURL: String?
 }

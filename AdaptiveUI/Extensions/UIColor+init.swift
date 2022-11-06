@@ -9,12 +9,11 @@ import UIKit
 
 extension UIColor {
     convenience init(from color: AUIColor) {
+        guard #available(iOS 13, *) else { self.init(hex: color.lightThemeColor) }
+
         self.init() { (UITraitCollection: UITraitCollection) -> UIColor in
-            if UITraitCollection.userInterfaceStyle == .dark {
-                return UIColor(hex: color.darkThemeColor)
-            } else {
-                return UIColor(hex: color.lightThemeColor)
-            }
+            guard UITraitCollection.userInterfaceStyle == .dark else { return UIColor(hex: color.lightThemeColor) }
+            return UIColor(hex: color.darkThemeColor)
         }
     }
 }

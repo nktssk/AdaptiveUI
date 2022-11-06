@@ -9,6 +9,8 @@ import Foundation
 
 final class AUITextView: AUILabel {
 
+    // MARK: Configuration
+
     @Convertible(default: false)
     var isEditable: Bool
 

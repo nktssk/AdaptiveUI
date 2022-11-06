@@ -34,7 +34,7 @@ extension AUISize {
 // MARK: AUIOffset
 
 extension AUIOffset {
-    static let standard: AUIOffset = {
+    static let `default`: AUIOffset = {
         let value = AUIOffset()
         value.x = .zero
         value.y = -1
@@ -64,6 +64,20 @@ extension AUIColor {
         let color = AUIColor()
         color.lightThemeColor = "#DCDCE0"
         color.darkThemeColor = "#202022"
+        return color
+    }()
+
+    static let defaultButtonTintColor: AUIColor = {
+        let color = AUIColor()
+        color.lightThemeColor = "#3578F5"
+        color.darkThemeColor = "#3B81F6"
+        return color
+    }()
+
+    static let defaultSearchBarTintColor: AUIColor = {
+        let color = AUIColor()
+        color.lightThemeColor = "#3578F5"
+        color.darkThemeColor = "#3B81F6"
         return color
     }()
 }
