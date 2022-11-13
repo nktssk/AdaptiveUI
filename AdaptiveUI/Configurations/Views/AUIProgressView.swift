@@ -9,8 +9,8 @@ import Foundation
 
 final class AUIProgressView: AUIView {
 
-    @Convertible(default: 0.0)
-    var progress: Double
+    @Convertible(default: .zero)
+    var progress: Float
 
     @Convertible
     var trackTintColor: AUIColor

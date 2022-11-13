@@ -9,7 +9,7 @@ import UIKit
 
 enum SceneBuilder {
     static func parse(configuration: AUIConfiguration) {
-
+        
     }
 
     static func buildViewHierarchy(rootView: UIView, configuration: ViewConfiguration) {
@@ -44,19 +44,19 @@ enum SceneBuilder {
             view = TextFieldParser.configure(configuration: configuration)
 
         case .searchBar(let configuration):
-            view = UIView()
+            view = SearchBarParser.configure(configuration: configuration)
 
         case .pickerView(let configuration):
-            view = UIView()
+            view = PickerViewParser.configure(configuration: configuration)
 
         case .progressView(let configuration):
-            view = UIView()
+            view = ProgressViewParser.configure(configuration: configuration)
 
         case .segmentedControl(let configuration):
-            view = UIView()
+            view = SegmentedControlParser.configure(configuration: configuration)
 
         case .activityIndicator(let configuration):
-            view = UIView()
+            view = ActivityIndicatorParser.configure(configuration: configuration)
         }
 
         rootView.addSubview(view)

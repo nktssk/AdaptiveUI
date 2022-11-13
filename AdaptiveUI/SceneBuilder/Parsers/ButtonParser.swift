@@ -10,7 +10,6 @@ import UIKit
 enum ButtonParser {
     static func configure(configuration: AUIButton) -> UIButton {
         let button = UIButton()
-        BaseViewConfigurator.configure(view: button, configuration: configuration)
 
         if let text = configuration.text {
             button.setTitle(text.content, for: .normal)
@@ -39,6 +38,8 @@ enum ButtonParser {
                  }
              }.resume()
         }
+
+        BaseViewConfigurator.configure(view: button, configuration: configuration)
 
         return button
     }

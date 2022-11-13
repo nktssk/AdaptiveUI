@@ -15,7 +15,6 @@ enum ImageViewParser {
         } else {
             imageView = UIImageView(image: UIImage(named: configuration.image.imageName ?? ""))
         }
-
         imageView.contentMode = configuration.contentMode.uiKit
         imageView.tintColor = UIColor(from: configuration.tintColor)
 

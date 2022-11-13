@@ -51,6 +51,11 @@
 		E50FD98429180C05007A5A91 /* SliderParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD98329180C05007A5A91 /* SliderParser.swift */; };
 		E50FD98629180E8B007A5A91 /* ButtonParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD98529180E8B007A5A91 /* ButtonParser.swift */; };
 		E50FD989291838F1007A5A91 /* AsyncUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD988291838F1007A5A91 /* AsyncUIImageView.swift */; };
+		E5605B872921326D00B5E923 /* ActivityIndicatorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5605B862921326D00B5E923 /* ActivityIndicatorParser.swift */; };
+		E5605B89292133A200B5E923 /* SearchBarParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5605B88292133A200B5E923 /* SearchBarParser.swift */; };
+		E5605B8B2921359000B5E923 /* SegmentedControlParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5605B8A2921359000B5E923 /* SegmentedControlParser.swift */; };
+		E5605B8D292136C400B5E923 /* ProgressViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5605B8C292136C400B5E923 /* ProgressViewParser.swift */; };
+		E5605B8F2921387700B5E923 /* PickerViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5605B8E2921387700B5E923 /* PickerViewParser.swift */; };
 		E5C54DDC29197CA700E3EBEA /* SwitchParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C54DDB29197CA700E3EBEA /* SwitchParser.swift */; };
 		E5C54DDE29197D9000E3EBEA /* TextViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C54DDD29197D9000E3EBEA /* TextViewParser.swift */; };
 		E5CA128C29198141002FE1DC /* ImageViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CA128B29198141002FE1DC /* ImageViewParser.swift */; };
@@ -126,6 +131,11 @@
 		E50FD98329180C05007A5A91 /* SliderParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderParser.swift; sourceTree = "<group>"; };
 		E50FD98529180E8B007A5A91 /* ButtonParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonParser.swift; sourceTree = "<group>"; };
 		E50FD988291838F1007A5A91 /* AsyncUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncUIImageView.swift; sourceTree = "<group>"; };
+		E5605B862921326D00B5E923 /* ActivityIndicatorParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorParser.swift; sourceTree = "<group>"; };
+		E5605B88292133A200B5E923 /* SearchBarParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarParser.swift; sourceTree = "<group>"; };
+		E5605B8A2921359000B5E923 /* SegmentedControlParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedControlParser.swift; sourceTree = "<group>"; };
+		E5605B8C292136C400B5E923 /* ProgressViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewParser.swift; sourceTree = "<group>"; };
+		E5605B8E2921387700B5E923 /* PickerViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewParser.swift; sourceTree = "<group>"; };
 		E5C54DDB29197CA700E3EBEA /* SwitchParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchParser.swift; sourceTree = "<group>"; };
 		E5C54DDD29197D9000E3EBEA /* TextViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewParser.swift; sourceTree = "<group>"; };
 		E5CA128B29198141002FE1DC /* ImageViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewParser.swift; sourceTree = "<group>"; };
@@ -373,6 +383,11 @@
 				E5C54DDD29197D9000E3EBEA /* TextViewParser.swift */,
 				E5CA128B29198141002FE1DC /* ImageViewParser.swift */,
 				E5CA128D2919849C002FE1DC /* TextFieldParser.swift */,
+				E5605B862921326D00B5E923 /* ActivityIndicatorParser.swift */,
+				E5605B88292133A200B5E923 /* SearchBarParser.swift */,
+				E5605B8A2921359000B5E923 /* SegmentedControlParser.swift */,
+				E5605B8C292136C400B5E923 /* ProgressViewParser.swift */,
+				E5605B8E2921387700B5E923 /* PickerViewParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -539,6 +554,7 @@
 				586775977C12B85F63D8158B00BAC1E4 /* AdaptiveUI-dummy.m in Sources */,
 				E5CA128E2919849C002FE1DC /* TextFieldParser.swift in Sources */,
 				E50FD989291838F1007A5A91 /* AsyncUIImageView.swift in Sources */,
+				E5605B8B2921359000B5E923 /* SegmentedControlParser.swift in Sources */,
 				27E2B10F02875AE32CE37E393CF00F74 /* AUIActivityIndicator.swift in Sources */,
 				E5CA128C29198141002FE1DC /* ImageViewParser.swift in Sources */,
 				394D05D01B50770A019F52F97D53E8AC /* AUIButton.swift in Sources */,
@@ -550,6 +566,7 @@
 				5976B0E5480637329D4C96944943BF2C /* AUIImageView.swift in Sources */,
 				4774FC0A15FDF660741FEE8F11864DA8 /* AUILabel.swift in Sources */,
 				7C8CC80473EC04CD95035B8BDA206989 /* AUIPickerView.swift in Sources */,
+				E5605B8F2921387700B5E923 /* PickerViewParser.swift in Sources */,
 				37B9AA005BBA402ABCAD6902497EB73D /* AUIProgressView.swift in Sources */,
 				7BD6645D2A247F5A076B3122F4E731EA /* AUISearchBar.swift in Sources */,
 				87AD47AEBF012A830D47848A37CF7005 /* AUISegmentedControl.swift in Sources */,
@@ -578,11 +595,14 @@
 				CDC547747E8743E840781DC0683E63CB /* SerializedCodingKeys.swift in Sources */,
 				B6316AEE9C12BD24D70C156F9F42CC0F /* SerializedTransformable.swift in Sources */,
 				8FC9A5DCDDED219439E5CB312AE4663E /* Transformable.swift in Sources */,
+				E5605B89292133A200B5E923 /* SearchBarParser.swift in Sources */,
 				E5C54DDC29197CA700E3EBEA /* SwitchParser.swift in Sources */,
 				26BD8AA07A5AA312650E58182F579194 /* UIColor+hex.swift in Sources */,
 				9550A9E02D9BFB57EDB427674A5C870A /* UIColor+init.swift in Sources */,
+				E5605B8D292136C400B5E923 /* ProgressViewParser.swift in Sources */,
 				E5C54DDE29197D9000E3EBEA /* TextViewParser.swift in Sources */,
 				B34889A517E3F0A990B9721E67A89BDE /* ViewConfiguration.swift in Sources */,
+				E5605B872921326D00B5E923 /* ActivityIndicatorParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

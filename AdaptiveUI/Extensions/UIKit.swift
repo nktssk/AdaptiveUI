@@ -197,3 +197,16 @@ extension AUITextField.KeyboardType {
         }
     }
 }
+
+extension AUISearchBar.SearchStyle {
+    var uiKit: UISearchBar.Style {
+        switch self {
+        case .default:
+            return .default
+        case .minimal:
+            return .minimal
+        case .prominent:
+            return .prominent
+        }
+    }
+}

@@ -10,8 +10,6 @@ import UIKit
 enum SwitchParser {
     static func configure(configuration: AUISwitch) -> UISwitch {
         let uiSwitch = UISwitch()
-        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration)
-
         uiSwitch.isOn = configuration.isOn
         if let onTintColor = UIColor(from: configuration.onTintColor) {
             uiSwitch.onTintColor = onTintColor
@@ -19,7 +17,9 @@ enum SwitchParser {
         if let thumbTintColor = UIColor(from: configuration.thumbTintColor) {
             uiSwitch.thumbTintColor = thumbTintColor
         }
-        
+
+        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration)
+
         return uiSwitch
     }
 }

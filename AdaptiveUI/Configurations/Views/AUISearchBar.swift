@@ -16,16 +16,13 @@ final class AUISearchBar: AUIView {
     }
 
     @Convertible
-    var text: String?
+    var text: AUIText
 
     @Convertible
     var prompt: String?
 
     @Convertible
     var placeholder: String?
-
-    @Convertible
-    var searchTextField: AUITextField?
 
     @Convertible
     var barTintColor: AUIColor?
