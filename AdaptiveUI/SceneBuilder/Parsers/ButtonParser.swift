@@ -40,7 +40,6 @@ enum ButtonParser {
              }.resume()
         }
 
-
         return button
     }
 }

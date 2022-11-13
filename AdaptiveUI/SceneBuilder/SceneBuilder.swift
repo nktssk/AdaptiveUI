@@ -32,16 +32,16 @@ enum SceneBuilder {
             view = UIView()
 
         case .switch(let configuration):
-            view = UIView()
+            view = SwitchParser.configure(configuration: configuration)
 
         case .textView(let configuration):
-            view = UIView()
+            view = TextViewParser.configure(configuration: configuration)
 
         case .imageView(let configuration):
-            view = UIView()
+            view = ImageViewParser.configure(configuration: configuration)
 
         case .textField(let configuration):
-            view = UIView()
+            view = TextFieldParser.configure(configuration: configuration)
 
         case .searchBar(let configuration):
             view = UIView()

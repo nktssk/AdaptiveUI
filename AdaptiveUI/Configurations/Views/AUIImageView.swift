@@ -29,7 +29,7 @@ final class AUIImageView: AUIView {
     // MARK: Representation
 
     @Convertible
-    var image: AUIImageView
+    var image: AUIImage
 
     @Convertible(default: .defaultImageBackgroundColor)
     var tintColor: AUIColor
@@ -38,7 +38,4 @@ final class AUIImageView: AUIView {
 
     @Convertible
     var contentMode: ContentMode
-
-    @Convertible(default: .zero)
-    var imageContentInsets: AUIInsets
 }
