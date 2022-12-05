@@ -7,7 +7,17 @@
 
 import Foundation
 
-protocol SerializableEncodable: Encodable {}
+protocol SerializableEncodable: Encodable {
+    init()
+}
+
+extension SerializableEncodable {
+    static func generate(_ operation: (Self) -> Void) -> Self {
+        let value = Self.init()
+        operation(value)
+        return value
+    }
+}
 
 extension SerializableEncodable {
     

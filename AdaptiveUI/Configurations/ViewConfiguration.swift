@@ -12,7 +12,6 @@ enum ViewConfiguration: Codable {
     case label(configuration: AUILabel)
     case slider(configuration: AUISlider)
     case button(configuration: AUIButton)
-    case webView(configuration: AUIWebView)
     case `switch`(configuration: AUISwitch)
     case textView(configuration: AUITextView)
     case imageView(configuration: AUIImageView)

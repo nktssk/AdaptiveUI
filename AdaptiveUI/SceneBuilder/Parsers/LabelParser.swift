@@ -13,9 +13,13 @@ enum LabelParser {
         label.font = configuration.text.uiFont
         label.text = configuration.text.content
         label.numberOfLines = configuration.maxNumberOfLines
-        label.shadowOffset = configuration.shadowOffset.cgSize
+        label.textColor = UIColor(from: configuration.textColor)
         label.textAlignment = configuration.alignment.uiAligment
         label.shadowColor = UIColor(from: configuration.shadowColor)
+
+        if let shadowOffset = configuration.shadowOffset?.cgSize {
+            label.shadowOffset = shadowOffset
+        }
 
         BaseViewConfigurator.configure(view: label, configuration: configuration)
 

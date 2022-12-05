@@ -12,15 +12,18 @@ struct AUIController: Serializable {
     // MARK: Nested Types
 
     enum Kind: String, Decodable {
-        case table
         case `static`
         case scrollable
+        case webView
     }
 
     // MARK: AdaptiveUI Configuration
 
     @Convertible(default: .static)
     var kind: Kind
+
+    @Convertible
+    var webViewURL: String?
 
     // MARK: Configuration
 
@@ -32,8 +35,8 @@ struct AUIController: Serializable {
     @Convertible(default: false)
     var largeTitle: Bool
 
-    @Convertible
-    var backgroundColor: AUIColor?
+    @Convertible(default: .defaultViewColor)
+    var backgroundColor: AUIColor
 
     // MARK: Layout
 

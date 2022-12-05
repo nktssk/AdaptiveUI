@@ -15,26 +15,22 @@ class ViewController: UIViewController {
         sandbox()
     }
 
-    func sandbox() {
-        response()
+    override func viewDidAppear(_ animated: Bool) {
+        let vc = SceneBuilder.parse(configuration: ViewControllerPreview.configuration)
+        present(vc, animated: true)
         print("\n------------------------------------------------------------\n")
-        textField()
-        print("\n------------------------------------------------------------\n")
-        constraints()
-
+        print(String(data: try! JSONEncoder().encode(ViewControllerPreview.configuration), encoding: .utf8))
     }
 
-    func constraints() {
-        let constraint1 = AUIConstraint()
-        constraint1.target = "TargetView"
-        constraint1.targetAnchor = .width
-        constraint1.kind = .relation(source: "SourceView", sourceAnchor: .height, relationType: .equal)
-        print(String(data: try! JSONEncoder().encode(constraint1), encoding: .utf8)!)
-        let constraint2 = AUIConstraint()
-        constraint2.target = "TargetView"
-        constraint2.targetAnchor = .height
-        constraint2.kind = .constant(value: 200)
-        print(String(data: try! JSONEncoder().encode(constraint2), encoding: .utf8)!)
+    func sandbox() {
+        // response()
+        print("\n------------------------------------------------------------\n")
+        textField()
+        print(1)
+        DispatchQueue.global().sync {
+            print(2)
+        }
+        print(3)
     }
 
     func textField() {

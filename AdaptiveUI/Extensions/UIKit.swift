@@ -210,3 +210,43 @@ extension AUISearchBar.SearchStyle {
         }
     }
 }
+
+extension AUIConstraint.Anchor {
+
+    func xAxisAnchorFor(_ view: UIView) -> NSLayoutXAxisAnchor? {
+        switch self {
+        case .leading:
+            return view.leadingAnchor
+        case .trailing:
+            return view.trailingAnchor
+        case .centerX:
+            return view.centerXAnchor
+        default:
+            return nil
+        }
+    }
+
+    func yAxisAnchorFor(_ view: UIView) -> NSLayoutYAxisAnchor? {
+        switch self {
+        case .top:
+            return view.topAnchor
+        case .bottom:
+            return view.bottomAnchor
+        case .centerY:
+            return view.centerYAnchor
+        default:
+            return nil
+        }
+    }
+
+    func dimensionAnchorFor(_ view: UIView) -> NSLayoutDimension? {
+        switch self {
+        case .width:
+            return view.widthAnchor
+        case .height:
+            return view.heightAnchor
+        default:
+            return nil
+        }
+    }
+}

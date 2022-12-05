@@ -18,8 +18,6 @@ extension ViewConfiguration {
             return configuration
         case .button(let configuration):
             return configuration
-        case .webView(let configuration):
-            return configuration
         case .switch(let configuration):
             return configuration
         case .textView(let configuration):

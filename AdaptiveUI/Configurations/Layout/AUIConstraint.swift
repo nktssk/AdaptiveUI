@@ -9,6 +9,28 @@ import Foundation
 
 struct AUIConstraint: Serializable {
 
+    // MARK: Nested Types
+
+    struct RelationConfiguration: Serializable {
+        @Convertible(default: "AUIParentView")
+        var source: String
+
+        @Convertible
+        var sourceAnchor: Anchor
+
+        @Convertible(default: .equal)
+        var relationType: RelationType
+
+        @Convertible(default: .zero)
+        var constant: Double
+
+        @Convertible(default: .zero)
+        var multiplier: Double
+
+        @Convertible(default: 1000)
+        var priority: Float
+    }
+
     enum Anchor: String, Codable {
         case width
         case height
@@ -27,9 +49,11 @@ struct AUIConstraint: Serializable {
     }
 
     enum Kind: Codable {
-        case relation(source: String, sourceAnchor: Anchor,  relationType: RelationType, multiplier: Double? = nil, constant: Double? = nil)
+        case relation(configuration: RelationConfiguration)
         case constant(value: Double)
     }
+
+    // MARK: AdaptiveUI Configuration
 
     @Convertible
     var kind: Kind

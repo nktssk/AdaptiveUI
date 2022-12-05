@@ -25,13 +25,13 @@ class AUILabel: AUIView {
     // MARK: Representation
 
     @Convertible(default: .defaultTextColor)
-    var color: AUIColor
+    var textColor: AUIColor
 
     @Convertible
     var shadowColor: AUIColor?
 
-    @Convertible(default: .default)
-    var shadowOffset: AUIOffset
+    @Convertible
+    var shadowOffset: AUIOffset?
 
     // MARK: Layout
 

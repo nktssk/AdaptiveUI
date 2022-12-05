@@ -7,12 +7,41 @@
 
 import UIKit
 
+typealias ViewHierarchy = [String: UIView]
+
 enum SceneBuilder {
-    static func parse(configuration: AUIConfiguration) {
+    static func parse(configuration: AUIConfiguration) -> UIViewController {
+
+        let viewController = buildViewController(configuration: configuration.controller)
+        let rootView = viewController.view!
+
+        // Build hierarchy
+
+        var hierarchy = [String: UIView]()
+        configuration.views.forEach { buildViewHierarchy(rootView: rootView, configuration: $0, hierarchy: &hierarchy) }
         
+        // Layout
+
+        AUILayoutManager.layout(hierarchy: hierarchy, constraints: configuration.layout)
+
+        return viewController
     }
 
-    static func buildViewHierarchy(rootView: UIView, configuration: ViewConfiguration) {
+    static func buildViewController(configuration: AUIController) -> UIViewController {
+        let viewController: UIViewController
+        switch configuration.kind {
+        case .static:
+            viewController = UIViewController()
+        case .scrollable:
+            viewController = ScrollableViewController()
+        case .webView:
+            viewController = WebViewControllerViewController(url: configuration.webViewURL)
+        }
+        viewController.view.backgroundColor = UIColor(from: configuration.backgroundColor)
+        return viewController
+    }
+
+    static func buildViewHierarchy(rootView: UIView, configuration: ViewConfiguration, hierarchy: inout ViewHierarchy) {
         let view: UIView
         switch configuration {
         case .view(let configuration):
@@ -27,9 +56,6 @@ enum SceneBuilder {
 
         case .button(let configuration):
             view = ButtonParser.configure(configuration: configuration)
-
-        case .webView(let configuration):
-            view = UIView()
 
         case .switch(let configuration):
             view = SwitchParser.configure(configuration: configuration)
@@ -59,9 +85,12 @@ enum SceneBuilder {
             view = ActivityIndicatorParser.configure(configuration: configuration)
         }
 
+        let viewConfiguration = configuration.viewConfiguration
         rootView.addSubview(view)
+        hierarchy[viewConfiguration.identifier] = view
+
         for subview in configuration.viewConfiguration.subviews {
-            SceneBuilder.buildViewHierarchy(rootView: view, configuration: subview)
+            SceneBuilder.buildViewHierarchy(rootView: view, configuration: subview, hierarchy: &hierarchy)
         }
     }
 }

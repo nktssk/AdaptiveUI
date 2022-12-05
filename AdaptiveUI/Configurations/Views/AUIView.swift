@@ -27,8 +27,8 @@ class AUIView: Serializable {
     @Convertible(default: .zero)
     var cornerRadius: Double
 
-    @Convertible
-    var backgroundColor: AUIColor?
+    @Convertible(default: .defaultViewColor)
+    var backgroundColor: AUIColor
 
     @Convertible(default: false)
     var isHidden: Bool

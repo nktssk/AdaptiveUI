@@ -12,7 +12,7 @@ struct AUIConfiguration: Serializable {
     // MARK: AdaptiveUI Configuration
 
     @Convertible
-    var controller: AUIController?
+    var controller: AUIController
 
     // MARK: Representation
 
@@ -21,5 +21,6 @@ struct AUIConfiguration: Serializable {
 
     // MARK: Layout
 
-    // let layout: [ViewRelation]
+    @Convertible
+    var layout: [AUIConstraint]
 }
