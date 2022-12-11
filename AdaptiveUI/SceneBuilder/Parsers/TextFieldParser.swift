@@ -8,7 +8,7 @@
 import UIKit
 
 enum TextFieldParser {
-    static func configure(configuration: AUITextField) -> UITextField {
+    static func configure(configuration: AUITextField, viewController: AUIViewController) -> UITextField {
         let textField = UITextField()
         textField.font = configuration.text.uiFont
         textField.text = configuration.text.content
@@ -22,9 +22,13 @@ enum TextFieldParser {
         textField.autocapitalizationType = configuration.autocapitalizationType.uiKit
         textField.spellCheckingType = configuration.spellCheckingType.uiKit
 
-        // TODO: - Delegate
+        textField.delegate = viewController
 
-        BaseViewConfigurator.configure(view: textField, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .textField(textField)
+        }
+
+        BaseViewConfigurator.configure(view: textField, configuration: configuration, viewController: viewController)
 
         return textField
     }

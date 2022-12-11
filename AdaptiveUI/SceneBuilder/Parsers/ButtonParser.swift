@@ -8,7 +8,7 @@
 import UIKit
 
 enum ButtonParser {
-    static func configure(configuration: AUIButton) -> UIButton {
+    static func configure(configuration: AUIButton, viewController: AUIViewController) -> UIButton {
         let button = UIButton()
 
         if let text = configuration.text {
@@ -38,8 +38,30 @@ enum ButtonParser {
                  }
              }.resume()
         }
+        if let action = configuration.actionHandler {
+            switch action {
+            case .custom(let id):
+                let actionWrapper = AUIActionWrapper { [weak viewController] in
+                    viewController?.actions[id]?()
+                }
+                viewController.actionWrappers.append(actionWrapper)
+                button.addTarget(actionWrapper, action: #selector(actionWrapper.action), for: .touchUpInside)
+            case .standard(let type):
+                // TODO: Later
+                print(type)
+            }
+        }
 
-        BaseViewConfigurator.configure(view: button, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .button(button)
+        }
+
+        BaseViewConfigurator.configure(
+            view: button,
+            configuration: configuration,
+            viewController: viewController,
+            skipActions: true
+        )
 
         return button
     }

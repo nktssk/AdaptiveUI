@@ -8,11 +8,14 @@
 import UIKit
 
 enum PickerViewParser {
-    static func configure(configuration: AUIPickerView) -> UIPickerView {
+    static func configure(configuration: AUIPickerView, viewController: AUIViewController) -> UIPickerView {
         let pickerView = UIPickerView()
-        // TODO: - Delegate
 
-        BaseViewConfigurator.configure(view: pickerView, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .pickerView(pickerView)
+        }
+
+        BaseViewConfigurator.configure(view: pickerView, configuration: configuration, viewController: viewController)
 
         return pickerView
     }

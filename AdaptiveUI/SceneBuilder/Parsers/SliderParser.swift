@@ -8,7 +8,7 @@
 import UIKit
 
 enum SliderParser {
-    static func configure(configuration: AUISlider) -> UISlider {
+    static func configure(configuration: AUISlider, viewController: AUIViewController) -> UISlider {
         let slider = UISlider()
 
         slider.value = configuration.currentValue
@@ -18,7 +18,17 @@ enum SliderParser {
         setupImage(from: configuration.minImage, slider: slider, isMin: true)
         setupImage(from: configuration.maxImage, slider: slider, isMin: false)
 
-        BaseViewConfigurator.configure(view: slider, configuration: configuration)
+        let actionWrapper = AUIActionWrapper { [weak viewController, unowned slider] in
+            viewController?.sliderValueDidChange(slider)
+        }
+        viewController.actionWrappers.append(actionWrapper)
+        slider.addTarget(actionWrapper, action: #selector(actionWrapper.action), for: .valueChanged)
+
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .slider(slider)
+        }
+
+        BaseViewConfigurator.configure(view: slider, configuration: configuration, viewController: viewController, skipActions: true)
 
         return slider
     }

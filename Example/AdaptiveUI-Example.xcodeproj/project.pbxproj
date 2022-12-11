@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E544F019293D039E005F6BF9 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544F018293D039E005F6BF9 /* Builder.swift */; };
-		E544F01B293D03A5005F6BF9 /* UIViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544F01A293D03A5005F6BF9 /* UIViewControllerPreview.swift */; };
 		E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CB28F2C38400B941BD /* AppDelegate.swift */; };
 		E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CD28F2C38400B941BD /* SceneDelegate.swift */; };
 		E55328D028F2C38400B941BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CF28F2C38400B941BD /* ViewController.swift */; };
@@ -24,7 +23,6 @@
 		AF4FE94111F5685F56D602F8 /* Pods-AdaptiveUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.debug.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B33CCC0F1BD6D5B7CF09D8AE /* Pods-AdaptiveUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.release.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.release.xcconfig"; sourceTree = "<group>"; };
 		E544F018293D039E005F6BF9 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
-		E544F01A293D03A5005F6BF9 /* UIViewControllerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerPreview.swift; sourceTree = "<group>"; };
 		E55328C828F2C38400B941BD /* AdaptiveUI-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdaptiveUI-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55328CB28F2C38400B941BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E55328CD28F2C38400B941BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,32 +66,14 @@
 		E544F015293D037B005F6BF9 /* UIBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				E544F017293D038E005F6BF9 /* Builder */,
-				E544F016293D0387005F6BF9 /* Common */,
-			);
-			path = UIBuilder;
-			sourceTree = "<group>";
-		};
-		E544F016293D0387005F6BF9 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				E544F01A293D03A5005F6BF9 /* UIViewControllerPreview.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		E544F017293D038E005F6BF9 /* Builder */ = {
-			isa = PBXGroup;
-			children = (
 				E544F018293D039E005F6BF9 /* Builder.swift */,
 			);
-			path = Builder;
+			path = UIBuilder;
 			sourceTree = "<group>";
 		};
 		E55328BF28F2C38400B941BD = {
 			isa = PBXGroup;
 			children = (
-				E544F015293D037B005F6BF9 /* UIBuilder */,
 				E55328CA28F2C38400B941BD /* AdaptiveUI-Example */,
 				E55328C928F2C38400B941BD /* Products */,
 				6C4ED0E21169448EA3DF37D9 /* Pods */,
@@ -112,6 +92,7 @@
 		E55328CA28F2C38400B941BD /* AdaptiveUI-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E544F015293D037B005F6BF9 /* UIBuilder */,
 				E55328CB28F2C38400B941BD /* AppDelegate.swift */,
 				E55328CD28F2C38400B941BD /* SceneDelegate.swift */,
 				E55328CF28F2C38400B941BD /* ViewController.swift */,
@@ -223,7 +204,6 @@
 			files = (
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
-				E544F01B293D03A5005F6BF9 /* UIViewControllerPreview.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
 				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,
 				E544F019293D039E005F6BF9 /* Builder.swift in Sources */,

@@ -8,7 +8,7 @@
 import UIKit
 
 enum LabelParser {
-    static func configure(configuration: AUILabel) -> UILabel {
+    static func configure(configuration: AUILabel, viewController: AUIViewController) -> UILabel {
         let label = UILabel()
         label.font = configuration.text.uiFont
         label.text = configuration.text.content
@@ -21,7 +21,11 @@ enum LabelParser {
             label.shadowOffset = shadowOffset
         }
 
-        BaseViewConfigurator.configure(view: label, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .label(label)
+        }
+
+        BaseViewConfigurator.configure(view: label, configuration: configuration, viewController: viewController)
         label.backgroundColor = .clear
 
         return label

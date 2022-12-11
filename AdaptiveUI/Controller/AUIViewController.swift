@@ -10,18 +10,30 @@ import WebKit
 
 open class AUIViewController: UIViewController {
 
-    // MARK: Private Properties
+    // MARK: Open Properties
 
+    open var actions: [String: VoidClosure] = [:]
+    open var viewHierarchy: [String: AUIViewEnumeration] = [:]
+
+    // MARK: Internal Properties
+
+    var actionWrappers: [AUIActionWrapper] = []
+
+    // MARK: Private Properties
+    
     private let processor: AUIViewConfigurationProcessorProtocol
 
     private var needBuildHierarchy = true
     private var configuration: AUIConfiguration?
-    private var actions: [String: VoidClosure] = [:]
+
+    private lazy var blurEffectView = UIVisualEffectView()
+    private lazy var activityIndicatorView = UIActivityIndicatorView()
+
+    // MARK: Lifecycle
 
     init(processor: AUIViewConfigurationProcessorProtocol) {
         self.processor = processor
         super.init(nibName: nil, bundle: nil)
-
         processor.download { [weak self] result in
             guard let self = self else { return }
             switch result {
@@ -37,6 +49,9 @@ open class AUIViewController: UIViewController {
         }
     }
 
+    public required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     open override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,26 +63,33 @@ open class AUIViewController: UIViewController {
         }
     }
 
-    public required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
     // MARK: Open Methods
 
-    open func showLoadingView() {}
-    open func hideLoadingView() {}
+    open func showLoadingView() {
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = view.bounds
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.addSubview(blurEffectView)
+        activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView.center = view.center
+        activityIndicatorView.startAnimating()
+        view.addSubview(activityIndicatorView)
+        activityIndicatorView.alpha = .zero
+        blurEffectView.alpha = .zero
+        UIView.animate(withDuration: 0.5) {
+            self.activityIndicatorView.alpha = 1
+            self.blurEffectView.alpha = 1
+        }
+    }
+
+    open func hideLoadingView() {
+        blurEffectView.alpha = .zero
+        activityIndicatorView.stopAnimating()
+        activityIndicatorView.alpha = .zero
+    }
 
     open func failedDownloading(with error: Error) {}
-
-    // MARK: Public Methods
-
-    public func setupActions(actions: [String: VoidClosure]) {
-        self.actions = actions
-    }
-
-    public func appendAction(identifier: String, action: @escaping VoidClosure) {
-        actions[identifier] = action
-    }
 
     // MARK: Private Methods
 
@@ -120,7 +142,47 @@ open class AUIViewController: UIViewController {
             ]
         )
         
-        SceneBuilder.parse(configuration: configuration, rootView: topView)
+        SceneBuilder.parse(configuration: configuration, rootView: topView, viewController: self)
     }
 }
 
+
+extension AUIViewController {
+
+    // MARK: Actions
+
+    @objc func switchValueDidChange(_ switch: UISwitch) {}
+    @objc open func sliderValueDidChange(_ slider: UISlider) {}
+    @objc func segmentedControlValueDidChange(_ segmentedControl: UISegmentedControl) {}
+}
+
+extension AUIViewController: UITextViewDelegate {
+
+    @objc open func textViewShouldEndEditing(_ textView: UITextView) -> Bool { true }
+    @objc open func textViewShouldBeginEditing(_ textView: UITextView) -> Bool { true }
+    @objc open func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool { true }
+
+    @objc open func textViewDidChange(_ textView: UITextView) {}
+    @objc open func textViewDidEndEditing(_ textView: UITextView) {}
+    @objc open func textViewDidBeginEditing(_ textView: UITextView) {}
+}
+
+extension AUIViewController: UITextFieldDelegate {
+
+    @objc open func textFieldShouldClear(_ textField: UITextField) -> Bool { true }
+    @objc open func textFieldShouldReturn(_ textField: UITextField) -> Bool { true }
+    @objc open func textFieldShouldEndEditing(_ textField: UITextField) -> Bool { true }
+    @objc open func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool { true }
+
+    @objc open func textFieldDidEndEditing(_ textField: UITextField) {}
+    @objc open func textFieldDidBeginEditing(_ textField: UITextField) {}
+    @objc open func textFieldDidChangeSelection(_ textField: UITextField) {}
+    @objc open func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {}
+    @objc open func textField(
+        _ textField: UITextField,
+        shouldChangeCharactersIn range: NSRange,
+        replacementString string: String
+    ) -> Bool { true }
+}
+
+extension AUIViewController: UISearchBarDelegate {}

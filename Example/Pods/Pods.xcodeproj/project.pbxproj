@@ -57,8 +57,9 @@
 		E006F95FB7ED0FC1F2499419DCC313A2 /* UIColor+hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A93D954AE49EE78E967FD4FBA0154F /* UIColor+hex.swift */; };
 		E0CC43F1A14296867449ED8DBC842F06 /* ActivityIndicatorParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A36F68D08FC7E90F5A83FD953B3F16 /* ActivityIndicatorParser.swift */; };
 		E50835CE2945C21200F15F14 /* ConfigurationBuilderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835CD2945C21200F15F14 /* ConfigurationBuilderProtocol.swift */; };
-		E50835D12945D18800F15F14 /* AUIViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835D02945D18800F15F14 /* AUIViewControllerDelegate.swift */; };
 		E50835D32945D2AB00F15F14 /* AUIViewEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */; };
+		E50835D92945F06400F15F14 /* AUIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835D82945F06400F15F14 /* AUIAction.swift */; };
+		E50835DD2945F9E600F15F14 /* AUIActionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */; };
 		E5E08C502940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E08C4F2940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift */; };
 		E7EB4552418246D6F6EBEE666A02766F /* EncodableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2609A406E43C948979F0638F3D9 /* EncodableProperty.swift */; };
 		E84B9E049B3611D943A0B9C6146960F2 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C3D9AED78D868AAAEB8BDA07B8FBA /* SceneBuilder.swift */; };
@@ -146,8 +147,9 @@
 		DB2A94DDBFF496E9E58427A8B5DC20C3 /* AUITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUITextField.swift; sourceTree = "<group>"; };
 		DBE14E3C4A2CCABF3E31EA51AC653739 /* Pods-AdaptiveUI-Example */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-AdaptiveUI-Example"; path = Pods_AdaptiveUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E50835CD2945C21200F15F14 /* ConfigurationBuilderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurationBuilderProtocol.swift; sourceTree = "<group>"; };
-		E50835D02945D18800F15F14 /* AUIViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIViewEnumeration.swift; sourceTree = "<group>"; };
+		E50835D82945F06400F15F14 /* AUIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIAction.swift; sourceTree = "<group>"; };
+		E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIActionWrapper.swift; sourceTree = "<group>"; };
 		E5E08C4F2940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIViewConfigurationProcessorProtocol.swift; sourceTree = "<group>"; };
 		E74D39D223997881184287C19268D87C /* SerializedTransformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SerializedTransformable.swift; sourceTree = "<group>"; };
 		E928C717318BEDB2B11BE2AF76F45F80 /* Pods-AdaptiveUI-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AdaptiveUI-Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -214,7 +216,6 @@
 		4FD031651204E828654441562A605E3B /* AdaptiveUI */ = {
 			isa = PBXGroup;
 			children = (
-				E50835CF2945D17700F15F14 /* Actions */,
 				E50835CC2945C20B00F15F14 /* Builder */,
 				FE67EC768AA0B3E4E4133E3B2936D00D /* CodableExtensions */,
 				B10B70B7E6471B582AC8C002A067C86E /* Configurations */,
@@ -266,6 +267,7 @@
 		635DB40B14E119568CB1C9DCC1577FCE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */,
 				4441E0C40C944E7EBA57D4F59005B480 /* AUIViewController.swift */,
 				E5E08C4F2940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift */,
 			);
@@ -360,6 +362,7 @@
 		B10B70B7E6471B582AC8C002A067C86E /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
+				E50835D72945F05B00F15F14 /* Action */,
 				00474EC6C38F2B58E81A51BFA6E2364A /* AUIConfiguration.swift */,
 				31067A0BA4F1FA8262DFB5B0CE89B7F6 /* ViewConfiguration.swift */,
 				A045FF05F3F51CAF8E564922AAF2F131 /* Common */,
@@ -431,13 +434,13 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
-		E50835CF2945D17700F15F14 /* Actions */ = {
+		E50835D72945F05B00F15F14 /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				E50835D02945D18800F15F14 /* AUIViewControllerDelegate.swift */,
-				E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */,
+				E50835D82945F06400F15F14 /* AUIAction.swift */,
+				E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */,
 			);
-			path = Actions;
+			path = Action;
 			sourceTree = "<group>";
 		};
 		EA61C245561E5F76FC8380B4D8734435 /* Views */ = {
@@ -593,6 +596,7 @@
 				E0CC43F1A14296867449ED8DBC842F06 /* ActivityIndicatorParser.swift in Sources */,
 				BA10EA41C0F8806E2CC643747F393ED6 /* AdaptiveUI-dummy.m in Sources */,
 				67BA28DA15BDA4B68849C7474BD6C755 /* AsyncUIImageView.swift in Sources */,
+				E50835DD2945F9E600F15F14 /* AUIActionWrapper.swift in Sources */,
 				02862229B5CDDD9BB4F8B1C25B08E2DB /* AUIActivityIndicator.swift in Sources */,
 				BD4605B444ACE742FA8A3EBC0523CC70 /* AUIButton.swift in Sources */,
 				1A5889BA4D115EA2A6318FA7B22804C7 /* AUIColor.swift in Sources */,
@@ -611,6 +615,7 @@
 				DCD91F6AE6FF6D01ACC43F27F2333BDE /* AUISegmentedControl.swift in Sources */,
 				3C2C11DB89C3A963F7C64D3BC1DF93FB /* AUISlider.swift in Sources */,
 				53BD3049D7346D4405E008765C3608D6 /* AUISwitch.swift in Sources */,
+				E50835D92945F06400F15F14 /* AUIAction.swift in Sources */,
 				F57A78A92AC8D53742F0EC8F05741F4F /* AUIText.swift in Sources */,
 				E5E08C502940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift in Sources */,
 				1876C3B630259E159CE7516F1C9CE8D5 /* AUITextField.swift in Sources */,
@@ -637,7 +642,6 @@
 				70153651C5048DDD196CA51488B1DBB8 /* SerializedTransformable.swift in Sources */,
 				3D15FBA0C4BA93AC7853EE54F8C33D96 /* SliderParser.swift in Sources */,
 				0942CA6C3AD2A9267D52F76C73EA13FE /* SwitchParser.swift in Sources */,
-				E50835D12945D18800F15F14 /* AUIViewControllerDelegate.swift in Sources */,
 				013C6C8CA745E2EC2635DEC42A389608 /* TextFieldParser.swift in Sources */,
 				7136F2EA2F17D78B5ABCBFFBCA2B5305 /* TextViewParser.swift in Sources */,
 				8FF9AA9C3605018802F10D1056A1A62F /* Transformable.swift in Sources */,

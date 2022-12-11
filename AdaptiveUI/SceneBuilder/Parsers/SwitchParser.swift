@@ -8,7 +8,7 @@
 import UIKit
 
 enum SwitchParser {
-    static func configure(configuration: AUISwitch) -> UISwitch {
+    static func configure(configuration: AUISwitch, viewController: AUIViewController) -> UISwitch {
         let uiSwitch = UISwitch()
         uiSwitch.isOn = configuration.isOn
         if let onTintColor = UIColor(from: configuration.onTintColor) {
@@ -17,8 +17,17 @@ enum SwitchParser {
         if let thumbTintColor = UIColor(from: configuration.thumbTintColor) {
             uiSwitch.thumbTintColor = thumbTintColor
         }
+        let actionWrapper = AUIActionWrapper { [weak viewController, unowned uiSwitch] in
+            viewController?.switchValueDidChange(uiSwitch)
+        }
+        viewController.actionWrappers.append(actionWrapper)
+        uiSwitch.addTarget(actionWrapper, action: #selector(actionWrapper.action), for: .valueChanged)
 
-        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .`switch`(uiSwitch)
+        }
+
+        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration, viewController: viewController)
 
         return uiSwitch
     }

@@ -8,7 +8,7 @@
 import UIKit
 
 enum ActivityIndicatorParser {
-    static func configure(configuration: AUIActivityIndicator) -> UIActivityIndicatorView {
+    static func configure(configuration: AUIActivityIndicator, viewController: AUIViewController) -> UIActivityIndicatorView {
         let activityIndicator = UIActivityIndicatorView(style: configuration.isLarge ? .large : .medium)
         activityIndicator.color = UIColor(from: configuration.color)
         if configuration.isAnimating {
@@ -17,7 +17,11 @@ enum ActivityIndicatorParser {
             activityIndicator.stopAnimating()
         }
 
-        BaseViewConfigurator.configure(view: activityIndicator, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .activityIndicator(activityIndicator)
+        }
+
+        BaseViewConfigurator.configure(view: activityIndicator, configuration: configuration, viewController: viewController)
 
         return activityIndicator
     }

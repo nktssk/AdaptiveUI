@@ -422,6 +422,7 @@ struct ConfigurationBuilder: ConfigurationBuilderProtocol {
                 color.lightThemeColor = "#000000"
                 color.lightThemeColor = "#000000"
             }
+            button.actionHandler = .custom(id: "SendButtonTapped")
         })
     ]
 }

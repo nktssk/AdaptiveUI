@@ -45,4 +45,9 @@ public class AUIView: Serializable {
     public var insets: AUIInsets
 
     public required init() {}
+
+    // MARK: Action
+
+    @Convertible
+    public var actionHandler: AUIAction?
 }

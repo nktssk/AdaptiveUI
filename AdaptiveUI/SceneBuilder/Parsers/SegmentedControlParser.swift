@@ -8,7 +8,7 @@
 import UIKit
 
 enum SegmentedControlParser {
-    static func configure(configuration: AUISegmentedControl) -> UISegmentedControl {
+    static func configure(configuration: AUISegmentedControl, viewController: AUIViewController) -> UISegmentedControl {
         let segmentedControl: UISegmentedControl
         switch configuration.items {
         case .titles(let list):
@@ -23,8 +23,17 @@ enum SegmentedControlParser {
             )
         }
         segmentedControl.selectedSegmentIndex = configuration.selectedSegmentIndex
+        let actionWrapper = AUIActionWrapper { [weak viewController, unowned segmentedControl] in
+            viewController?.segmentedControlValueDidChange(segmentedControl)
+        }
+        viewController.actionWrappers.append(actionWrapper)
+        segmentedControl.addTarget(actionWrapper, action: #selector(actionWrapper.action), for: .valueChanged)
 
-        BaseViewConfigurator.configure(view: segmentedControl, configuration: configuration)
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .segmentedControl(segmentedControl)
+        }
+
+        BaseViewConfigurator.configure(view: segmentedControl, configuration: configuration, viewController: viewController, skipActions: true)
 
         return segmentedControl
     }
