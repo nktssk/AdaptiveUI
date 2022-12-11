@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class AUIImageView: AUIView {
+public final class AUIImageView: AUIView {
 
     // MARK: Nested Types
 
-    enum ContentMode: String, Codable {
+    public enum ContentMode: String, Codable {
         case scaleToFill
         case scaleAspectFit
         case scaleAspectFill
@@ -29,13 +29,13 @@ final class AUIImageView: AUIView {
     // MARK: Representation
 
     @Convertible
-    var image: AUIImage
+    public var image: AUIImage
 
     @Convertible(default: .defaultImageBackgroundColor)
-    var tintColor: AUIColor
+    public var tintColor: AUIColor
 
     // MARK: Layout
 
     @Convertible
-    var contentMode: ContentMode
+    public var contentMode: ContentMode
 }

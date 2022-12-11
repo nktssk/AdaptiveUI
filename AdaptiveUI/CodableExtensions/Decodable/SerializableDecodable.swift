@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol SerializableDecodable: Decodable {
+public protocol SerializableDecodable: Decodable {
     init()
     func decode(from decoder: Decoder) throws
 }
 
-extension SerializableDecodable {
+public extension SerializableDecodable {
     
     func decode(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: SerializedCodingKeys.self)

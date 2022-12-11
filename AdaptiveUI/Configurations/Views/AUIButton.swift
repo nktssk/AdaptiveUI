@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class AUIButton: AUIView {
+public final class AUIButton: AUIView {
 
     // MARK: Nested types
 
-    enum ImageAlignment: String, Codable {
+    public enum ImageAlignment: String, Codable {
         case right
         case left
     }
@@ -19,14 +19,17 @@ final class AUIButton: AUIView {
     // MARK: Configuration
 
     @Convertible
-    var text: AUIText?
+    public var text: AUIText?
 
     @Convertible
-    var image: AUIImage?
+    public var image: AUIImage?
 
     @Convertible(default: .defaultButtonTintColor)
-    var tintColor: AUIColor
+    public var tintColor: AUIColor
 
     @Convertible(default: nil)
-    var textColor: AUIColor?
+    public var textColor: AUIColor?
+
+    @Convertible
+    public var selectedColor: AUIColor?
 }

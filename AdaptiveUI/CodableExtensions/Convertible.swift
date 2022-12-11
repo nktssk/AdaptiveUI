@@ -10,7 +10,7 @@ import Foundation
 typealias Serializable = SerializableEncodable & SerializableDecodable
 
 @propertyWrapper
-final class Convertible<T> {
+public final class Convertible<T> {
     var key: String?
     var alternateKey: String?
     
@@ -24,7 +24,7 @@ final class Convertible<T> {
         return _value as! U
     }
     
-    var wrappedValue: T {
+    public var wrappedValue: T {
         get {
             return _wrappedValue(T.self)
         } set {
@@ -32,7 +32,7 @@ final class Convertible<T> {
         }
     }
     
-    init(_ key: String? = nil, alternateKey: String? = nil, default value: T? = nil) {
+    public init(_ key: String? = nil, alternateKey: String? = nil, default value: T? = nil) {
         self.key = key
         self.alternateKey = alternateKey
         self._value = value
@@ -41,7 +41,7 @@ final class Convertible<T> {
 
 extension Convertible: EncodableProperty where T: Encodable {
     
-    func encodeValue(from container: inout EncodeContainer, propertyName: String) throws {
+    public func encodeValue(from container: inout EncodeContainer, propertyName: String) throws {
         let codingKey = SerializedCodingKeys(key: key ?? propertyName)
         try container.encodeIfPresent(wrappedValue, forKey: codingKey)
     }
@@ -49,7 +49,7 @@ extension Convertible: EncodableProperty where T: Encodable {
 
 extension Convertible: DecodableProperty where T: Decodable {
     
-    func decodeValue(from container: DecodeContainer, propertyName: String) throws {
+    public func decodeValue(from container: DecodeContainer, propertyName: String) throws {
         let codingKey = SerializedCodingKeys(key: key ?? propertyName)
         
         if let value = try? container.decodeIfPresent(T.self, forKey: codingKey) {

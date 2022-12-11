@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct AUIText: Serializable {
+public struct AUIText: Serializable {
 
     // MARK: Nested Types
 
-    enum FontWeight: String, Decodable {
+    public enum FontWeight: String, Decodable {
         case light
         case medium
         case regular
@@ -21,11 +21,13 @@ struct AUIText: Serializable {
     // MARK: Configuration
 
     @Convertible
-    var content: String
+    public var content: String
 
     @Convertible(default: 12)
-    var fontSize: Int
+    public var fontSize: Int
 
     @Convertible(default: .regular)
-    var fontWeight: FontWeight
+    public var fontWeight: FontWeight
+
+    public init() {}
 }

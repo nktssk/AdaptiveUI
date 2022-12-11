@@ -7,42 +7,42 @@
 
 import Foundation
 
-class AUIView: Serializable {
+public class AUIView: Serializable {
 
     // MARK: AdaptiveUI Configuration
 
     @Convertible
-    var identifier: String
+    public var identifier: String
 
     // MARK: Configuration
 
     @Convertible
-    var accessibilityIdentifier: String?
+    public var accessibilityIdentifier: String?
 
     // MARK: Representation
 
     @Convertible(default: 1.0)
-    var alpha: Double
+    public var alpha: Double
 
     @Convertible(default: .zero)
-    var cornerRadius: Double
+    public var cornerRadius: Double
 
     @Convertible(default: .defaultViewColor)
-    var backgroundColor: AUIColor
+    public var backgroundColor: AUIColor
 
     @Convertible(default: false)
-    var isHidden: Bool
+    public var isHidden: Bool
 
     @Convertible(default: [])
-    var subviews: [ViewConfiguration]
+    public var subviews: [ViewConfiguration]
 
     // MARK: Layout
 
     @Convertible
-    var size: AUISize?
+    public var size: AUISize?
 
     @Convertible(default: .zero)
-    var insets: AUIInsets
+    public var insets: AUIInsets
 
-    required init() {}
+    public required init() {}
 }

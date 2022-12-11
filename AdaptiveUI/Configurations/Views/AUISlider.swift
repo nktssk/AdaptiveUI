@@ -7,22 +7,22 @@
 
 import Foundation
 
-final class AUISlider: AUIView {
+public final class AUISlider: AUIView {
 
     // MARK: Configuration
 
     @Convertible(default: .zero)
-    var minValue: Float
+    public var minValue: Float
 
     @Convertible(default: .zero)
-    var currentValue: Float
+    public var currentValue: Float
 
     @Convertible
-    var maxValue: Float
+    public var maxValue: Float
 
     @Convertible
-    var minImage: AUIImage?
+    public var minImage: AUIImage?
 
     @Convertible
-    var maxImage: AUIImage?
+    public var maxImage: AUIImage?
 }

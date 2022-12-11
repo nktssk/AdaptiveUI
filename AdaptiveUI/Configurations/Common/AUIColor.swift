@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct AUIColor: Serializable {
+public struct AUIColor: Serializable {
     @Convertible
-    var darkThemeColor: String
+    public var darkThemeColor: String?
 
     @Convertible
-    var lightThemeColor: String
+    public var lightThemeColor: String
+
+    public init() {}
 }

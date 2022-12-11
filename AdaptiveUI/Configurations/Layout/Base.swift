@@ -7,32 +7,38 @@
 
 import Foundation
 
-struct AUIInsets: Serializable {
+public struct AUIInsets: Serializable {
     @Convertible(default: .zero)
-    var top: Double
+    public var top: Double
 
     @Convertible(default: .zero)
-    var left: Double
+    public var left: Double
 
     @Convertible(default: .zero)
-    var right: Double
+    public var right: Double
 
     @Convertible(default: .zero)
-    var bottom: Double
+    public var bottom: Double
+
+    public init() {}
 }
 
-struct AUISize: Serializable {
+public struct AUISize: Serializable {
     @Convertible(default: .zero)
-    var width: Double
+    public var width: Double
 
     @Convertible(default: .zero)
-    var height: Double
+    public var height: Double
+
+    public init() {}
 }
 
-struct AUIOffset: Serializable {
+public struct AUIOffset: Serializable {
     @Convertible(default: .zero)
-    var x: Double
+    public var x: Double
 
     @Convertible(default: .zero)
-    var y: Double
+    public var y: Double
+
+    public init() {}
 }

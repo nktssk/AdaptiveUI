@@ -7,50 +7,50 @@
 
 import Foundation
 
-final class AUITextField: AUIView {
+public final class AUITextField: AUIView {
 
     // MARK: Nested Types
 
-    enum Alignment: String, Codable {
+    public enum Alignment: String, Codable {
         case left
         case center
         case right
     }
 
-    enum CleanButtonMode: String, Codable {
+    public enum CleanButtonMode: String, Codable {
         case never
         case whileEditing
         case unlessEditing
         case always
     }
 
-    enum BorderStyle: String, Codable {
+    public enum BorderStyle: String, Codable {
         case none
         case line
         case bezel
         case roundedRect
     }
 
-    enum AutocapitalizationType: String, Codable {
+    public enum AutocapitalizationType: String, Codable {
         case none
         case words
         case sentences
         case allCharacters
     }
 
-    enum AutocorrectionType: String, Codable {
+    public enum AutocorrectionType: String, Codable {
         case `default`
         case no
         case yes
     }
 
-    enum SpellCheckingType: String, Codable {
+    public enum SpellCheckingType: String, Codable {
         case `default`
         case no
         case yes
     }
 
-    enum KeyboardType: String, Codable {
+    public enum KeyboardType: String, Codable {
         case `default`
         case asciiCapable
         case numbersAndPunctuation
@@ -65,7 +65,7 @@ final class AUITextField: AUIView {
         case asciiCapableNumberPad
     }
 
-    enum KeyboardAppearance: String, Codable {
+    public enum KeyboardAppearance: String, Codable {
         case `default`
         case dark
         case light
@@ -73,37 +73,37 @@ final class AUITextField: AUIView {
 
     // MARK: Configuration
 
-    @Convertible
-    var text: AUIText
+    @Convertible(default: AUIText())
+    public var text: AUIText
 
     @Convertible
-    var placeholder: String?
+    public var placeholder: String?
 
     // MARK: Representation
 
     @Convertible(default: .defaultTextColor)
-    var textColor: AUIColor
+    public var textColor: AUIColor
 
     @Convertible(default: .never)
-    var cleanButtonMode: CleanButtonMode
+    public var cleanButtonMode: CleanButtonMode
 
     @Convertible(default: .roundedRect)
-    var borderStyle: BorderStyle
+    public var borderStyle: BorderStyle
 
     @Convertible(default: .sentences)
-    var autocapitalizationType: AutocapitalizationType
+    public var autocapitalizationType: AutocapitalizationType
 
     @Convertible(default: .default)
-    var autocorrectionType: AutocorrectionType
+    public var autocorrectionType: AutocorrectionType
 
     @Convertible(default: .default)
-    var spellCheckingType: SpellCheckingType
+    public var spellCheckingType: SpellCheckingType
 
     @Convertible(default: .default)
-    var keyboardType: KeyboardType
+    public var keyboardType: KeyboardType
 
     // MARK: Layout
 
     @Convertible(default: .left)
-    var textAlignment: Alignment
+    public var textAlignment: Alignment
 }

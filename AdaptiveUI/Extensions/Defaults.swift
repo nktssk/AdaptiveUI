@@ -46,35 +46,35 @@ extension AUIOffset {
 
 extension AUIColor {
 
-    static let defaultTextColor: AUIColor = {
+    public static let defaultTextColor: AUIColor = {
         let color = AUIColor()
         color.lightThemeColor = "#000000"
         color.darkThemeColor = "#FFFFFF"
         return color
     }()
 
-    static let defaultViewColor: AUIColor = {
+    public static let defaultViewColor: AUIColor = {
         let color = AUIColor()
         color.lightThemeColor = "#FFFFFF"
         color.darkThemeColor = "#000000"
         return color
     }()
 
-    static let defaultImageBackgroundColor: AUIColor = {
+    public static let defaultImageBackgroundColor: AUIColor = {
         let color = AUIColor()
         color.lightThemeColor = "#DCDCE0"
         color.darkThemeColor = "#202022"
         return color
     }()
 
-    static let defaultButtonTintColor: AUIColor = {
+    public static let defaultButtonTintColor: AUIColor = {
         let color = AUIColor()
         color.lightThemeColor = "#3578F5"
         color.darkThemeColor = "#3B81F6"
         return color
     }()
 
-    static let defaultSearchBarTintColor: AUIColor = {
+    public static let defaultSearchBarTintColor: AUIColor = {
         let color = AUIColor()
         color.lightThemeColor = "#3578F5"
         color.darkThemeColor = "#3B81F6"

@@ -8,12 +8,12 @@
 import Foundation
 
 @propertyWrapper
-final class SerializedTransformable<T: Transformable> {
-    let key: String?
-    let alternateKey: String?
-    var wrappedValue: T.To?
+public final class SerializedTransformable<T: Transformable> {
+    public let key: String?
+    public let alternateKey: String?
+    public var wrappedValue: T.To?
     
-    init(_ key: String? = nil, alternateKey: String? = nil) {
+    public init(_ key: String? = nil, alternateKey: String? = nil) {
         self.key = key
         self.alternateKey = alternateKey
         self.wrappedValue = nil
@@ -22,7 +22,7 @@ final class SerializedTransformable<T: Transformable> {
 
 extension SerializedTransformable: EncodableProperty where T.From: Encodable {
     
-    func encodeValue(from container: inout EncodeContainer, propertyName: String) throws {
+    public func encodeValue(from container: inout EncodeContainer, propertyName: String) throws {
         let codingKey = SerializedCodingKeys(key: key ?? propertyName)
         try container.encode(T.transformToJSON(value: wrappedValue), forKey: codingKey)
     }
@@ -30,7 +30,7 @@ extension SerializedTransformable: EncodableProperty where T.From: Encodable {
 
 extension SerializedTransformable: DecodableProperty where T.From: Decodable {
     
-    func decodeValue(from container: DecodeContainer, propertyName: String) throws {
+    public func decodeValue(from container: DecodeContainer, propertyName: String) throws {
         let codingKey = SerializedCodingKeys(key: key ?? propertyName)
         
         if let value = try? container.decodeIfPresent(T.From.self, forKey: codingKey) {

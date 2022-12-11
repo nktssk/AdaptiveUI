@@ -7,16 +7,16 @@
 
 import Foundation
 
-final class AUISwitch: AUIView {
+public final class AUISwitch: AUIView {
 
     // MARK: Configuration
 
     @Convertible(default: false)
-    var isOn: Bool
+    public var isOn: Bool
 
     @Convertible
-    var onTintColor: AUIColor?
+    public var onTintColor: AUIColor?
 
     @Convertible
-    var thumbTintColor: AUIColor?
+    public var thumbTintColor: AUIColor?
 }

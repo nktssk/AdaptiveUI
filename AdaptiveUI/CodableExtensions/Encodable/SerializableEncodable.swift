@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol SerializableEncodable: Encodable {
+public protocol SerializableEncodable: Encodable {
     init()
 }
 
-extension SerializableEncodable {
+public extension SerializableEncodable {
     static func generate(_ operation: (Self) -> Void) -> Self {
         let value = Self.init()
         operation(value)
@@ -19,7 +19,7 @@ extension SerializableEncodable {
     }
 }
 
-extension SerializableEncodable {
+public extension SerializableEncodable {
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: SerializedCodingKeys.self)

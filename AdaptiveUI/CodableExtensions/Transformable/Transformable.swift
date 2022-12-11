@@ -7,16 +7,16 @@
 
 import Foundation
 
-typealias Transformable = TransformableFromJSON & TransformableToJSON
+public typealias Transformable = TransformableFromJSON & TransformableToJSON
 
-protocol TransformableFromJSON {
+public protocol TransformableFromJSON {
     associatedtype From: Any
     associatedtype To: Any
     
     static func transformFromJSON(value: From?) -> To?
 }
 
-protocol TransformableToJSON {
+public protocol TransformableToJSON {
     associatedtype From: Any
     associatedtype To: Any
     

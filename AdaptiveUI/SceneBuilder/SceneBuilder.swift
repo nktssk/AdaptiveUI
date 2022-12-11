@@ -10,10 +10,7 @@ import UIKit
 typealias ViewHierarchy = [String: UIView]
 
 enum SceneBuilder {
-    static func parse(configuration: AUIConfiguration) -> UIViewController {
-
-        let viewController = buildViewController(configuration: configuration.controller)
-        let rootView = viewController.view!
+    static func parse(configuration: AUIConfiguration, rootView: UIView) {
 
         // Build hierarchy
 
@@ -23,22 +20,6 @@ enum SceneBuilder {
         // Layout
 
         AUILayoutManager.layout(hierarchy: hierarchy, constraints: configuration.layout)
-
-        return viewController
-    }
-
-    static func buildViewController(configuration: AUIController) -> UIViewController {
-        let viewController: UIViewController
-        switch configuration.kind {
-        case .static:
-            viewController = UIViewController()
-        case .scrollable:
-            viewController = ScrollableViewController()
-        case .webView:
-            viewController = WebViewControllerViewController(url: configuration.webViewURL)
-        }
-        viewController.view.backgroundColor = UIColor(from: configuration.backgroundColor)
-        return viewController
     }
 
     static func buildViewHierarchy(rootView: UIView, configuration: ViewConfiguration, hierarchy: inout ViewHierarchy) {

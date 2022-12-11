@@ -7,10 +7,10 @@
 
 import Foundation
 
-final class AUIWebView: AUIView {
+public final class AUIWebView: AUIView {
 
     // MARK: AdaptiveUI Configuration
 
     @Convertible
-    var url: String
+    public var url: String
 }

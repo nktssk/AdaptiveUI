@@ -58,19 +58,16 @@ enum AUILayoutManager {
             case .equal:
                 constraint = targetAnchor.constraint(
                     equalTo: sourceAnchor,
-                    multiplier: configuration.multiplier,
                     constant: configuration.constant
                 )
             case .greaterThanOrEqual:
                 constraint = targetAnchor.constraint(
                     greaterThanOrEqualTo: sourceAnchor,
-                    multiplier: configuration.multiplier,
                     constant: configuration.constant
                 )
             case .lessThanOrEqual:
                 constraint = targetAnchor.constraint(
                     lessThanOrEqualTo: sourceAnchor,
-                    multiplier: configuration.multiplier,
                     constant: configuration.constant
                 )
             }

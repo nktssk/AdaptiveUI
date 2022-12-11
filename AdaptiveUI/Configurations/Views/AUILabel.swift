@@ -7,11 +7,11 @@
 
 import Foundation
 
-class AUILabel: AUIView {
+public class AUILabel: AUIView {
 
     // MARK: Nested Types
 
-    enum Alignment: String, Codable {
+    public enum Alignment: String, Codable {
         case left
         case center
         case right
@@ -19,25 +19,25 @@ class AUILabel: AUIView {
 
     // MARK: Configuration
     
-    @Convertible
-    var text: AUIText
+    @Convertible(default: AUIText())
+    public var text: AUIText
 
     // MARK: Representation
 
     @Convertible(default: .defaultTextColor)
-    var textColor: AUIColor
+    public var textColor: AUIColor
 
     @Convertible
-    var shadowColor: AUIColor?
+    public var shadowColor: AUIColor?
 
     @Convertible
-    var shadowOffset: AUIOffset?
+    public var shadowOffset: AUIOffset?
 
     // MARK: Layout
 
     @Convertible(default: .left)
-    var alignment: Alignment
+    public var alignment: Alignment
 
     @Convertible(default: 1)
-    var maxNumberOfLines: Int
+    public var maxNumberOfLines: Int
 }

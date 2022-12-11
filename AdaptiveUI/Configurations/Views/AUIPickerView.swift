@@ -7,4 +7,4 @@
 
 import Foundation
 
-final class AUIPickerView: AUIView {}
+public final class AUIPickerView: AUIView {}

@@ -15,6 +15,7 @@
 		E55328D328F2C38400B941BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55328D128F2C38400B941BD /* Main.storyboard */; };
 		E55328D528F2C38B00B941BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55328D428F2C38B00B941BD /* Assets.xcassets */; };
 		E55328D828F2C38B00B941BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55328D628F2C38B00B941BD /* LaunchScreen.storyboard */; };
+		E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */; };
 		F06E045A24C88361B20EAF0D /* Pods_AdaptiveUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		E55328D428F2C38B00B941BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E55328D728F2C38B00B941BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E55328D928F2C38B00B941BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAUIViewConfigurationProcessor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				E55328D428F2C38B00B941BD /* Assets.xcassets */,
 				E55328D628F2C38B00B941BD /* LaunchScreen.storyboard */,
 				E55328D928F2C38B00B941BD /* Info.plist */,
+				E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */,
 			);
 			path = "AdaptiveUI-Example";
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
 				E544F01B293D03A5005F6BF9 /* UIViewControllerPreview.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
+				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,
 				E544F019293D039E005F6BF9 /* Builder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum ViewConfiguration: Codable {
+public enum ViewConfiguration: Codable {
     case view(configuration: AUIView)
     case label(configuration: AUILabel)
     case slider(configuration: AUISlider)

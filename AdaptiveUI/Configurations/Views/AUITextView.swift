@@ -7,11 +7,11 @@
 
 import Foundation
 
-final class AUITextView: AUIView {
+public final class AUITextView: AUIView {
 
     // MARK: Nested Types
 
-    enum Alignment: String, Codable {
+    public enum Alignment: String, Codable {
         case left
         case center
         case right
@@ -20,24 +20,24 @@ final class AUITextView: AUIView {
     // MARK: Configuration
 
     @Convertible
-    var text: AUIText
+    public var text: AUIText
 
     // MARK: Representation
 
     @Convertible(default: .defaultTextColor)
-    var color: AUIColor
+    public var color: AUIColor
 
     @Convertible(default: false)
-    var isEditable: Bool
+    public var isEditable: Bool
 
     @Convertible(default: true)
-    var isSelectable: Bool
+    public var isSelectable: Bool
 
     // MARK: Layout
 
     @Convertible(default: .left)
-    var alignment: Alignment
+    public var alignment: Alignment
 
     @Convertible(default: 1)
-    var maxNumberOfLines: Int
+    public var maxNumberOfLines: Int
 }

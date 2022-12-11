@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class AUIProgressView: AUIView {
+public final class AUIProgressView: AUIView {
 
     @Convertible(default: .zero)
-    var progress: Float
+    public var progress: Float
 
     @Convertible
-    var trackTintColor: AUIColor
+    public var trackTintColor: AUIColor
 
     @Convertible
-    var progressTintColor: AUIColor
+    public var progressTintColor: AUIColor
 }

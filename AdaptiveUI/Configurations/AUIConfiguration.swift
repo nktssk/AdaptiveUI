@@ -7,20 +7,22 @@
 
 import Foundation
 
-struct AUIConfiguration: Serializable {
+public struct AUIConfiguration: Serializable {
 
     // MARK: AdaptiveUI Configuration
 
     @Convertible
-    var controller: AUIController
+    public var controller: AUIController
 
     // MARK: Representation
 
     @Convertible
-    var views: [ViewConfiguration]
+    public var views: [ViewConfiguration]
 
     // MARK: Layout
 
     @Convertible
-    var layout: [AUIConstraint]
+    public var layout: [AUIConstraint]
+
+    public init() {}
 }

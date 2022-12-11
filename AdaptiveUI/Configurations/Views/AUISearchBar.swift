@@ -7,32 +7,32 @@
 
 import Foundation
 
-final class AUISearchBar: AUIView {
+public final class AUISearchBar: AUIView {
 
-    enum SearchStyle: String, Codable {
+    public enum SearchStyle: String, Codable {
         case `default`
         case prominent
         case minimal
     }
 
     @Convertible
-    var text: AUIText
+    public var text: AUIText
 
     @Convertible
-    var prompt: String?
+    public var prompt: String?
 
     @Convertible
-    var placeholder: String?
+    public var placeholder: String?
 
     @Convertible
-    var barTintColor: AUIColor?
+    public var barTintColor: AUIColor?
 
     @Convertible(default: .default)
-    var searchBarStyle: SearchStyle
+    public var searchBarStyle: SearchStyle
 
     @Convertible(default: .defaultSearchBarTintColor)
-    var tintColor: AUIColor
+    public var tintColor: AUIColor
 
     @Convertible(default: true)
-    var isTranslucent: Bool
+    public var isTranslucent: Bool
 }

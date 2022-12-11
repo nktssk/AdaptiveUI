@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class AUIActivityIndicator: AUIView {
+public final class AUIActivityIndicator: AUIView {
 
     @Convertible(default: true)
-    var isLarge: Bool
+    public var isLarge: Bool
 
     @Convertible
-    var color: AUIColor
+    public var color: AUIColor
 
     @Convertible(default: true)
-    var isAnimating: Bool
+    public var isAnimating: Bool
 }

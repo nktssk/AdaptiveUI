@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct AUIController: Serializable {
+public struct AUIController: Serializable {
 
     // MARK: Nested Types
 
-    enum Kind: String, Decodable {
+    public enum Kind: String, Decodable {
         case `static`
         case scrollable
         case webView
@@ -20,28 +20,31 @@ struct AUIController: Serializable {
     // MARK: AdaptiveUI Configuration
 
     @Convertible(default: .static)
-    var kind: Kind
+    public var kind: Kind
 
     @Convertible
-    var webViewURL: String?
+    public var webViewURL: String?
 
     // MARK: Configuration
 
     @Convertible
-    var title: String?
+    public var title: String?
 
     // MARK: Representation
 
     @Convertible(default: false)
-    var largeTitle: Bool
+    public var largeTitle: Bool
 
     @Convertible(default: .defaultViewColor)
-    var backgroundColor: AUIColor
+    public var backgroundColor: AUIColor
+
+    @Convertible(default: true)
+    public var isTranslucent: Bool
 
     // MARK: Layout
 
     @Convertible(default: false)
-    var pinToSafeArea: Bool
+    public var pinToSafeArea: Bool
 
-    init() {}
+    public init() {}
 }

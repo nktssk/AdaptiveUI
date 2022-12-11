@@ -22,6 +22,7 @@ enum LabelParser {
         }
 
         BaseViewConfigurator.configure(view: label, configuration: configuration)
+        label.backgroundColor = .clear
 
         return label
     }

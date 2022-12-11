@@ -7,31 +7,33 @@
 
 import Foundation
 
-struct AUIConstraint: Serializable {
+public struct AUIConstraint: Serializable {
 
     // MARK: Nested Types
 
-    struct RelationConfiguration: Serializable {
+    public struct RelationConfiguration: Serializable {
         @Convertible(default: "AUIParentView")
-        var source: String
+        public var source: String
 
         @Convertible
-        var sourceAnchor: Anchor
+        public var sourceAnchor: Anchor
 
         @Convertible(default: .equal)
-        var relationType: RelationType
+        public var relationType: RelationType
 
         @Convertible(default: .zero)
-        var constant: Double
+        public var constant: Double
 
         @Convertible(default: .zero)
-        var multiplier: Double
+        public var multiplier: Double
 
         @Convertible(default: 1000)
-        var priority: Float
+        public var priority: Float
+
+        public init() {}
     }
 
-    enum Anchor: String, Codable {
+    public enum Anchor: String, Codable {
         case width
         case height
         case top
@@ -42,13 +44,13 @@ struct AUIConstraint: Serializable {
         case centerY
     }
 
-    enum RelationType: String, Codable {
+    public enum RelationType: String, Codable {
         case lessThanOrEqual
         case equal
         case greaterThanOrEqual
     }
 
-    enum Kind: Codable {
+    public enum Kind: Codable {
         case relation(configuration: RelationConfiguration)
         case constant(value: Double)
     }
@@ -56,11 +58,13 @@ struct AUIConstraint: Serializable {
     // MARK: AdaptiveUI Configuration
 
     @Convertible
-    var kind: Kind
+    public var kind: Kind
 
     @Convertible
-    var target: String
+    public var target: String
 
     @Convertible
-    var targetAnchor: Anchor
+    public var targetAnchor: Anchor
+
+    public init() {}
 }

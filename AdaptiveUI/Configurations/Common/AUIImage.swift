@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct AUIImage: Serializable {
+public struct AUIImage: Serializable {
     @Convertible
-    var imageName: String?
+    public var imageName: String?
 
     @Convertible
-    var imageURL: String?
+    public var imageURL: String?
+
+    public init() {}
 }
