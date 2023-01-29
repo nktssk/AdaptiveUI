@@ -24,6 +24,8 @@ extension ViewConfiguration {
             return configuration
         case .imageView(let configuration):
             return configuration
+        case .tableView(let configuration):
+            return configuration
         case .textField(let configuration):
             return configuration
         case .searchBar(let configuration):

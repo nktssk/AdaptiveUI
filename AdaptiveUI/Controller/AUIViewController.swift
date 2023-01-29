@@ -17,6 +17,7 @@ open class AUIViewController: UIViewController {
 
     // MARK: Internal Properties
 
+    var tableViewHandler: AUITableViewHandler?
     var actionWrappers: [AUIActionWrapper] = []
 
     // MARK: Private Properties
@@ -148,9 +149,6 @@ open class AUIViewController: UIViewController {
 
 
 extension AUIViewController {
-
-    // MARK: Actions
-
     @objc func switchValueDidChange(_ switch: UISwitch) {}
     @objc open func sliderValueDidChange(_ slider: UISlider) {}
     @objc func segmentedControlValueDidChange(_ segmentedControl: UISegmentedControl) {}

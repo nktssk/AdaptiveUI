@@ -16,6 +16,7 @@ public enum ViewConfiguration: Codable {
     case textView(configuration: AUITextView)
     case imageView(configuration: AUIImageView)
     case textField(configuration: AUITextField)
+    case tableView(configuration: AUITableView)
     case searchBar(configuration: AUISearchBar)
     case pickerView(configuration: AUIPickerView)
     case progressView(configuration: AUIProgressView)

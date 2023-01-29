@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum AUIAction{
+public enum AUIAction {
     public enum StandardActionType: Codable {
         case alert(title: String, message: String)
         case openWebURL(url: String)

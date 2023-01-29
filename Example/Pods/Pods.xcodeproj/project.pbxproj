@@ -60,6 +60,10 @@
 		E50835D32945D2AB00F15F14 /* AUIViewEnumeration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */; };
 		E50835D92945F06400F15F14 /* AUIAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835D82945F06400F15F14 /* AUIAction.swift */; };
 		E50835DD2945F9E600F15F14 /* AUIActionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */; };
+		E50FD0992949AB9300B3926E /* AUITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD0982949AB9300B3926E /* AUITableView.swift */; };
+		E50FD09B2949B14900B3926E /* Array+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD09A2949B14900B3926E /* Array+Safe.swift */; };
+		E50FD09E2949B16F00B3926E /* AUITableViewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD09D2949B16F00B3926E /* AUITableViewHandler.swift */; };
+		E50FD0A02949B1E300B3926E /* TableViewParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50FD09F2949B1E300B3926E /* TableViewParser.swift */; };
 		E5E08C502940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E08C4F2940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift */; };
 		E7EB4552418246D6F6EBEE666A02766F /* EncodableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBD1C2609A406E43C948979F0638F3D9 /* EncodableProperty.swift */; };
 		E84B9E049B3611D943A0B9C6146960F2 /* SceneBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230C3D9AED78D868AAAEB8BDA07B8FBA /* SceneBuilder.swift */; };
@@ -150,6 +154,10 @@
 		E50835D22945D2AB00F15F14 /* AUIViewEnumeration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIViewEnumeration.swift; sourceTree = "<group>"; };
 		E50835D82945F06400F15F14 /* AUIAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIAction.swift; sourceTree = "<group>"; };
 		E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIActionWrapper.swift; sourceTree = "<group>"; };
+		E50FD0982949AB9300B3926E /* AUITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUITableView.swift; sourceTree = "<group>"; };
+		E50FD09A2949B14900B3926E /* Array+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Safe.swift"; sourceTree = "<group>"; };
+		E50FD09D2949B16F00B3926E /* AUITableViewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUITableViewHandler.swift; sourceTree = "<group>"; };
+		E50FD09F2949B1E300B3926E /* TableViewParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewParser.swift; sourceTree = "<group>"; };
 		E5E08C4F2940E6CB00B717DB /* AUIViewConfigurationProcessorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUIViewConfigurationProcessorProtocol.swift; sourceTree = "<group>"; };
 		E74D39D223997881184287C19268D87C /* SerializedTransformable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SerializedTransformable.swift; sourceTree = "<group>"; };
 		E928C717318BEDB2B11BE2AF76F45F80 /* Pods-AdaptiveUI-Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AdaptiveUI-Example-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -238,6 +246,7 @@
 				C38A33DB5EF4921FB6F27FBD7FB6117B /* UIColor+init.swift */,
 				D5CF6892FEB6E5D482D94BDBC6DC346B /* UIKit.swift */,
 				96225BF1076A4D51F21E0567B398F282 /* ViewConfiguration+view.swift */,
+				E50FD09A2949B14900B3926E /* Array+Safe.swift */,
 			);
 			name = Extensions;
 			path = AdaptiveUI/Extensions;
@@ -304,6 +313,7 @@
 		8164FAFA47EE0CBC7E8D7571A67A3C68 /* SceneBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				E50FD09C2949B16600B3926E /* Handlers */,
 				230C3D9AED78D868AAAEB8BDA07B8FBA /* SceneBuilder.swift */,
 				0F87DA10571104E273A826A593658C44 /* Layout */,
 				A8530D852D88EE229C4DE568B72B7F33 /* Parsers */,
@@ -346,6 +356,7 @@
 				93D6846B380344216C521CBAB2F710F0 /* TextFieldParser.swift */,
 				47C2946F8780795A1D63B7B20FEB4068 /* TextViewParser.swift */,
 				206C6CA02A3A14FAD4821BA9804B3C13 /* ViewParser.swift */,
+				E50FD09F2949B1E300B3926E /* TableViewParser.swift */,
 			);
 			path = Parsers;
 			sourceTree = "<group>";
@@ -438,9 +449,17 @@
 			isa = PBXGroup;
 			children = (
 				E50835D82945F06400F15F14 /* AUIAction.swift */,
-				E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */,
 			);
 			path = Action;
+			sourceTree = "<group>";
+		};
+		E50FD09C2949B16600B3926E /* Handlers */ = {
+			isa = PBXGroup;
+			children = (
+				E50835DC2945F9E600F15F14 /* AUIActionWrapper.swift */,
+				E50FD09D2949B16F00B3926E /* AUITableViewHandler.swift */,
+			);
+			path = Handlers;
 			sourceTree = "<group>";
 		};
 		EA61C245561E5F76FC8380B4D8734435 /* Views */ = {
@@ -460,6 +479,7 @@
 				8C34D2E81A10698DB0DC2DEC55610A39 /* AUITextView.swift */,
 				D6EE4D01DFCE96CC6D3335F37AF0BDFE /* AUIView.swift */,
 				2FA6C4ACE625F00DB8EC1A3EE59F778F /* AUIWebView.swift */,
+				E50FD0982949AB9300B3926E /* AUITableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -594,6 +614,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0CC43F1A14296867449ED8DBC842F06 /* ActivityIndicatorParser.swift in Sources */,
+				E50FD09E2949B16F00B3926E /* AUITableViewHandler.swift in Sources */,
 				BA10EA41C0F8806E2CC643747F393ED6 /* AdaptiveUI-dummy.m in Sources */,
 				67BA28DA15BDA4B68849C7474BD6C755 /* AsyncUIImageView.swift in Sources */,
 				E50835DD2945F9E600F15F14 /* AUIActionWrapper.swift in Sources */,
@@ -606,6 +627,7 @@
 				E50835D32945D2AB00F15F14 /* AUIViewEnumeration.swift in Sources */,
 				9FE893BE012033CAFC9912E5291C87D1 /* AUIImage.swift in Sources */,
 				B3BE865C63A282761D139A6BA55CAF95 /* AUIImageView.swift in Sources */,
+				E50FD0A02949B1E300B3926E /* TableViewParser.swift in Sources */,
 				69F616936996B78E4D968CC13EACEC57 /* AUILabel.swift in Sources */,
 				993B056468BF320D0B7543638767B649 /* AUILayoutManager.swift in Sources */,
 				9794F422695AE4E3BD23970E39B94667 /* AUIPickerView.swift in Sources */,
@@ -624,10 +646,12 @@
 				F6828098E328C1CDA582189F3ED83CCC /* AUIViewController.swift in Sources */,
 				3E6649B1F6FD7D02F7823AAA3BFBBA5F /* AUIWebView.swift in Sources */,
 				28E509E3DB0AACC1F976658F270CFF9F /* Base.swift in Sources */,
+				E50FD0992949AB9300B3926E /* AUITableView.swift in Sources */,
 				985ADF13F3FEC1BFB6119733286E968B /* ButtonParser.swift in Sources */,
 				2749EA7C31810FA1D1ABFA680F0A1356 /* Convertible.swift in Sources */,
 				ED7B4161E491BCD524149B8204F0E83F /* DecodableProperty.swift in Sources */,
 				EAA5DEA43F9076BE4CA81C214C2BE6FA /* Defaults.swift in Sources */,
+				E50FD09B2949B14900B3926E /* Array+Safe.swift in Sources */,
 				E7EB4552418246D6F6EBEE666A02766F /* EncodableProperty.swift in Sources */,
 				38DD6F181F54F96CE00D34FCDDCA4BAB /* ImageViewParser.swift in Sources */,
 				F1D9897F72C2131E663B87DEEB867C2C /* LabelParser.swift in Sources */,

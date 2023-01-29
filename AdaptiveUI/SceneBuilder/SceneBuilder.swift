@@ -64,6 +64,9 @@ enum SceneBuilder {
 
         case .activityIndicator(let configuration):
             view = ActivityIndicatorParser.configure(configuration: configuration, viewController: viewController)
+
+        case .tableView(let configuration):
+            view = TableViewParser.configure(configuration: configuration, viewController: viewController)
         }
 
         let viewConfiguration = configuration.viewConfiguration
