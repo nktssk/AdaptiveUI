@@ -23,12 +23,13 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let data = config.data[safe: indexPath.row] else { return }
-        viewController?.actions[data.actionId]?()
+        viewController?.actions[data.selectActionId ?? ""]?()
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let data = config.data[safe: indexPath.row],
-              let viewConfiguration = config.cellsTypes[data.cellType],
+        guard let configuration = config.data[safe: indexPath.row],
+              let viewConfiguration = config.cellsTypes[configuration.cellType],
               let viewController = viewController
         else { return UITableViewCell() }
 
@@ -38,12 +39,13 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         viewConfiguration.subviews.forEach {
             SceneBuilder.buildViewHierarchy(rootView: cell, configuration: $0, hierarchy: &hierarchy, viewController: viewController)
         }
+        AUILayoutManager.layout(hierarchy: hierarchy, constraints: viewConfiguration.layout)
 
-        for data in data.data {
-            guard let contentView = hierarchy[data.key] else { continue }
-            switch data.value {
-            case .image(let imageName):
-                (contentView as? UIImageView)?.image = UIImage(named: imageName)
+        for (identifier, data) in configuration.identifierToData {
+            guard let contentView = hierarchy[identifier] else { continue }
+            switch data {
+            case .image(let imageURL):
+                (contentView as? AsyncUIImageView)?.url = imageURL
             case .text(let text):
                 (contentView as? UILabel)?.text = text
             }

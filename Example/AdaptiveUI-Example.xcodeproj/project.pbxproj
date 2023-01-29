@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E544F019293D039E005F6BF9 /* Builder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544F018293D039E005F6BF9 /* Builder.swift */; };
+		E544F019293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */; };
 		E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CB28F2C38400B941BD /* AppDelegate.swift */; };
 		E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CD28F2C38400B941BD /* SceneDelegate.swift */; };
 		E55328D028F2C38400B941BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CF28F2C38400B941BD /* ViewController.swift */; };
@@ -15,6 +15,8 @@
 		E55328D528F2C38B00B941BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E55328D428F2C38B00B941BD /* Assets.xcassets */; };
 		E55328D828F2C38B00B941BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E55328D628F2C38B00B941BD /* LaunchScreen.storyboard */; };
 		E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */; };
+		E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */; };
+		E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */; };
 		F06E045A24C88361B20EAF0D /* Pods_AdaptiveUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -22,7 +24,7 @@
 		9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdaptiveUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4FE94111F5685F56D602F8 /* Pods-AdaptiveUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.debug.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B33CCC0F1BD6D5B7CF09D8AE /* Pods-AdaptiveUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.release.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.release.xcconfig"; sourceTree = "<group>"; };
-		E544F018293D039E005F6BF9 /* Builder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder.swift; sourceTree = "<group>"; };
+		E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublePaymentConfigurationBuilder.swift; sourceTree = "<group>"; };
 		E55328C828F2C38400B941BD /* AdaptiveUI-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AdaptiveUI-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E55328CB28F2C38400B941BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E55328CD28F2C38400B941BD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		E55328D728F2C38B00B941BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E55328D928F2C38B00B941BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAUIViewConfigurationProcessor.swift; sourceTree = "<group>"; };
+		E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublePaymentViewController.swift; sourceTree = "<group>"; };
+		E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableConfigurationBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +70,8 @@
 		E544F015293D037B005F6BF9 /* UIBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				E544F018293D039E005F6BF9 /* Builder.swift */,
+				E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */,
+				E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */,
 			);
 			path = UIBuilder;
 			sourceTree = "<group>";
@@ -92,6 +97,8 @@
 		E55328CA28F2C38400B941BD /* AdaptiveUI-Example */ = {
 			isa = PBXGroup;
 			children = (
+				E5B8265F2986910E00C12EB9 /* Mocks */,
+				E5B8265C29868E6F00C12EB9 /* Demos */,
 				E544F015293D037B005F6BF9 /* UIBuilder */,
 				E55328CB28F2C38400B941BD /* AppDelegate.swift */,
 				E55328CD28F2C38400B941BD /* SceneDelegate.swift */,
@@ -100,9 +107,24 @@
 				E55328D428F2C38B00B941BD /* Assets.xcassets */,
 				E55328D628F2C38B00B941BD /* LaunchScreen.storyboard */,
 				E55328D928F2C38B00B941BD /* Info.plist */,
-				E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */,
 			);
 			path = "AdaptiveUI-Example";
+			sourceTree = "<group>";
+		};
+		E5B8265C29868E6F00C12EB9 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
+		E5B8265F2986910E00C12EB9 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,11 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */,
+				E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */,
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
 				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,
-				E544F019293D039E005F6BF9 /* Builder.swift in Sources */,
+				E544F019293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

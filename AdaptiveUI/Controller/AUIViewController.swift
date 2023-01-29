@@ -32,7 +32,7 @@ open class AUIViewController: UIViewController {
 
     // MARK: Lifecycle
 
-    init(processor: AUIViewConfigurationProcessorProtocol) {
+    public init(processor: AUIViewConfigurationProcessorProtocol) {
         self.processor = processor
         super.init(nibName: nil, bundle: nil)
         processor.download { [weak self] result in
@@ -142,8 +142,11 @@ open class AUIViewController: UIViewController {
                 )
             ]
         )
-        
-        SceneBuilder.parse(configuration: configuration, rootView: topView, viewController: self)
+
+        DispatchQueue.global().async { [weak self] in
+            guard let self = self else { return }
+            SceneBuilder.parse(configuration: configuration, rootView: topView, viewController: self)
+        }
     }
 }
 

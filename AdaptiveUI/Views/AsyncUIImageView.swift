@@ -9,14 +9,25 @@ import UIKit
 
 final class AsyncUIImageView: UIImageView {
 
+    var url: String = "" {
+        didSet {
+            guard let url = URL(string: url) else { return }
+            startDownloading(url: url)
+        }
+    }
+
+    let gradientLayer = CAGradientLayer()
+
+    public override init(image: UIImage? = nil, highlightedImage: UIImage? = nil) {
+        super.init(image: image, highlightedImage: highlightedImage)
+        tintColor = .systemGray6
+    }
+
     init(url: String) {
         super.init(frame: .zero)
 
-        backgroundColor = .systemGray6
-        startShimmering()
-
-        guard let url = URL(string: url) else { return }
-        startDownloading(url: url)
+        self.tintColor = .systemGray6
+        self.url = url
     }
 
     required init?(coder: NSCoder) {
@@ -24,6 +35,9 @@ final class AsyncUIImageView: UIImageView {
     }
 
     private func startDownloading(url: URL) {
+        DispatchQueue.main.async {
+            self.startShimmering()
+        }
         URLSession.shared.dataTask(with: url) { data, response, error in
              guard
                  let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
@@ -33,20 +47,23 @@ final class AsyncUIImageView: UIImageView {
                  else { return }
              DispatchQueue.main.async() { [weak self] in
                  self?.image = image
+                 self?.tintColor = .none
+                 self?.gradientLayer.removeAllAnimations()
+                 self?.gradientLayer.removeFromSuperlayer()
              }
          }.resume()
     }
 
     private func startShimmering() {
+        self.backgroundColor = .systemGray
         guard let backgroundColor = backgroundColor else { return }
 
-        let gradientLayer = CAGradientLayer()
         gradientLayer.frame = bounds
         gradientLayer.cornerRadius = min(bounds.height / 2, 5)
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
-        let gradientColorOne = backgroundColor.withAlphaComponent(0.5).cgColor
-        let gradientColorTwo = backgroundColor.withAlphaComponent(0.8).cgColor
+        let gradientColorOne = UIColor.systemGray6.withAlphaComponent(0.5).cgColor
+        let gradientColorTwo = UIColor.systemGray6.withAlphaComponent(0.8).cgColor
         gradientLayer.colors = [gradientColorOne, gradientColorTwo, gradientColorOne]
         gradientLayer.locations = [0.0, 0.5, 1.0]
         layer.addSublayer(gradientLayer)

@@ -29,13 +29,13 @@ public final class AUIImageView: AUIView {
     // MARK: Representation
 
     @Convertible
-    public var image: AUIImage
+    public var image: AUIImage?
 
     @Convertible(default: .defaultImageBackgroundColor)
     public var tintColor: AUIColor
 
     // MARK: Layout
 
-    @Convertible
+    @Convertible(default: .scaleAspectFill)
     public var contentMode: ContentMode
 }

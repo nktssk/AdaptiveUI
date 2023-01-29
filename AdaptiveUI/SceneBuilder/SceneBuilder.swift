@@ -15,11 +15,22 @@ enum SceneBuilder {
         // Build hierarchy
 
         var hierarchy = [String: UIView]()
-        configuration.views.forEach { buildViewHierarchy(rootView: rootView, configuration: $0, hierarchy: &hierarchy, viewController: viewController) }
+        configuration.views.forEach { configuration in
+            DispatchQueue.main.async {
+                buildViewHierarchy(
+                    rootView: rootView,
+                    configuration: configuration,
+                    hierarchy: &hierarchy,
+                    viewController: viewController
+                )
+            }
+        }
         
         // Layout
 
-        AUILayoutManager.layout(hierarchy: hierarchy, constraints: configuration.layout)
+        DispatchQueue.main.async {
+            AUILayoutManager.layout(hierarchy: hierarchy, constraints: configuration.layout)
+        }
     }
 
     static func buildViewHierarchy(rootView: UIView, configuration: ViewConfiguration, hierarchy: inout ViewHierarchy, viewController: AUIViewController) {

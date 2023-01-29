@@ -8,7 +8,7 @@
 import SwiftUI
 import AdaptiveUI
 
-struct ConfigurationBuilder: ConfigurationBuilderProtocol {
+struct RublePaymentConfigurationBuilder: ConfigurationBuilderProtocol {
 
     static var controller: AUIController {
         .generate { configuration in
@@ -333,7 +333,7 @@ struct ConfigurationBuilder: ConfigurationBuilderProtocol {
                     label.identifier = "SourceSumLabel"
                     label.text.fontSize = 35
                     label.text.fontWeight = .bold
-                    label.text.content = "13 4534,54 $"
+                    label.text.content = "134 534,54 $"
                     label.textColor = .generate { color in
                         color.lightThemeColor = "#FFFFFF"
                         color.darkThemeColor = "#FFFFFF"

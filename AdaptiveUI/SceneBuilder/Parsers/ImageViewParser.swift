@@ -8,12 +8,14 @@
 import UIKit
 
 enum ImageViewParser {
-    static func configure(configuration: AUIImageView, viewController: AUIViewController) -> UIImageView {
-        let imageView: UIImageView
-        if let url = configuration.image.imageURL {
+    static func configure(configuration: AUIImageView, viewController: AUIViewController) -> AsyncUIImageView {
+        let imageView: AsyncUIImageView
+        if let url = configuration.image?.imageURL {
             imageView = AsyncUIImageView(url: url)
+        } else if let imageName = configuration.image?.imageName {
+            imageView = AsyncUIImageView(image: UIImage(named: imageName))
         } else {
-            imageView = UIImageView(image: UIImage(named: configuration.image.imageName ?? ""))
+            imageView = AsyncUIImageView()
         }
         imageView.contentMode = configuration.contentMode.uiKit
         imageView.tintColor = UIColor(from: configuration.tintColor)

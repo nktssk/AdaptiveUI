@@ -20,7 +20,7 @@ public struct AUIText: Serializable {
 
     // MARK: Configuration
 
-    @Convertible
+    @Convertible(default: "")
     public var content: String
 
     @Convertible(default: 12)

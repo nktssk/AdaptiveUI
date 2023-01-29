@@ -48,8 +48,12 @@ enum AUILayoutManager {
         configuration: AUIConstraint.RelationConfiguration
     ) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil
-        target.translatesAutoresizingMaskIntoConstraints = false
-        source.translatesAutoresizingMaskIntoConstraints = false
+        if (target as? UITableViewCell) == nil {
+            target.translatesAutoresizingMaskIntoConstraints = false
+        }
+        if (source as? UITableViewCell) == nil {
+            source.translatesAutoresizingMaskIntoConstraints = false
+        }
 
         // Size
         if let targetAnchor = targetAnchor.dimensionAnchorFor(target),
