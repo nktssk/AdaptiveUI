@@ -56,12 +56,11 @@ final class AsyncUIImageView: UIImageView {
 
     private func startShimmering() {
         self.backgroundColor = .systemGray
-        guard let backgroundColor = backgroundColor else { return }
-
         gradientLayer.frame = bounds
         gradientLayer.cornerRadius = min(bounds.height / 2, 5)
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
+        
         let gradientColorOne = UIColor.systemGray6.withAlphaComponent(0.5).cgColor
         let gradientColorTwo = UIColor.systemGray6.withAlphaComponent(0.8).cgColor
         gradientLayer.colors = [gradientColorOne, gradientColorTwo, gradientColorOne]
@@ -69,7 +68,6 @@ final class AsyncUIImageView: UIImageView {
         layer.addSublayer(gradientLayer)
         gradientLayer.zPosition = CGFloat(Float.greatestFiniteMagnitude)
 
-        // MARK: - Shimmer Animation
         let animation = CABasicAnimation(keyPath: "locations")
         animation.fromValue = [-1.0, -0.5, 0.0]
         animation.toValue = [1.0, 1.5, 2.0]

@@ -48,10 +48,10 @@ enum AUILayoutManager {
         configuration: AUIConstraint.RelationConfiguration
     ) -> NSLayoutConstraint? {
         var constraint: NSLayoutConstraint? = nil
-        if (target as? UITableViewCell) == nil {
+        if (target.superview as? UITableViewCell) == nil {
             target.translatesAutoresizingMaskIntoConstraints = false
         }
-        if (source as? UITableViewCell) == nil {
+        if (source.superview as? UITableViewCell) == nil {
             source.translatesAutoresizingMaskIntoConstraints = false
         }
 

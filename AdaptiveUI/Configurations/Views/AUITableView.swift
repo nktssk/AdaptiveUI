@@ -12,8 +12,19 @@ public final class AUITableView: AUIView {
 
     public struct Data: Serializable {
         public enum Kind {
-            case text(String)
-            case image(String)
+            case text(content: String, actionId: String? = nil)
+            case image(url: String, actionId: String? = nil)
+            case button(content: String, actionId: String? = nil)
+            case `switch`(isOn: Bool, actionId: String? = nil)
+
+            var actionId: String? {
+                switch self {
+                case .text(_, let actionId): return actionId
+                case .image(_, let actionId): return actionId
+                case .button(_, let actionId): return actionId
+                case .`switch`(_, let actionId): return actionId
+                }
+            }
         }
 
         @Convertible

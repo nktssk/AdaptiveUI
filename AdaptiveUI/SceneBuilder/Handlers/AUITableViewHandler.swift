@@ -33,24 +33,10 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
               let viewController = viewController
         else { return UITableViewCell() }
 
-        let cell = UITableViewCell()
-        var hierarchy = [String: UIView]()
-        BaseViewConfigurator.configure(view: cell, configuration: viewConfiguration, viewController: viewController)
-        viewConfiguration.subviews.forEach {
-            SceneBuilder.buildViewHierarchy(rootView: cell, configuration: $0, hierarchy: &hierarchy, viewController: viewController)
-        }
-        AUILayoutManager.layout(hierarchy: hierarchy, constraints: viewConfiguration.layout)
-
-        for (identifier, data) in configuration.identifierToData {
-            guard let contentView = hierarchy[identifier] else { continue }
-            switch data {
-            case .image(let imageURL):
-                (contentView as? AsyncUIImageView)?.url = imageURL
-            case .text(let text):
-                (contentView as? UILabel)?.text = text
-            }
-        }
-
-        return cell
+        return SceneBuilder.buildCell(
+            data: configuration,
+            cellConfiguration: viewConfiguration,
+            viewController: viewController
+        )
     }
 }

@@ -17,6 +17,7 @@
 		E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */; };
 		E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */; };
 		E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */; };
+		E5B826632986D70500C12EB9 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B826622986D70500C12EB9 /* TableViewController.swift */; };
 		F06E045A24C88361B20EAF0D /* Pods_AdaptiveUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		E5A081B42940DD330017F24D /* MockAUIViewConfigurationProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAUIViewConfigurationProcessor.swift; sourceTree = "<group>"; };
 		E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublePaymentViewController.swift; sourceTree = "<group>"; };
 		E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableConfigurationBuilder.swift; sourceTree = "<group>"; };
+		E5B826622986D70500C12EB9 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */,
+				E5B826622986D70500C12EB9 /* TableViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */,
 				E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */,
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
+				E5B826632986D70500C12EB9 /* TableViewController.swift in Sources */,
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
 				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,

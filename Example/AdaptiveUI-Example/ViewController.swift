@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func openTableScreen(_ sender: Any) {
-        let viewController = RublePaymentViewController(
+        let viewController = TableViewController(
             processor: MockAUIViewConfigurationProcessor(configurationBuilder: TableConfigurationBuilder.self)
         )
         navigationController?.pushViewController(viewController, animated: true)

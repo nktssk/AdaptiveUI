@@ -47,158 +47,171 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                 tableView.data = [
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Казань")]
+                        cell.selectActionId = "openRublePayment"
+                        cell.identifierToData = ["label": .text(content: "Казань")]
                     },
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Москва")]
+                        cell.identifierToData = ["label": .text(content: "Москва", actionId: "print")]
                     },
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Санкт-Петербург")]
+                        cell.identifierToData = ["label": .text(content: "Санкт-Петербург")]
                     },
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Набережные Челны")]
+                        cell.identifierToData = ["label": .text(content: "Набережные Челны")]
                     },
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Нижний Новгород")]
+                        cell.identifierToData = ["label": .text(content: "Нижний Новгород")]
                     },
                     .generate() { cell in
                         cell.cellType = "SimpleText"
-                        cell.identifierToData = ["label": .text("Великий Новгород")]
+                        cell.identifierToData = ["label": .text(content: "Великий Новгород")]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text("Кот обыкновенный"),
-                            "Subtitle": .text("Этот котик был взят из мема"),
-                            "Image": .image("https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
+                            "Title": .text(content: "Кот обыкновенный"),
+                            "Subtitle": .text(content: "Этот котик был взят из мема"),
+                            "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]
                     },
                 ]
                 tableView.cellsTypes = [
+                    "Button": AUITableViewCell.generate() { view in
+                        view.identifier = "Button"
+                        view.subviews = [
+                            .button(configuration: .generate() { button in
+                                button.identifier = "button"
+                                button.text = .generate() { text in
+                                    text.content = ""
+                                }
+                            })
+                        ]
+                        view.layout = []
+                    },
                     "SimpleText": AUITableViewCell.generate() { view in
                         view.identifier = "SimpleText"
                         view.subviews = [

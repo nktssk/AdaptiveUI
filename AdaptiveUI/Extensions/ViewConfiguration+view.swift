@@ -40,4 +40,126 @@ extension ViewConfiguration {
             return configuration
         }
     }
+
+    mutating func setupActionID(_ actionID: String) {
+        switch self {
+        case .view(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .view(configuration: config)
+        case .label(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .label(configuration: config)
+        case .slider(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .slider(configuration: config)
+        case .button(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .button(configuration: config)
+        case .switch(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .switch(configuration: config)
+        case .textView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .textView(configuration: config)
+        case .imageView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .imageView(configuration: config)
+        case .tableView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .tableView(configuration: config)
+        case .textField(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .textField(configuration: config)
+        case .searchBar(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .searchBar(configuration: config)
+        case .pickerView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .pickerView(configuration: config)
+        case .progressView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .progressView(configuration: config)
+        case .segmentedControl(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .segmentedControl(configuration: config)
+        case .activityIndicator(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .activityIndicator(configuration: config)
+        }
+    }
+
+    mutating func removeActionID() {
+        switch self {
+        case .view(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .view(configuration: config)
+        case .label(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .label(configuration: config)
+        case .slider(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .slider(configuration: config)
+        case .button(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .button(configuration: config)
+        case .switch(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .switch(configuration: config)
+        case .textView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .textView(configuration: config)
+        case .imageView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .imageView(configuration: config)
+        case .tableView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .tableView(configuration: config)
+        case .textField(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .textField(configuration: config)
+        case .searchBar(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .searchBar(configuration: config)
+        case .pickerView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .pickerView(configuration: config)
+        case .progressView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .progressView(configuration: config)
+        case .segmentedControl(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .segmentedControl(configuration: config)
+        case .activityIndicator(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .activityIndicator(configuration: config)
+        }
+    }
 }

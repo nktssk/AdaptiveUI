@@ -13,7 +13,6 @@ enum SceneBuilder {
     static func parse(configuration: AUIConfiguration, rootView: UIView, viewController: AUIViewController) {
 
         // Build hierarchy
-
         var hierarchy = [String: UIView]()
         configuration.views.forEach { configuration in
             DispatchQueue.main.async {
@@ -27,7 +26,6 @@ enum SceneBuilder {
         }
         
         // Layout
-
         DispatchQueue.main.async {
             AUILayoutManager.layout(hierarchy: hierarchy, constraints: configuration.layout)
         }
@@ -87,5 +85,53 @@ enum SceneBuilder {
         for subview in configuration.viewConfiguration.subviews {
             SceneBuilder.buildViewHierarchy(rootView: view, configuration: subview, hierarchy: &hierarchy, viewController: viewController)
         }
+    }
+
+    static func buildCell(
+        data: AUITableView.Data,
+        cellConfiguration: AUITableViewCell,
+        viewController: AUIViewController
+    ) -> UITableViewCell {
+        let cell = UITableViewCell()
+        var hierarchy = [String: UIView]()
+
+        data.identifierToData.forEach { key, value in
+            guard let actionId = value.actionId,
+                  let index = cellConfiguration.subviews.firstIndex(where: { $0.viewConfiguration.identifier == key })
+            else { return }
+            cellConfiguration.subviews[index].setupActionID(actionId)
+        }
+
+        BaseViewConfigurator.configure(view: cell, configuration: cellConfiguration, viewController: viewController)
+
+        cellConfiguration.subviews.forEach {
+            SceneBuilder.buildViewHierarchy(rootView: cell.contentView, configuration: $0, hierarchy: &hierarchy, viewController: viewController)
+        }
+
+        AUILayoutManager.layout(hierarchy: hierarchy, constraints: cellConfiguration.layout)
+
+        for (identifier, data) in data.identifierToData {
+            guard let contentView = hierarchy[identifier] else { continue }
+            switch data {
+            case .image(let imageURL, _):
+                (contentView as? AsyncUIImageView)?.url = imageURL
+            case .text(let text, _):
+                (contentView as? UILabel)?.text = text
+            case .button(content: let content, _):
+                (contentView as? UIButton)?.setTitle(content, for: .normal)
+            case .switch(isOn: let isOn, _):
+                (contentView as? UISwitch)?.isOn = isOn
+            }
+        }
+
+        data.identifierToData.forEach { key, value in
+            guard let actionId = value.actionId,
+                  let index = cellConfiguration.subviews.firstIndex(where: { $0.viewConfiguration.identifier == key }),
+                  cellConfiguration.subviews[index].viewConfiguration.actionHandler == .custom(id: actionId)
+            else { return }
+            cellConfiguration.subviews[index].removeActionID()
+        }
+
+        return cell
     }
 }

@@ -42,6 +42,7 @@ enum BaseViewConfigurator {
             target: actionWrapper,
             action: #selector(actionWrapper.action)
         )
+        view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
