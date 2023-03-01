@@ -193,7 +193,7 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                     .generate() { cell in
                         cell.cellType = "TwoText"
                         cell.identifierToData = [
-                            "Title": .text(content: "Кот обыкновенный"),
+                            "Title": .text(content: "Кот"),
                             "Subtitle": .text(content: "Этот котик был взят из мема"),
                             "Image": .image(url: "https://beta.ctvnews.ca/content/dam/ctvnews/images/2019/11/18/1_4691731.png?cache_timestamp=1574134871525"),
                         ]

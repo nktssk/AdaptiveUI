@@ -9,8 +9,6 @@ import Foundation
 
 public struct AUIConstraint: Serializable {
 
-    // MARK: Nested Types
-
     public struct RelationConfiguration: Serializable {
         @Convertible(default: "AUIParentView")
         public var source: String
@@ -54,8 +52,6 @@ public struct AUIConstraint: Serializable {
         case relation(configuration: RelationConfiguration)
         case constant(value: Double)
     }
-
-    // MARK: AdaptiveUI Configuration
 
     @Convertible
     public var kind: Kind
