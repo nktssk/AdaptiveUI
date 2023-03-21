@@ -10,6 +10,8 @@ import AdaptiveUI
 
 struct RublePaymentConfigurationBuilder: ConfigurationBuilderProtocol {
 
+    static var cache: Bool { true }
+    
     static var controller: AUIController {
         .generate { configuration in
             configuration.kind = .scrollable

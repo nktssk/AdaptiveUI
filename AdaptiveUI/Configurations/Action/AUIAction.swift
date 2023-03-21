@@ -7,7 +7,7 @@
 
 import Foundation
 
-public enum AUIAction: Equatable {
+public enum AUIAction: Codable, Equatable {
     public enum StandardActionType: Codable, Equatable {
         case alert(title: String, message: String, buttonText: String)
         case openWebURL(url: String)

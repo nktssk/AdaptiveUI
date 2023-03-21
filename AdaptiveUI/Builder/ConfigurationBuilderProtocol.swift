@@ -12,6 +12,7 @@ public protocol ConfigurationBuilderProtocol {
     static var controller: AUIController { get }
     static var layout: [AUIConstraint] { get }
     static var views: [ViewConfiguration] { get }
+    static var cache: Bool { get }
 }
 
 extension ConfigurationBuilderProtocol {
@@ -20,6 +21,7 @@ extension ConfigurationBuilderProtocol {
             configuration.views = self.views
             configuration.layout = self.layout
             configuration.controller = self.controller
+            configuration.cache = self.cache
         }
     }
 

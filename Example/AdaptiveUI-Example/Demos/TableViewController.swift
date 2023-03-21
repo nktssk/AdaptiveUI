@@ -17,7 +17,10 @@ final class TableViewController: AUIViewController {
 
     func openRublePayment() {
         let viewController = RublePaymentViewController(
-            processor: MockAUIViewConfigurationProcessor(configurationBuilder: RublePaymentConfigurationBuilder.self)
+            processor: MockAUIViewConfigurationProcessor(
+                screenId: "TableViewController",
+                configurationBuilder: TableConfigurationBuilder.self
+            )
         )
         navigationController?.pushViewController(viewController, animated: true)
     }

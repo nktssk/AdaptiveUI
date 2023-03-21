@@ -11,7 +11,7 @@ public struct AUIController: Serializable {
 
     // MARK: Nested Types
 
-    public enum Kind: String, Decodable {
+    public enum Kind: String, Codable {
         case `static`
         case scrollable
         case webView

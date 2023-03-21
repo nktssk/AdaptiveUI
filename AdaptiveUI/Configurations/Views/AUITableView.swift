@@ -11,7 +11,7 @@ import UIKit
 public final class AUITableView: AUIView {
 
     public struct Data: Serializable {
-        public enum Kind {
+        public enum Kind: Codable {
             case text(content: String, actionId: String? = nil)
             case image(url: String, actionId: String? = nil)
             case button(content: String, actionId: String? = nil)

@@ -9,16 +9,24 @@ import Foundation
 import AdaptiveUI
 
 class MockAUIViewConfigurationProcessor: AUIViewConfigurationProcessorProtocol {
-
+    
+    struct MockError: Error {}
+    
+    var screenId: String
     private let configurationBuilder: ConfigurationBuilderProtocol.Type
 
-    init(configurationBuilder: ConfigurationBuilderProtocol.Type) {
+    init(
+        screenId: String,
+        configurationBuilder: ConfigurationBuilderProtocol.Type
+    ) {
+        self.screenId = screenId
         self.configurationBuilder = configurationBuilder
     }
 
     func download(completion: @escaping (Result<AUIConfiguration, Error>) -> Void) {
         let configuration = configurationBuilder.configuration
-        completion(.success(configuration))
+        // completion(.success(configuration))
+        completion(.failure(MockError()))
         log()
     }
 

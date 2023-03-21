@@ -22,8 +22,10 @@ open class AUIViewController: UIViewController {
 
     // MARK: Private Properties
     
+    private let storage: LocalStorageProtocol
     private let processor: AUIViewConfigurationProcessorProtocol
 
+    private var renderLayoutOnce = false
     private var needBuildHierarchy = true
     private var configuration: AUIConfiguration?
 
@@ -32,20 +34,36 @@ open class AUIViewController: UIViewController {
 
     // MARK: Lifecycle
 
-    public init(processor: AUIViewConfigurationProcessorProtocol) {
+    public init(
+        processor: AUIViewConfigurationProcessorProtocol,
+        storage: LocalStorageProtocol = LocalStorage()
+    ) {
+        self.storage = storage
         self.processor = processor
         super.init(nibName: nil, bundle: nil)
         processor.download { [weak self] result in
             guard let self = self else { return }
             switch result {
             case .failure(let error):
-                self.failedDownloading(with: error)
+                self.storage.loadData(named: self.processor.screenId) { [weak self] configuration in
+                    DispatchQueue.main.async {
+                        guard let self else { return }
+                        guard let configuration else { return self.failedDownloading(with: error) }
+                        if self.needBuildHierarchy { self.hideLoadingView() }
+                        self.configuration = configuration
+                        self.renderLayout(with: configuration)
+                    }
+                }
 
             case .success(let configuration):
                 if self.needBuildHierarchy {
                     self.hideLoadingView()
                 }
+                self.renderLayout(with: configuration)
                 self.configuration = configuration
+                if configuration.cache {
+                    self.storage.saveData(configuration, named: self.processor.screenId)
+                }
             }
         }
     }
@@ -90,11 +108,18 @@ open class AUIViewController: UIViewController {
         activityIndicatorView.alpha = .zero
     }
 
-    open func failedDownloading(with error: Error) {}
+    open func failedDownloading(with error: Error) {
+        let alert = UIAlertController(title: "Произошла ошибка при загрузке данных", message: nil ,preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ок", style: .default) { [weak self] _ in self?.dismiss(animated: true) }
+        alert.addAction(action)
+        present(alert, animated: true)
+    }
 
     // MARK: Private Methods
 
     private func renderLayout(with configuration: AUIConfiguration) {
+        guard !renderLayoutOnce else { return }
+        renderLayoutOnce = true
         let controllerConfiguration = configuration.controller
 
         let topView: UIView

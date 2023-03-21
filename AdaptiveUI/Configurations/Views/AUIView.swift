@@ -35,15 +35,7 @@ public class AUIView: Serializable {
 
     @Convertible(default: [])
     public var subviews: [ViewConfiguration]
-
-    // MARK: Layout
-
-    @Convertible
-    public var size: AUISize?
-
-    @Convertible(default: .zero)
-    public var insets: AUIInsets
-
+    
     public required init() {}
 
     // MARK: Action

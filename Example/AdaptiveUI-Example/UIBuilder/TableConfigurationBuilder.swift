@@ -9,6 +9,8 @@ import AdaptiveUI
 
 struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
     
+    static var cache: Bool { true }
+    
     static var layout: [AUIConstraint] = [
         .generate { constraint in
             constraint.target = "TableView"

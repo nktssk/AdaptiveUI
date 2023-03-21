@@ -11,7 +11,7 @@ public struct AUIText: Serializable {
 
     // MARK: Nested Types
 
-    public enum FontWeight: String, Decodable {
+    public enum FontWeight: String, Codable {
         case light
         case medium
         case regular

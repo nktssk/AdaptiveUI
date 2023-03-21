@@ -24,5 +24,10 @@ public struct AUIConfiguration: Serializable {
     @Convertible
     public var layout: [AUIConstraint]
 
+    // MARK: Storage
+    
+    @Convertible(default: false)
+    public var cache: Bool
+
     public init() {}
 }
