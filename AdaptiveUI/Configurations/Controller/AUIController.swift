@@ -43,7 +43,7 @@ public struct AUIController: Serializable {
 
     // MARK: Layout
 
-    @Convertible(default: false)
+    @Convertible(default: true)
     public var pinToSafeArea: Bool
 
     public init() {}

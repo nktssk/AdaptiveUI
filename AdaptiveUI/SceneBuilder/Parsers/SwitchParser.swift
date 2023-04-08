@@ -19,6 +19,16 @@ enum SwitchParser {
         }
         let actionWrapper = AUIActionWrapper { [weak viewController, unowned uiSwitch] in
             viewController?.switchValueDidChange(uiSwitch)
+            switch configuration.actionHandler {
+            case .custom(let id):
+                viewController?.actions[id]?()
+            case .standard(let type):
+                DispatchQueue.main.async {
+                    BaseViewConfigurator.defaultAction(type: type, viewController: viewController)
+                }
+            case .none:
+                break
+            }
         }
         viewController.actionWrappers.append(actionWrapper)
         uiSwitch.addTarget(actionWrapper, action: #selector(actionWrapper.action), for: .valueChanged)
@@ -27,7 +37,7 @@ enum SwitchParser {
             viewController.viewHierarchy[configuration.identifier] = .`switch`(uiSwitch)
         }
 
-        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration, viewController: viewController)
+        BaseViewConfigurator.configure(view: uiSwitch, configuration: configuration, viewController: viewController, skipActions: true)
 
         return uiSwitch
     }

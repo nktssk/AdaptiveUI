@@ -18,6 +18,10 @@ enum TableViewParser {
         tableView.separatorStyle = configuration.isSeparatorHidden ? .none : .singleLine
         tableView.dataSource = handler
         viewController.tableViewHandler = handler
+        
+        if viewController.viewHierarchy[configuration.identifier] == nil {
+            viewController.viewHierarchy[configuration.identifier] = .tableView(tableView)
+        }
 
         return tableView
     }

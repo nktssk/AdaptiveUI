@@ -11,7 +11,7 @@ public final class AUIImageView: AUIView {
 
     // MARK: Nested Types
 
-    public enum ContentMode: String, Codable {
+    public enum ContentMode: String, Codable, Equatable {
         case scaleToFill
         case scaleAspectFit
         case scaleAspectFill

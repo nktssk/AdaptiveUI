@@ -9,7 +9,8 @@ import UIKit
 
 public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDelegate {
 
-    private let config: AUITableView
+    private var config: AUITableView
+    private weak var tableView: UITableView?
     private weak var viewController: AUIViewController?
 
     init(config: AUITableView, viewController: AUIViewController) {
@@ -18,7 +19,8 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
     }
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        config.data.count
+        self.tableView = tableView
+        return config.data.count
     }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -38,5 +40,10 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
             cellConfiguration: viewConfiguration,
             viewController: viewController
         )
+    }
+    
+    public func reload(data: [AUITableView.Data]) {
+        config.data = data
+        tableView?.reloadData()
     }
 }

@@ -76,7 +76,9 @@ open class AUIViewController: UIViewController {
         super.viewDidLoad()
         if let configuration = configuration {
             needBuildHierarchy = false
-            renderLayout(with: configuration)
+            DispatchQueue.main.async {
+                self.renderLayout(with: configuration)
+            }
         } else {
             showLoadingView()
         }
@@ -126,6 +128,8 @@ open class AUIViewController: UIViewController {
         switch configuration.controller.kind {
         case .scrollable:
             topView = UIScrollView()
+            topView.backgroundColor = .white
+            navigationController?.navigationBar.backgroundColor = .white
 
         case .static:
             topView = UIView()
@@ -150,8 +154,8 @@ open class AUIViewController: UIViewController {
         NSLayoutConstraint.activate(
             [
                 topView.topAnchor.constraint(
-                    equalTo: view.topAnchor,
-                    constant: pinToSafeArea ? view.safeAreaInsets.top : .zero
+                    equalTo: view.safeAreaLayoutGuide.topAnchor,
+                    constant: pinToSafeArea ? .zero : -view.safeAreaInsets.top
                 ),
                 topView.leadingAnchor.constraint(
                     equalTo: view.leadingAnchor,

@@ -46,7 +46,7 @@ enum BaseViewConfigurator {
         view.addGestureRecognizer(tapGestureRecognizer)
     }
 
-    private static func defaultAction(type: AUIAction.StandardActionType, viewController: AUIViewController?) {
+    static func defaultAction(type: AUIAction.StandardActionType, viewController: AUIViewController?) {
         switch type {
         case .alert(let title, let message, let buttonText):
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
@@ -65,6 +65,15 @@ enum BaseViewConfigurator {
         case .openScreen(let url):
             guard let url = URL(string: url) else { return }
             UIApplication.shared.open(url)
+
+        case .transform(let content):
+            guard let viewEnum = viewController?.viewHierarchy[content.id] else { return }
+            
+            UIView.animate(withDuration: TimeInterval(content.duration)) {
+                for param in content.params {
+                    AUITransformHandler.applyTransform(for: viewEnum, transform: param, viewController: viewController)
+                }
+            }
         }
     }
 }

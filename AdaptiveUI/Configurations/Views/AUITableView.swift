@@ -10,8 +10,8 @@ import UIKit
 
 public final class AUITableView: AUIView {
 
-    public struct Data: Serializable {
-        public enum Kind: Codable {
+    public struct Data: Serializable, Equatable {
+        public enum Kind: Codable, Equatable {
             case text(content: String, actionId: String? = nil)
             case image(url: String, actionId: String? = nil)
             case button(content: String, actionId: String? = nil)
@@ -37,6 +37,10 @@ public final class AUITableView: AUIView {
         public var selectActionId: String?
 
         public init() {}
+        
+        public static func == (lhs: AUITableView.Data, rhs: AUITableView.Data) -> Bool {
+            lhs.identifierToData == rhs.identifierToData
+        }
     }
 
     @Convertible

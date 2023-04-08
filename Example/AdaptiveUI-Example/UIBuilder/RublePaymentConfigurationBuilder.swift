@@ -424,7 +424,18 @@ struct RublePaymentConfigurationBuilder: ConfigurationBuilderProtocol {
                 color.lightThemeColor = "#000000"
                 color.lightThemeColor = "#000000"
             }
-            button.actionHandler = .custom(id: "SendButtonTapped")
+            button.actionHandler = .standard(
+                type: .transform(
+                    content: .generate { content in
+                        content.duration = 1
+                        content.id = "TargetView"
+                        content.params = [
+                            .alpha(value: 0.5),
+                            .color(value: "532452")
+                        ]
+                    }
+                )
+            )
         })
     ]
 }

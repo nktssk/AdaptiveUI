@@ -12,6 +12,7 @@ public enum AUIAction: Codable, Equatable {
         case alert(title: String, message: String, buttonText: String)
         case openWebURL(url: String)
         case openScreen(url: String)
+        case transform(content: AUITransformContent)
     }
 
     case custom(id: String)

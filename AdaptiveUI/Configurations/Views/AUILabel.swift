@@ -11,7 +11,7 @@ public class AUILabel: AUIView {
 
     // MARK: Nested Types
 
-    public enum Alignment: String, Codable {
+    public enum Alignment: String, Codable, Equatable {
         case left
         case center
         case right

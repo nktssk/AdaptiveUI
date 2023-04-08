@@ -9,14 +9,30 @@ import AdaptiveUI
 
 struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
     
-    static var cache: Bool { true }
+    static var cache: Bool { false }
     
     static var layout: [AUIConstraint] = [
+        .generate { constraint in
+            constraint.target = "uiSwitch"
+            constraint.targetAnchor = .top
+            constraint.kind = .relation(configuration: .generate { config in
+                config.sourceAnchor = .top
+            })
+        },
+        .generate { constraint in
+            constraint.target = "uiSwitch"
+            constraint.targetAnchor = .centerX
+            constraint.kind = .relation(configuration: .generate { config in
+                config.sourceAnchor = .centerX
+            })
+        },
         .generate { constraint in
             constraint.target = "TableView"
             constraint.targetAnchor = .top
             constraint.kind = .relation(configuration: .generate { config in
-                config.sourceAnchor = .top
+                config.sourceAnchor = .bottom
+                config.source = "uiSwitch"
+                config.constant = 10
             })
         },
         .generate { constraint in
@@ -42,7 +58,31 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
         }
     ]
 
-    static var views: [ViewConfiguration] = [
+    static var views: [ViewConfiguration] { [
+        .switch(configuration: .generate() { uiSwitch in
+            uiSwitch.isOn = true
+            uiSwitch.identifier = "uiSwitch"
+            uiSwitch.actionHandler = .standard(
+                type: .transform(
+                    content: .generate { content in
+                        content.duration = 1
+                        content.id = "TableView"
+                        content.params = [
+                            .tableViewReload(value: [
+                                .generate() { cell in
+                                    cell.cellType = "SimpleText"
+                                    cell.identifierToData = ["label": .text(content: "Контект перегрузился", actionId: "print")]
+                                },
+                                .generate() { cell in
+                                    cell.cellType = "SimpleText"
+                                    cell.identifierToData = ["label": .text(content: "Это работает еее")]
+                                },
+                            ])
+                        ]
+                    }
+                )
+            )
+        }),
         .tableView(
             configuration: .generate() { tableView in
                 tableView.identifier = "TableView"
@@ -367,5 +407,6 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                 ]
             }
         )
-    ]
+        ]
+    }
 }

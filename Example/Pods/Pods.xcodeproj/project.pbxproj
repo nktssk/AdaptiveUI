@@ -50,6 +50,8 @@
 		852B506502696104526B5F0B6D9BEEBC /* AUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D439C34DEC08F745A4FA279E7FE4C66E /* AUITextField.swift */; };
 		864E9EE6F79A89F4F23E2D65090DC103 /* TextFieldParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A80C8C8AF1D631E961C2D07FED7E1E /* TextFieldParser.swift */; };
 		86E1CDDC0B7245A58D9E5EA19A8D9FBF /* AUITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54740ACF53173D8284B0662E5DFD265C /* AUITextView.swift */; };
+		879D8B3229E1888B0082C0C3 /* AUITransformContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879D8B3129E1888B0082C0C3 /* AUITransformContent.swift */; };
+		879D8B3529E18C2A0082C0C3 /* AUITransformHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879D8B3429E18C2A0082C0C3 /* AUITransformHandler.swift */; };
 		89050B1456427C2352DDF2D9D863464B /* AUISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5702CC97DBBDB6EF75159973FF5ADDD /* AUISwitch.swift */; };
 		8905DE117C17ACBDF3EF4863BE3493CF /* AdaptiveUI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BA0D778CB0F1A45C6CE5E71F75FB010A /* AdaptiveUI-dummy.m */; };
 		8E2BD7F3928C42B00958F63845EBD08D /* AUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C573E054F103765713C3F02B77CCBEE0 /* AUIWebView.swift */; };
@@ -148,20 +150,22 @@
 		7F221EC69216CB8ABE9D07922A7FB4D9 /* AUIConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIConfiguration.swift; sourceTree = "<group>"; };
 		82B127021AA205C50EBFBD99A1D4F427 /* AUIViewEnumeration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIViewEnumeration.swift; sourceTree = "<group>"; };
 		8539EEB0A35902E8EAFD582B5CAD3CE5 /* SwitchParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SwitchParser.swift; sourceTree = "<group>"; };
+		879D8B3129E1888B0082C0C3 /* AUITransformContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUITransformContent.swift; sourceTree = "<group>"; };
+		879D8B3429E18C2A0082C0C3 /* AUITransformHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUITransformHandler.swift; sourceTree = "<group>"; };
 		89C2CB6B27907F7D95865E653B0C2410 /* FPSStatusBarWindow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FPSStatusBarWindow.swift; path = Sources/FPSStatusBarWindow.swift; sourceTree = "<group>"; };
 		8BC66CB74D64CB5E679E4D876991FEB8 /* ViewParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewParser.swift; sourceTree = "<group>"; };
 		8C219CF9CC7E4EE3B4C347978E5E96BC /* PickerViewParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = PickerViewParser.swift; sourceTree = "<group>"; };
 		9438E04BF1C89038B0BDBDE3FC95C49F /* Pods-AdaptiveUI-Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AdaptiveUI-Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9570135B9343C97B25E7DCB744DAC6CD /* AUIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIImageView.swift; sourceTree = "<group>"; };
 		9A9A85AC66E8D137E8D77ABD6AC6168A /* AUIActivityIndicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUIActivityIndicator.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A5702CC97DBBDB6EF75159973FF5ADDD /* AUISwitch.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AUISwitch.swift; sourceTree = "<group>"; };
 		A6CF8845837FA114FADD3AB6DCD8B80D /* DecodableProperty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DecodableProperty.swift; sourceTree = "<group>"; };
 		A78A912B5BB542D01CF5675E234C7074 /* ConfigurationBuilderProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ConfigurationBuilderProtocol.swift; sourceTree = "<group>"; };
 		AC0ABB2FFD335C2DFD4AFE708A7A61BA /* ActivityIndicatorParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorParser.swift; sourceTree = "<group>"; };
 		AE74823B58ADC59D9E81881E4AD4AFC9 /* LabelParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = LabelParser.swift; sourceTree = "<group>"; };
 		B2B900195F7C2FEC769E05386C3D11C2 /* ViewConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewConfiguration.swift; sourceTree = "<group>"; };
-		B40B331CDE536CB5F55E50D80FAB14B7 /* AdaptiveUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AdaptiveUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B40B331CDE536CB5F55E50D80FAB14B7 /* AdaptiveUI.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AdaptiveUI.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		B79200F62C0259DD66ACC464EEC03DE9 /* UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
 		B8D0373D85F2FE2F2D7CD19216FD3D8E /* FPSCounter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FPSCounter-umbrella.h"; sourceTree = "<group>"; };
 		BA0D778CB0F1A45C6CE5E71F75FB010A /* AdaptiveUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AdaptiveUI-dummy.m"; sourceTree = "<group>"; };
@@ -287,8 +291,8 @@
 			children = (
 				2B42BF9DC47CBE157345BE36AD03F36C /* AUIActionWrapper.swift */,
 				F22353B9B51A0E78B57095C1AB4064F0 /* AUITableViewHandler.swift */,
+				879D8B3429E18C2A0082C0C3 /* AUITransformHandler.swift */,
 			);
-			name = Handlers;
 			path = Handlers;
 			sourceTree = "<group>";
 		};
@@ -297,7 +301,6 @@
 			children = (
 				7C5F1BB0D1725424EF69851B1ABF6FB9 /* AUILayoutManager.swift */,
 			);
-			name = Layout;
 			path = Layout;
 			sourceTree = "<group>";
 		};
@@ -346,7 +349,6 @@
 				A6CF8845837FA114FADD3AB6DCD8B80D /* DecodableProperty.swift */,
 				C907AC5AAB72A11EECF965E60260C19F /* SerializableDecodable.swift */,
 			);
-			name = Decodable;
 			path = Decodable;
 			sourceTree = "<group>";
 		};
@@ -379,7 +381,6 @@
 				6BF5AE5F97CC13E71D5031971FFCDCE1 /* TextViewParser.swift */,
 				8BC66CB74D64CB5E679E4D876991FEB8 /* ViewParser.swift */,
 			);
-			name = Parsers;
 			path = Parsers;
 			sourceTree = "<group>";
 		};
@@ -402,7 +403,6 @@
 				BA770CEB918303DAAAC4B64AB20EEC13 /* AUIView.swift */,
 				C573E054F103765713C3F02B77CCBEE0 /* AUIWebView.swift */,
 			);
-			name = Views;
 			path = Views;
 			sourceTree = "<group>";
 		};
@@ -411,7 +411,6 @@
 			children = (
 				5C9521A981031DD29F8BFF086C7B1FEE /* AUIController.swift */,
 			);
-			name = Controller;
 			path = Controller;
 			sourceTree = "<group>";
 		};
@@ -419,8 +418,8 @@
 			isa = PBXGroup;
 			children = (
 				472E075EDE38FAEE28E59E0060B7D112 /* AUIAction.swift */,
+				879D8B3129E1888B0082C0C3 /* AUITransformContent.swift */,
 			);
-			name = Action;
 			path = Action;
 			sourceTree = "<group>";
 		};
@@ -433,7 +432,6 @@
 				89C2CB6B27907F7D95865E653B0C2410 /* FPSStatusBarWindow.swift */,
 				C4E5571A2A4205775338FB24B927145A /* Support Files */,
 			);
-			name = FPSCounter;
 			path = FPSCounter;
 			sourceTree = "<group>";
 		};
@@ -499,7 +497,6 @@
 				21C785C722FFD02EA01F4C3D08D53510 /* AUIImage.swift */,
 				C620195FA4501CC477796CF962E0CCC4 /* AUIText.swift */,
 			);
-			name = Common;
 			path = Common;
 			sourceTree = "<group>";
 		};
@@ -517,7 +514,6 @@
 				5F0902800A9B9F4275BABB21AD982301 /* SerializedTransformable.swift */,
 				D219E42828BC04ED6C97442275D94889 /* Transformable.swift */,
 			);
-			name = Transformable;
 			path = Transformable;
 			sourceTree = "<group>";
 		};
@@ -539,7 +535,6 @@
 				26A49AD9CB64948CFDF90F4BC0167BBD /* AUIConstraint.swift */,
 				5E37C8449733548D1CE99D4D0281F76A /* Base.swift */,
 			);
-			name = Layout;
 			path = Layout;
 			sourceTree = "<group>";
 		};
@@ -598,7 +593,6 @@
 				7E26D872D7BB38CFA1F92F28C7CE0ADB /* EncodableProperty.swift */,
 				D46384D3F64039958DDC43DD615DAC92 /* SerializableEncodable.swift */,
 			);
-			name = Encodable;
 			path = Encodable;
 			sourceTree = "<group>";
 		};
@@ -757,6 +751,7 @@
 				6FC8177703428994DBF1E845932CCD54 /* AUIColor.swift in Sources */,
 				49BE719003831FF2E0599C602FBEA0D0 /* AUIConfiguration.swift in Sources */,
 				0A746A54979F7502EF723349EDB0B33B /* AUIConstraint.swift in Sources */,
+				879D8B3529E18C2A0082C0C3 /* AUITransformHandler.swift in Sources */,
 				6EB0E941538A4B06B7AB18DB3D070B65 /* AUIController.swift in Sources */,
 				9C3B26090A803551AF2B2E98CB08A376 /* AUIImage.swift in Sources */,
 				4CEA2C1A3DCFCEB8C89D6C0BB5F52C98 /* AUIImageView.swift in Sources */,
@@ -792,6 +787,7 @@
 				A0C115EA964A858D1938A3EE3AF8EF01 /* PickerViewParser.swift in Sources */,
 				5FCA9F7682998C2B32B9D12AA4ECE1E7 /* ProgressViewParser.swift in Sources */,
 				DAFF7D53FF5887E98ED0946925617FD9 /* SceneBuilder.swift in Sources */,
+				879D8B3229E1888B0082C0C3 /* AUITransformContent.swift in Sources */,
 				6CBB610BCB4700F1AF044F8474E390CA /* SearchBarParser.swift in Sources */,
 				C8DC772835DBD04238FC1D97B9FDB9EE /* SegmentedControlParser.swift in Sources */,
 				11A9C1F309E37E714A9E1A8AE2A0AF5D /* SerializableDecodable.swift in Sources */,

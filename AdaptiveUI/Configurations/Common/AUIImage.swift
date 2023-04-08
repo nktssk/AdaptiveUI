@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AUIImage: Serializable {
+public struct AUIImage: Serializable, Equatable {
     @Convertible
     public var imageName: String?
 
@@ -15,4 +15,8 @@ public struct AUIImage: Serializable {
     public var imageURL: String?
 
     public init() {}
+    
+    public static func == (lhs: AUIImage, rhs: AUIImage) -> Bool {
+        lhs.imageName == rhs.imageName && lhs.imageURL == rhs.imageURL
+    }
 }
