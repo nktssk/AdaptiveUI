@@ -25,7 +25,7 @@ class MockAUIViewConfigurationProcessor: AUIViewConfigurationProcessorProtocol {
 
     func download(completion: @escaping (Result<AUIConfiguration, Error>) -> Void) {
         let configuration = configurationBuilder.configuration
-        // completion(.success(configuration))
+        //completion(.success(configuration))
         completion(.failure(MockError()))
         log()
     }
@@ -35,8 +35,8 @@ class MockAUIViewConfigurationProcessor: AUIViewConfigurationProcessorProtocol {
               let string = String(data: data, encoding: .utf8)
         else { return }
 
-        print("--------------Configuration-Start--------------")
-        print(string)
-        print("--------------Configuration-End--------------")
+        //print("--------------Configuration-Start--------------")
+        //print(string)
+        //print("--------------Configuration-End--------------")
     }
 }

@@ -3,4 +3,6 @@ target 'AdaptiveUI-Example' do
 
   pod 'AdaptiveUI', path: '../'
 
+  pod 'FPSCounter', '~> 4.1'
+
 end

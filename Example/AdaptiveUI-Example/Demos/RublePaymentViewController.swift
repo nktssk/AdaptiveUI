@@ -23,7 +23,11 @@ final class RublePaymentViewController: AUIViewController {
     func sendButtonDidTap() {
         guard sumTextField?.text?.isEmpty ?? true else { return showLoadingView() }
 
-        let alert = UIAlertController(title: "Введите сумму", message: "Необходимо ввести сумму перевода", preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: "Введите сумму",
+            message: "Необходимо ввести сумму перевода",
+            preferredStyle: .alert
+        )
         alert.addAction(UIAlertAction(title: "OK", style: .default) { _ in alert.dismiss(animated: true) })
         self.present(alert, animated: true)
     }

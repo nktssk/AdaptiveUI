@@ -1,8 +1,14 @@
 PODS:
   - AdaptiveUI (0.1.0)
+  - FPSCounter (4.1.0)
 
 DEPENDENCIES:
   - AdaptiveUI (from `../`)
+  - FPSCounter (~> 4.1)
+
+SPEC REPOS:
+  trunk:
+    - FPSCounter
 
 EXTERNAL SOURCES:
   AdaptiveUI:
@@ -10,7 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   AdaptiveUI: 546415689c2d84f3056396d36d2b5a6c1e0b7424
+  FPSCounter: 884afec377de66637808c4f52ecc3b85a404732b
 
-PODFILE CHECKSUM: 93cc86c21b304e29cecd5090c6ba371df773cc83
+PODFILE CHECKSUM: 2fda2417dd3a00610603f5ed97a94992ddc5df9b
 
 COCOAPODS: 1.12.0

@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		87F582D729DAF64000710D4A /* ScreenMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582D629DAF64000710D4A /* ScreenMeasure.swift */; };
+		87F582DC29DAF70700710D4A /* RAMServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */; };
+		87F582DD29DAF70700710D4A /* RAMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DB29DAF70600710D4A /* RAMService.swift */; };
+		87F582E129DAF70C00710D4A /* MonitoringService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DE29DAF70C00710D4A /* MonitoringService.swift */; };
+		87F582E229DAF70C00710D4A /* MonitoringServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DF29DAF70C00710D4A /* MonitoringServiceProtocol.swift */; };
+		87F582E329DAF70C00710D4A /* StatisticHandlerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582E029DAF70C00710D4A /* StatisticHandlerProtocol.swift */; };
+		87F582E629DAF71100710D4A /* FPSServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582E429DAF71100710D4A /* FPSServiceProtocol.swift */; };
+		87F582E729DAF71100710D4A /* FPSService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582E529DAF71100710D4A /* FPSService.swift */; };
+		87F582EA29DAF71700710D4A /* CPUServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582E829DAF71700710D4A /* CPUServiceProtocol.swift */; };
+		87F582EB29DAF71700710D4A /* CPUService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582E929DAF71700710D4A /* CPUService.swift */; };
+		87F582ED29DAF71B00710D4A /* ObservableValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582EC29DAF71B00710D4A /* ObservableValue.swift */; };
+		87F582F829DB081900710D4A /* AdaptiveUI_ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582F729DB081900710D4A /* AdaptiveUI_ExampleUITests.swift */; };
+		87F582FA29DB081900710D4A /* AdaptiveUI_ExampleUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582F929DB081900710D4A /* AdaptiveUI_ExampleUITestsLaunchTests.swift */; };
 		E544F019293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */; };
 		E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CB28F2C38400B941BD /* AppDelegate.swift */; };
 		E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55328CD28F2C38400B941BD /* SceneDelegate.swift */; };
@@ -21,7 +34,31 @@
 		F06E045A24C88361B20EAF0D /* Pods_AdaptiveUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		87F582FB29DB081900710D4A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E55328C028F2C38400B941BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E55328C728F2C38400B941BD;
+			remoteInfo = "AdaptiveUI-Example";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		87F582D629DAF64000710D4A /* ScreenMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMeasure.swift; sourceTree = "<group>"; };
+		87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMServiceProtocol.swift; path = Services/RAM/RAMServiceProtocol.swift; sourceTree = "<group>"; };
+		87F582DB29DAF70600710D4A /* RAMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMService.swift; path = Services/RAM/RAMService.swift; sourceTree = "<group>"; };
+		87F582DE29DAF70C00710D4A /* MonitoringService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonitoringService.swift; path = Services/Monitoring/MonitoringService.swift; sourceTree = "<group>"; };
+		87F582DF29DAF70C00710D4A /* MonitoringServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MonitoringServiceProtocol.swift; path = Services/Monitoring/MonitoringServiceProtocol.swift; sourceTree = "<group>"; };
+		87F582E029DAF70C00710D4A /* StatisticHandlerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StatisticHandlerProtocol.swift; path = Services/Monitoring/StatisticHandlerProtocol.swift; sourceTree = "<group>"; };
+		87F582E429DAF71100710D4A /* FPSServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPSServiceProtocol.swift; path = Services/FPS/FPSServiceProtocol.swift; sourceTree = "<group>"; };
+		87F582E529DAF71100710D4A /* FPSService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FPSService.swift; path = Services/FPS/FPSService.swift; sourceTree = "<group>"; };
+		87F582E829DAF71700710D4A /* CPUServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPUServiceProtocol.swift; path = Services/CPU/CPUServiceProtocol.swift; sourceTree = "<group>"; };
+		87F582E929DAF71700710D4A /* CPUService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CPUService.swift; path = Services/CPU/CPUService.swift; sourceTree = "<group>"; };
+		87F582EC29DAF71B00710D4A /* ObservableValue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ObservableValue.swift; path = Services/Common/ObservableValue.swift; sourceTree = "<group>"; };
+		87F582F529DB081800710D4A /* AdaptiveUI-ExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AdaptiveUI-ExampleUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		87F582F729DB081900710D4A /* AdaptiveUI_ExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveUI_ExampleUITests.swift; sourceTree = "<group>"; };
+		87F582F929DB081900710D4A /* AdaptiveUI_ExampleUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptiveUI_ExampleUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AdaptiveUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF4FE94111F5685F56D602F8 /* Pods-AdaptiveUI-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.debug.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		B33CCC0F1BD6D5B7CF09D8AE /* Pods-AdaptiveUI-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AdaptiveUI-Example.release.xcconfig"; path = "Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -41,6 +78,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		87F582F229DB081800710D4A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E55328C528F2C38400B941BD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -59,6 +103,40 @@
 				B33CCC0F1BD6D5B7CF09D8AE /* Pods-AdaptiveUI-Example.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		87F582D429DAED3600710D4A /* Native */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Native;
+			sourceTree = "<group>";
+		};
+		87F582D529DAF56C00710D4A /* Measure */ = {
+			isa = PBXGroup;
+			children = (
+				87F582EC29DAF71B00710D4A /* ObservableValue.swift */,
+				87F582E929DAF71700710D4A /* CPUService.swift */,
+				87F582E829DAF71700710D4A /* CPUServiceProtocol.swift */,
+				87F582E529DAF71100710D4A /* FPSService.swift */,
+				87F582E429DAF71100710D4A /* FPSServiceProtocol.swift */,
+				87F582DE29DAF70C00710D4A /* MonitoringService.swift */,
+				87F582DF29DAF70C00710D4A /* MonitoringServiceProtocol.swift */,
+				87F582E029DAF70C00710D4A /* StatisticHandlerProtocol.swift */,
+				87F582DB29DAF70600710D4A /* RAMService.swift */,
+				87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */,
+				87F582D629DAF64000710D4A /* ScreenMeasure.swift */,
+			);
+			path = Measure;
+			sourceTree = "<group>";
+		};
+		87F582F629DB081900710D4A /* AdaptiveUI-ExampleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				87F582F729DB081900710D4A /* AdaptiveUI_ExampleUITests.swift */,
+				87F582F929DB081900710D4A /* AdaptiveUI_ExampleUITestsLaunchTests.swift */,
+			);
+			path = "AdaptiveUI-ExampleUITests";
 			sourceTree = "<group>";
 		};
 		DBDAF5BF4C10625A6ABCC547 /* Frameworks */ = {
@@ -82,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				E55328CA28F2C38400B941BD /* AdaptiveUI-Example */,
+				87F582F629DB081900710D4A /* AdaptiveUI-ExampleUITests */,
 				E55328C928F2C38400B941BD /* Products */,
 				6C4ED0E21169448EA3DF37D9 /* Pods */,
 				DBDAF5BF4C10625A6ABCC547 /* Frameworks */,
@@ -92,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				E55328C828F2C38400B941BD /* AdaptiveUI-Example.app */,
+				87F582F529DB081800710D4A /* AdaptiveUI-ExampleUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,6 +179,8 @@
 		E55328CA28F2C38400B941BD /* AdaptiveUI-Example */ = {
 			isa = PBXGroup;
 			children = (
+				87F582D529DAF56C00710D4A /* Measure */,
+				87F582D429DAED3600710D4A /* Native */,
 				E5B8265F2986910E00C12EB9 /* Mocks */,
 				E5B8265C29868E6F00C12EB9 /* Demos */,
 				E544F015293D037B005F6BF9 /* UIBuilder */,
@@ -133,6 +215,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		87F582F429DB081800710D4A /* AdaptiveUI-ExampleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 87F582FD29DB081900710D4A /* Build configuration list for PBXNativeTarget "AdaptiveUI-ExampleUITests" */;
+			buildPhases = (
+				87F582F129DB081800710D4A /* Sources */,
+				87F582F229DB081800710D4A /* Frameworks */,
+				87F582F329DB081800710D4A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				87F582FC29DB081900710D4A /* PBXTargetDependency */,
+			);
+			name = "AdaptiveUI-ExampleUITests";
+			productName = "AdaptiveUI-ExampleUITests";
+			productReference = 87F582F529DB081800710D4A /* AdaptiveUI-ExampleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E55328C728F2C38400B941BD /* AdaptiveUI-Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E55328DC28F2C38B00B941BD /* Build configuration list for PBXNativeTarget "AdaptiveUI-Example" */;
@@ -141,6 +241,7 @@
 				E55328C428F2C38400B941BD /* Sources */,
 				E55328C528F2C38400B941BD /* Frameworks */,
 				E55328C628F2C38400B941BD /* Resources */,
+				C5414C68CDC9B16D9E20BC8B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,9 +259,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1420;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					87F582F429DB081800710D4A = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = E55328C728F2C38400B941BD;
+					};
 					E55328C728F2C38400B941BD = {
 						CreatedOnToolsVersion = 13.4;
 					};
@@ -180,11 +285,19 @@
 			projectRoot = "";
 			targets = (
 				E55328C728F2C38400B941BD /* AdaptiveUI-Example */,
+				87F582F429DB081800710D4A /* AdaptiveUI-ExampleUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		87F582F329DB081800710D4A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E55328C628F2C38400B941BD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -220,25 +333,70 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C5414C68CDC9B16D9E20BC8B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdaptiveUI-Example/Pods-AdaptiveUI-Example-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		87F582F129DB081800710D4A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87F582F829DB081900710D4A /* AdaptiveUI_ExampleUITests.swift in Sources */,
+				87F582FA29DB081900710D4A /* AdaptiveUI_ExampleUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E55328C428F2C38400B941BD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				87F582DD29DAF70700710D4A /* RAMService.swift in Sources */,
+				87F582E329DAF70C00710D4A /* StatisticHandlerProtocol.swift in Sources */,
+				87F582E129DAF70C00710D4A /* MonitoringService.swift in Sources */,
+				87F582DC29DAF70700710D4A /* RAMServiceProtocol.swift in Sources */,
+				87F582EA29DAF71700710D4A /* CPUServiceProtocol.swift in Sources */,
 				E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */,
+				87F582E729DAF71100710D4A /* FPSService.swift in Sources */,
 				E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */,
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
+				87F582E629DAF71100710D4A /* FPSServiceProtocol.swift in Sources */,
 				E5B826632986D70500C12EB9 /* TableViewController.swift in Sources */,
+				87F582D729DAF64000710D4A /* ScreenMeasure.swift in Sources */,
+				87F582EB29DAF71700710D4A /* CPUService.swift in Sources */,
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
+				87F582E229DAF70C00710D4A /* MonitoringServiceProtocol.swift in Sources */,
 				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,
+				87F582ED29DAF71B00710D4A /* ObservableValue.swift in Sources */,
 				E544F019293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		87F582FC29DB081900710D4A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E55328C728F2C38400B941BD /* AdaptiveUI-Example */;
+			targetProxy = 87F582FB29DB081900710D4A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E55328D128F2C38400B941BD /* Main.storyboard */ = {
@@ -260,6 +418,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		87F582FE29DB081900710D4A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "a123.AdaptiveUI-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AdaptiveUI-Example";
+			};
+			name = Debug;
+		};
+		87F582FF29DB081900710D4A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "a123.AdaptiveUI-ExampleUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AdaptiveUI-Example";
+			};
+			name = Release;
+		};
 		E55328DA28F2C38B00B941BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -433,6 +627,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		87F582FD29DB081900710D4A /* Build configuration list for PBXNativeTarget "AdaptiveUI-ExampleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				87F582FE29DB081900710D4A /* Debug */,
+				87F582FF29DB081900710D4A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E55328C328F2C38400B941BD /* Build configuration list for PBXProject "AdaptiveUI-Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
