@@ -38,6 +38,16 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func openCollectionScreen(_ sender: Any) {
+        let viewController = CollectionViewDemoViewController(
+            processor: MockAUIViewConfigurationProcessor(
+                screenId: "CollectionViewScreenBuilder",
+                configurationBuilder: CollectionViewScreenBuilder.self
+            )
+        )
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @IBAction func openNativePaymentScreen(_ sender: Any) {
         let viewController = storyboard!.instantiateViewController(withIdentifier: "ViewController")
         measureGlobal.start()

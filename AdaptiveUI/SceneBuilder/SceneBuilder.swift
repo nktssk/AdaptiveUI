@@ -76,9 +76,13 @@ enum SceneBuilder {
 
         case .tableView(let configuration):
             view = TableViewParser.configure(configuration: configuration, viewController: viewController)
+            
+        case .collectionView(let configuration):
+            view = CollectionViewParser.configure(configuration: configuration, viewController: viewController)
         }
 
         let viewConfiguration = configuration.viewConfiguration
+        view.tag = configuration.id
         rootView.addSubview(view)
         hierarchy[viewConfiguration.identifier] = view
 
@@ -88,8 +92,8 @@ enum SceneBuilder {
     }
 
     static func buildCell(
-        data: AUITableView.Data,
-        cellConfiguration: AUITableViewCell,
+        data: CellData,
+        cellConfiguration: AUIViewCell,
         viewController: AUIViewController
     ) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -121,12 +125,73 @@ enum SceneBuilder {
                 (contentView as? UIButton)?.setTitle(content, for: .normal)
             case .switch(isOn: let isOn, _):
                 (contentView as? UISwitch)?.isOn = isOn
+            case .backgroundColor(let string):
+                contentView.backgroundColor = UIColor(hex: string)
             }
         }
 
         data.identifierToData.forEach { key, value in
             guard let actionId = value.actionId,
                   let index = cellConfiguration.subviews.firstIndex(where: { $0.viewConfiguration.identifier == key }),
+                  cellConfiguration.subviews[index].viewConfiguration.actionHandler == .custom(id: actionId)
+            else { return }
+            cellConfiguration.subviews[index].removeActionID()
+        }
+
+        return cell
+    }
+    
+    static func buildCell(
+        data: CellData,
+        cell: StubCell,
+        config: AUICollectionView.Layout,
+        cellConfiguration: AUIViewCell,
+        viewController: AUIViewController
+    ) -> UICollectionViewCell {
+        
+        var hierarchy = [String: UIView]()
+        cell.contentView.subviews.reuse()
+
+        data.identifierToData.forEach { key, value in
+            guard let actionId = value.actionId,
+                  let index = cellConfiguration.subviews.firstIndex(where: { $0.viewConfiguration.identifier == key })
+            else { return }
+            cellConfiguration.subviews[index].setupActionID(actionId)
+        }
+
+        BaseViewConfigurator.configure(view: cell.contentView, configuration: cellConfiguration, viewController: viewController)
+
+        cellConfiguration.subviews.forEach {
+            SceneBuilder.buildViewHierarchy(rootView: cell.contentView, configuration: $0, hierarchy: &hierarchy, viewController: viewController)
+        }
+
+        AUILayoutManager.layout(hierarchy: hierarchy, constraints: cellConfiguration.layout)
+
+        if case let .backgroundColor(string) = data.identifierToData["backgroundColor"] {
+            cell.contentView.backgroundColor = UIColor(hex: string)
+            cell.backgroundView?.backgroundColor = UIColor(hex: string)
+        }
+        
+        for (identifier, data) in data.identifierToData {
+            guard let contentView = hierarchy[identifier] else { continue }
+            switch data {
+            case .image(let imageURL, _):
+                (contentView as? AsyncUIImageView)?.url = imageURL
+            case .text(let text, _):
+                (contentView as? UILabel)?.text = text
+            case .button(content: let content, _):
+                (contentView as? UIButton)?.setTitle(content, for: .normal)
+            case .backgroundColor(_): break
+            case .switch(isOn: let isOn, _):
+                (contentView as? UISwitch)?.isOn = isOn
+            }
+        }
+
+        data.identifierToData.forEach { key, value in
+            guard let actionId = value.actionId,
+                  let index = cellConfiguration.subviews.firstIndex(where: {
+                      $0.viewConfiguration.identifier == key
+                  }),
                   cellConfiguration.subviews[index].viewConfiguration.actionHandler == .custom(id: actionId)
             else { return }
             cellConfiguration.subviews[index].removeActionID()

@@ -44,5 +44,5 @@ public enum AUITransformParams: Codable, Equatable {
     
     case progress(value: CGFloat)
     
-    case tableViewReload(value: [AUITableView.Data])
+    case tableViewReload(value: [CellData])
 }

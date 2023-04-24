@@ -22,6 +22,7 @@ public enum AUIViewEnumeration {
     case segmentedControl(UISegmentedControl)
     case activityIndicator(UIActivityIndicatorView)
     case tableView(UITableView)
+    case collectionView(UICollectionView)
     
     var view: UIView {
         switch self {
@@ -52,6 +53,8 @@ public enum AUIViewEnumeration {
         case .activityIndicator(let view):
             return view
         case .tableView(let view):
+            return view
+        case .collectionView(let view):
             return view
         }
     }

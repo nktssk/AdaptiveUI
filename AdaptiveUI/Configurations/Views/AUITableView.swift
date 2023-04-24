@@ -10,53 +10,55 @@ import UIKit
 
 public final class AUITableView: AUIView {
 
-    public struct Data: Serializable, Equatable {
-        public enum Kind: Codable, Equatable {
-            case text(content: String, actionId: String? = nil)
-            case image(url: String, actionId: String? = nil)
-            case button(content: String, actionId: String? = nil)
-            case `switch`(isOn: Bool, actionId: String? = nil)
-
-            var actionId: String? {
-                switch self {
-                case .text(_, let actionId): return actionId
-                case .image(_, let actionId): return actionId
-                case .button(_, let actionId): return actionId
-                case .`switch`(_, let actionId): return actionId
-                }
-            }
-        }
-
-        @Convertible
-        public var identifierToData: [String: Kind]
-
-        @Convertible
-        public var cellType: String
-
-        @Convertible
-        public var selectActionId: String?
-
-        public init() {}
-        
-        public static func == (lhs: AUITableView.Data, rhs: AUITableView.Data) -> Bool {
-            lhs.identifierToData == rhs.identifierToData
-        }
-    }
+    @Convertible
+    public var cellsTypes: [String: AUIViewCell]
 
     @Convertible
-    public var cellsTypes: [String: AUITableViewCell]
-
-    @Convertible
-    public var data: [Data]
+    public var data: [CellData]
 
     @Convertible(default: true)
     public var isSeparatorHidden: Bool
 }
 
-public class AUITableViewCell: AUIView {
+public class AUIViewCell: AUIView {
 
     @Convertible
     public var layout: [AUIConstraint]
 
     public required init() {}
+}
+
+public struct CellData: Serializable, Equatable {
+    public enum Kind: Codable, Equatable {
+        case text(content: String, actionId: String? = nil)
+        case image(url: String, actionId: String? = nil)
+        case button(content: String, actionId: String? = nil)
+        case `switch`(isOn: Bool, actionId: String? = nil)
+        case backgroundColor(String)
+
+        var actionId: String? {
+            switch self {
+            case .text(_, let actionId): return actionId
+            case .image(_, let actionId): return actionId
+            case .button(_, let actionId): return actionId
+            case .`switch`(_, let actionId): return actionId
+            case .backgroundColor(_): return nil
+            }
+        }
+    }
+
+    @Convertible
+    public var identifierToData: [String: Kind]
+
+    @Convertible
+    public var cellType: String
+
+    @Convertible
+    public var selectActionId: String?
+
+    public init() {}
+    
+    public static func == (lhs: Self, rhs: Self) -> Bool {
+        lhs.identifierToData == rhs.identifierToData
+    }
 }

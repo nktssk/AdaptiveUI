@@ -41,3 +41,4 @@ public final class AUITextView: AUIView {
     @Convertible(default: 1)
     public var maxNumberOfLines: Int
 }
+

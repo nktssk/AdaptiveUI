@@ -38,6 +38,8 @@ extension ViewConfiguration {
             return configuration
         case .activityIndicator(let configuration):
             return configuration
+        case .collectionView(let configuration):
+            return configuration
         }
     }
 
@@ -99,6 +101,10 @@ extension ViewConfiguration {
             let config = configuration
             config.actionHandler = .custom(id: actionID)
             self = .activityIndicator(configuration: config)
+        case .collectionView(let configuration):
+            let config = configuration
+            config.actionHandler = .custom(id: actionID)
+            self = .collectionView(configuration: config)
         }
     }
 
@@ -160,6 +166,10 @@ extension ViewConfiguration {
             let config = configuration
             config.actionHandler = nil
             self = .activityIndicator(configuration: config)
+        case .collectionView(let configuration):
+            let config = configuration
+            config.actionHandler = nil
+            self = .collectionView(configuration: config)
         }
     }
 }

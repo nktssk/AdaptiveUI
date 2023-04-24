@@ -42,7 +42,7 @@ public class AUITableViewHandler: NSObject, UITableViewDataSource, UITableViewDe
         )
     }
     
-    public func reload(data: [AUITableView.Data]) {
+    public func reload(data: [CellData]) {
         config.data = data
         tableView?.reloadData()
     }

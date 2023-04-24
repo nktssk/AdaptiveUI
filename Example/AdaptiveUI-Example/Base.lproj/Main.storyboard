@@ -34,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9MN-XX-a84">
-                                <rect key="frame" x="0.0" y="350.66666666666669" width="393" height="151"/>
+                                <rect key="frame" x="0.0" y="322" width="393" height="208"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPK-XO-T8l">
                                         <rect key="frame" x="146" y="0.0" width="101.33333333333331" height="37"/>
@@ -52,8 +52,24 @@
                                             <action selector="openTableScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ZU-Kd-vcU"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6l-GO-KC6">
+                                        <rect key="frame" x="137" y="57" width="119.33333333333331" height="37"/>
+                                        <buttonConfiguration key="configuration" style="gray">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Коллекция">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="19"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="openCollectionScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cPc-Gc-zCn"/>
+                                        </connections>
+                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1lA-7e-g2P">
-                                        <rect key="frame" x="78.333333333333329" y="57" width="236.33333333333337" height="37"/>
+                                        <rect key="frame" x="78.333333333333329" y="114" width="236.33333333333337" height="37"/>
                                         <buttonConfiguration key="configuration" style="gray">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Экран переводов (сеть)">
@@ -69,7 +85,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rPE-2h-P0V">
-                                        <rect key="frame" x="72.333333333333329" y="114" width="248.66666666666669" height="37"/>
+                                        <rect key="frame" x="72.333333333333329" y="171" width="248.66666666666669" height="37"/>
                                         <buttonConfiguration key="configuration" style="gray">
                                             <attributedString key="attributedTitle">
                                                 <fragment content="Экран переводов (натив)">

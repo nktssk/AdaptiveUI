@@ -17,6 +17,7 @@ open class AUIViewController: UIViewController {
 
     // MARK: Internal Properties
 
+    var collectionViewHandler: AUICollectionViewHandler?
     var tableViewHandler: AUITableViewHandler?
     var actionWrappers: [AUIActionWrapper] = []
 
@@ -29,8 +30,8 @@ open class AUIViewController: UIViewController {
     private var needBuildHierarchy = true
     private var configuration: AUIConfiguration?
 
-    private lazy var blurEffectView = UIVisualEffectView()
-    private lazy var activityIndicatorView = UIActivityIndicatorView()
+    private var blurEffectView: UIVisualEffectView?
+    private var activityIndicatorView: UIActivityIndicatorView?
 
     // MARK: Lifecycle
 
@@ -56,9 +57,7 @@ open class AUIViewController: UIViewController {
                 }
 
             case .success(let configuration):
-                if self.needBuildHierarchy {
-                    self.hideLoadingView()
-                }
+                self.hideLoadingView()
                 self.renderLayout(with: configuration)
                 self.configuration = configuration
                 if configuration.cache {
@@ -88,26 +87,28 @@ open class AUIViewController: UIViewController {
 
     open func showLoadingView() {
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.extraLight)
-        blurEffectView = UIVisualEffectView(effect: blurEffect)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
-        activityIndicatorView = UIActivityIndicatorView()
+        let activityIndicatorView = UIActivityIndicatorView()
         activityIndicatorView.center = view.center
         activityIndicatorView.startAnimating()
         view.addSubview(activityIndicatorView)
         activityIndicatorView.alpha = .zero
         blurEffectView.alpha = .zero
         UIView.animate(withDuration: 0.5) {
-            self.activityIndicatorView.alpha = 1
-            self.blurEffectView.alpha = 1
+            self.activityIndicatorView?.alpha = 1
+            self.blurEffectView?.alpha = 1
         }
+        self.activityIndicatorView = activityIndicatorView
+        self.blurEffectView = blurEffectView
     }
 
     open func hideLoadingView() {
-        blurEffectView.alpha = .zero
-        activityIndicatorView.stopAnimating()
-        activityIndicatorView.alpha = .zero
+        blurEffectView?.alpha = .zero
+        activityIndicatorView?.stopAnimating()
+        activityIndicatorView?.isHidden = true
     }
 
     open func failedDownloading(with error: Error) {

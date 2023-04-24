@@ -20,3 +20,6 @@ public final class AUISwitch: AUIView {
     @Convertible
     public var thumbTintColor: AUIColor?
 }
++ isOn: Bool
++ onTintColor: AUIColor?
++ thumbTintColor: AUIColor?

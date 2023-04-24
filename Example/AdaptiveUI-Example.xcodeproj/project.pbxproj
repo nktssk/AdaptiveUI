@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8782F5A929EAC0010017CE86 /* CollectionViewScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */; };
+		87B6E2F529EAC36000E92D55 /* CollectionViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */; };
 		87F582D729DAF64000710D4A /* ScreenMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582D629DAF64000710D4A /* ScreenMeasure.swift */; };
 		87F582DC29DAF70700710D4A /* RAMServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */; };
 		87F582DD29DAF70700710D4A /* RAMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DB29DAF70600710D4A /* RAMService.swift */; };
@@ -45,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScreenBuilder.swift; sourceTree = "<group>"; };
+		87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDemoViewController.swift; sourceTree = "<group>"; };
 		87F582D629DAF64000710D4A /* ScreenMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMeasure.swift; sourceTree = "<group>"; };
 		87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMServiceProtocol.swift; path = Services/RAM/RAMServiceProtocol.swift; sourceTree = "<group>"; };
 		87F582DB29DAF70600710D4A /* RAMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMService.swift; path = Services/RAM/RAMService.swift; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 			children = (
 				E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */,
 				E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */,
+				8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */,
 			);
 			path = UIBuilder;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			children = (
 				E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */,
 				E5B826622986D70500C12EB9 /* TableViewController.swift */,
+				87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8782F5A929EAC0010017CE86 /* CollectionViewScreenBuilder.swift in Sources */,
 				87F582DD29DAF70700710D4A /* RAMService.swift in Sources */,
 				87F582E329DAF70C00710D4A /* StatisticHandlerProtocol.swift in Sources */,
 				87F582E129DAF70C00710D4A /* MonitoringService.swift in Sources */,
@@ -373,6 +380,7 @@
 				87F582EA29DAF71700710D4A /* CPUServiceProtocol.swift in Sources */,
 				E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */,
 				87F582E729DAF71100710D4A /* FPSService.swift in Sources */,
+				87B6E2F529EAC36000E92D55 /* CollectionViewDemoViewController.swift in Sources */,
 				E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */,
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
 				87F582E629DAF71100710D4A /* FPSServiceProtocol.swift in Sources */,

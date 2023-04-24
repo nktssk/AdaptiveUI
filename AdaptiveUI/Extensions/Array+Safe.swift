@@ -5,7 +5,7 @@
 //  Created by n.sosyuk on 14.12.2022.
 //
 
-import Foundation
+import UIKit
 
 extension Array {
     public subscript(safe index: Int) -> Element? {
@@ -14,5 +14,14 @@ extension Array {
         }
 
         return self[index]
+    }
+}
+
+extension Array where Element == UIView {
+    func reuse() {
+        forEach {
+            //$0.isHidden = true
+            $0.removeFromSuperview()
+        }
     }
 }

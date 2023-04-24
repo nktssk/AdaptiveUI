@@ -36,7 +36,7 @@ class MockAUIViewConfigurationProcessor: AUIViewConfigurationProcessorProtocol {
         else { return }
 
         //print("--------------Configuration-Start--------------")
-        //print(string)
+        print(string)
         //print("--------------Configuration-End--------------")
     }
 }

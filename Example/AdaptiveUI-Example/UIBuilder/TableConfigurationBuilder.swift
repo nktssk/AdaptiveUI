@@ -242,7 +242,7 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                     },
                 ]
                 tableView.cellsTypes = [
-                    "Button": AUITableViewCell.generate() { view in
+                    "Button": AUIViewCell.generate() { view in
                         view.identifier = "Button"
                         view.subviews = [
                             .button(configuration: .generate() { button in
@@ -254,7 +254,7 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                         ]
                         view.layout = []
                     },
-                    "SimpleText": AUITableViewCell.generate() { view in
+                    "SimpleText": AUIViewCell.generate() { view in
                         view.identifier = "SimpleText"
                         view.subviews = [
                             .label(configuration: .generate() { label in
@@ -298,7 +298,7 @@ struct TableConfigurationBuilder: ConfigurationBuilderProtocol {
                             },
                         ]
                     },
-                    "TwoText": AUITableViewCell.generate() { view in
+                    "TwoText": AUIViewCell.generate() { view in
                         view.identifier = "TwoText"
                         view.subviews = [
                             .label(configuration: .generate() { label in
