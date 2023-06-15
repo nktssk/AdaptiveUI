@@ -11,7 +11,9 @@ import UIKit
 
 public final class ScreenMeasure {
     
-    public var data: [String] = []
+    public static let shared = ScreenMeasure()
+    
+    public var data: [CFTimeInterval] = []
     
     let monitoringService = MonitoringService(
         fpsService: FPSService(),
@@ -32,19 +34,16 @@ public final class ScreenMeasure {
         guard isRecording else { return }
         
         let timeInterval = CACurrentMediaTime() - startTime
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()) {
-            // self.data.append(String(self.monitoringService.stopMonitoring()))
-        }
-        data.append(String("Время открытия экрана: \(timeInterval * 1000) миллисекунд"))
+        data.append(timeInterval)
         isRecording = false
+        monitoringService.stopRecording()
     }
 }
 
 extension UIViewController {
 
     static func swizzle() {
-        let originalSelector = #selector(viewDidLayoutSubviews)
+        let originalSelector = #selector(viewDidDisappear)
         let swizzledSelector = #selector(dc_viewDidLayoutSubviews)
         
         guard
@@ -53,6 +52,16 @@ extension UIViewController {
             else { return }
         
         method_exchangeImplementations(originalMethod, swizzledMethod)
+        
+        let originalSelector2 = #selector(viewWillAppear)
+        let swizzledSelector2 = #selector(dc_viewDidSubviews)
+        
+        guard
+            let originalMethod2 = class_getInstanceMethod(self, originalSelector2),
+            let swizzledMethod2 = class_getInstanceMethod(self, swizzledSelector2)
+            else { return }
+        
+        method_exchangeImplementations(originalMethod2, swizzledMethod2)
     }
 
     // MARK: - Method Swizzling
@@ -62,4 +71,12 @@ extension UIViewController {
         
         measureGlobal.stop()
     }
+    
+    
+    @objc func dc_viewDidSubviews(animated: Bool) {
+        self.dc_viewDidSubviews(animated: animated)
+        
+        measureGlobal.start()
+    }
+    
 }

@@ -424,7 +424,7 @@ struct RublePaymentConfigurationBuilder: ConfigurationBuilderProtocol {
                 color.lightThemeColor = "#000000"
                 color.lightThemeColor = "#000000"
             }
-            button.actionHandler = .standard(
+            button.actionHandler = [.standard(
                 type: .transform(
                     content: .generate { content in
                         content.duration = 1
@@ -435,7 +435,7 @@ struct RublePaymentConfigurationBuilder: ConfigurationBuilderProtocol {
                         ]
                     }
                 )
-            )
+            )]
         })
     ]
 }

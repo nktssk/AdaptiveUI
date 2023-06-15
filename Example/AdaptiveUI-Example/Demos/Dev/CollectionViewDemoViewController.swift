@@ -5,6 +5,7 @@
 //  Created by Nikita Sosyuk on 15.04.2023.
 //
 
+
 import AdaptiveUI
 
 final class CollectionViewDemoViewController: AUIViewController {

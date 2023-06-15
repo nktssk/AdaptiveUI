@@ -8,7 +8,7 @@
 import UIKit
 import AdaptiveUI
 
-public let measureGlobal = ScreenMeasure()
+public let measureGlobal = ScreenMeasure.shared
 
 class ViewController: UIViewController {
 
@@ -23,7 +23,6 @@ class ViewController: UIViewController {
                 configurationBuilder: TableConfigurationBuilder.self
             )
         )
-        measureGlobal.start()
         navigationController?.pushViewController(viewController, animated: true)
     }
 
@@ -34,7 +33,6 @@ class ViewController: UIViewController {
                 configurationBuilder: RublePaymentConfigurationBuilder.self
             )
         )
-        measureGlobal.start()
         navigationController?.pushViewController(viewController, animated: true)
     }
     
@@ -48,9 +46,18 @@ class ViewController: UIViewController {
         navigationController?.pushViewController(viewController, animated: true)
     }
     
+    @IBAction func openCodePaymentScreen(_ sender: Any) {
+        let viewController = RublePaymentNativeViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func openCodeList(_ sender: Any) {
+        let viewController = ListViewController()
+        navigationController?.pushViewController(viewController, animated: true)
+    }
+    
     @IBAction func openNativePaymentScreen(_ sender: Any) {
         let viewController = storyboard!.instantiateViewController(withIdentifier: "ViewController")
-        measureGlobal.start()
         navigationController?.pushViewController(viewController, animated: true)
     }
 }

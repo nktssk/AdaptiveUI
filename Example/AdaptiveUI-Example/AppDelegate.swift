@@ -12,6 +12,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UIViewController.swizzle()
+        
+        func log() {
+            guard let data = try? JSONEncoder().encode(TableConfigurationBuilder.configuration),
+                  let string = String(data: data, encoding: .utf8)
+            else { return }
+
+            //print("--------------Configuration-Start--------------")
+            print(string)
+            //print("--------------Configuration-End--------------")
+        }
+        log()
         return true
     }
 

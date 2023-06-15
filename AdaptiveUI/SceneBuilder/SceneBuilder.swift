@@ -117,8 +117,12 @@ enum SceneBuilder {
         for (identifier, data) in data.identifierToData {
             guard let contentView = hierarchy[identifier] else { continue }
             switch data {
-            case .image(let imageURL, _):
-                (contentView as? AsyncUIImageView)?.url = imageURL
+            case .image(let imageURL, let imageName, _):
+                if let imageURL {
+                    (contentView as? AsyncUIImageView)?.url = imageURL
+                } else {
+                    (contentView as? AsyncUIImageView)?.image = UIImage(named: imageName!)
+                }
             case .text(let text, _):
                 (contentView as? UILabel)?.text = text
             case .button(content: let content, _):
@@ -133,7 +137,7 @@ enum SceneBuilder {
         data.identifierToData.forEach { key, value in
             guard let actionId = value.actionId,
                   let index = cellConfiguration.subviews.firstIndex(where: { $0.viewConfiguration.identifier == key }),
-                  cellConfiguration.subviews[index].viewConfiguration.actionHandler == .custom(id: actionId)
+                  cellConfiguration.subviews[index].viewConfiguration.actionHandler.contains(where: { $0 == .custom(id: actionId) })
             else { return }
             cellConfiguration.subviews[index].removeActionID()
         }
@@ -175,8 +179,12 @@ enum SceneBuilder {
         for (identifier, data) in data.identifierToData {
             guard let contentView = hierarchy[identifier] else { continue }
             switch data {
-            case .image(let imageURL, _):
-                (contentView as? AsyncUIImageView)?.url = imageURL
+            case .image(let imageURL, let imageName, _):
+                if let imageURL {
+                    (contentView as? AsyncUIImageView)?.url = imageURL
+                } else {
+                    (contentView as? AsyncUIImageView)?.image = UIImage(named: imageName!)
+                }
             case .text(let text, _):
                 (contentView as? UILabel)?.text = text
             case .button(content: let content, _):
@@ -192,7 +200,7 @@ enum SceneBuilder {
                   let index = cellConfiguration.subviews.firstIndex(where: {
                       $0.viewConfiguration.identifier == key
                   }),
-                  cellConfiguration.subviews[index].viewConfiguration.actionHandler == .custom(id: actionId)
+                  cellConfiguration.subviews[index].viewConfiguration.actionHandler.contains(where: { $0 == .custom(id: actionId) })
             else { return }
             cellConfiguration.subviews[index].removeActionID()
         }

@@ -6,29 +6,57 @@
 //
 
 import XCTest
-import AdaptiveUI_Example
+@testable import AdaptiveUI_Example
 
 final class AdaptiveUI_ExampleUITests: XCTestCase {
-
-    func testExample() throws {
+    
+    override class func setUp() {
+        super.setUp()
+    }
+    
+    func testRublePaymentNative() throws {
         let app = XCUIApplication()
+        app.launch()
         
         for _ in 0...9 {
             app.staticTexts["Экран переводов (натив)"].tap()
-            app.navigationBars["Перевод между счетами"].buttons["Back"].tap()
+            app.navigationBars.firstMatch.buttons["Back"].tap()
         }
-        
-        app.launch()
     }
     
-    func testExample2() throws {
+    func testRublePaymentAdaptiveUI() throws {
         let app = XCUIApplication()
-        
+        app.launch()
         for _ in 0...9 {
             app.staticTexts["Экран переводов (сеть)"].tap()
-            app.navigationBars["Перевод между счетами"].buttons["Back"].tap()
+            app.navigationBars.firstMatch.buttons["Back"].tap()
         }
-        
+    }
+    
+    func testRublePaymentCode() throws {
+        let app = XCUIApplication()
         app.launch()
+        for _ in 0...9 {
+            app.staticTexts["Экран переводов (код)"].tap()
+            app.navigationBars.firstMatch.buttons["Back"].tap()
+        }
+    }
+    
+    func testListAdaptive() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.staticTexts["Таблицы"].tap()
+        app.swipeUp()
+        app.swipeUp()
+        app.navigationBars.firstMatch.buttons["Back"].tap()
+    }
+    
+    func testListNative() throws {
+        let app = XCUIApplication()
+        app.launch()
+        app.staticTexts["Таблицы (Код)"].tap()
+        app.swipeUp()
+        app.swipeUp()
+        app.navigationBars.firstMatch.buttons["Back"].tap()
     }
 }

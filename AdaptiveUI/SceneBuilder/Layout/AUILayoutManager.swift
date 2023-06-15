@@ -60,10 +60,17 @@ enum AUILayoutManager {
            let sourceAnchor = configuration.sourceAnchor.dimensionAnchorFor(source) {
             switch configuration.relationType {
             case .equal:
-                constraint = targetAnchor.constraint(
-                    equalTo: sourceAnchor,
-                    constant: configuration.constant
-                )
+                if configuration.multiplier != .zero {
+                    constraint = targetAnchor.constraint(
+                        equalTo: sourceAnchor,
+                        multiplier: configuration.multiplier
+                    )
+                } else {
+                    constraint = targetAnchor.constraint(
+                        equalTo: sourceAnchor,
+                        constant: configuration.constant
+                    )
+                }
             case .greaterThanOrEqual:
                 constraint = targetAnchor.constraint(
                     greaterThanOrEqualTo: sourceAnchor,

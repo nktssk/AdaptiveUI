@@ -31,7 +31,7 @@ public class AUIViewCell: AUIView {
 public struct CellData: Serializable, Equatable {
     public enum Kind: Codable, Equatable {
         case text(content: String, actionId: String? = nil)
-        case image(url: String, actionId: String? = nil)
+        case image(url: String? = nil, localImage: String? = nil, actionId: String? = nil)
         case button(content: String, actionId: String? = nil)
         case `switch`(isOn: Bool, actionId: String? = nil)
         case backgroundColor(String)
@@ -39,7 +39,7 @@ public struct CellData: Serializable, Equatable {
         var actionId: String? {
             switch self {
             case .text(_, let actionId): return actionId
-            case .image(_, let actionId): return actionId
+            case .image(_, _, let actionId): return actionId
             case .button(_, let actionId): return actionId
             case .`switch`(_, let actionId): return actionId
             case .backgroundColor(_): return nil

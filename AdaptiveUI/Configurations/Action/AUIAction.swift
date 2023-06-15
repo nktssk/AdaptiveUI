@@ -9,10 +9,11 @@ import Foundation
 
 public enum AUIAction: Codable, Equatable {
     public enum StandardActionType: Codable, Equatable {
-        case alert(title: String, message: String, buttonText: String)
+        case alert(title: String, message: String, buttonText: String, actions: [AUIAction])
         case openWebURL(url: String)
         case openScreen(url: String)
         case transform(content: AUITransformContent)
+        case dismiss(time: Double = .zero)
     }
 
     case custom(id: String)

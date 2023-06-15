@@ -19,7 +19,7 @@ enum SwitchParser {
         }
         let actionWrapper = AUIActionWrapper { [weak viewController, unowned uiSwitch] in
             viewController?.switchValueDidChange(uiSwitch)
-            switch configuration.actionHandler {
+            switch configuration.actionHandler.first {
             case .custom(let id):
                 viewController?.actions[id]?()
             case .standard(let type):

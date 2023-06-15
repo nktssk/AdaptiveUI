@@ -23,7 +23,7 @@ public struct AUIText: Serializable {
     @Convertible(default: "")
     public var content: String
 
-    @Convertible(default: 12)
+    @Convertible(default: 15)
     public var fontSize: Int
 
     @Convertible(default: .regular)

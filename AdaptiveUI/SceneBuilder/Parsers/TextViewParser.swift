@@ -16,13 +16,15 @@ enum TextViewParser {
         textView.isSelectable = configuration.isSelectable
         textView.textAlignment = configuration.alignment.uiAligment
         textView.delegate = viewController
+        textView.textColor = UIColor(from: configuration.color)
 
         if viewController.viewHierarchy[configuration.identifier] == nil {
             viewController.viewHierarchy[configuration.identifier] = .textView(textView)
         }
 
         BaseViewConfigurator.configure(view: textView, configuration: configuration, viewController: viewController)
-
+        textView.backgroundColor = .clear
+        
         return textView
     }
 }

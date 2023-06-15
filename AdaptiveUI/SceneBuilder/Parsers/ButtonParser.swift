@@ -38,7 +38,7 @@ enum ButtonParser {
                 }
             }.resume()
         }
-        if let action = configuration.actionHandler {
+        configuration.actionHandler.forEach { action in
             let actionWrapper = AUIActionWrapper { [weak viewController] in
                 switch action {
                 case .custom(let id):

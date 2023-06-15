@@ -44,29 +44,37 @@ open class AUIViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
         processor.download { [weak self] result in
             guard let self = self else { return }
-            switch result {
-            case .failure(let error):
-                self.storage.loadData(named: self.processor.screenId) { [weak self] configuration in
-                    DispatchQueue.main.async {
-                        guard let self else { return }
-                        guard let configuration else { return self.failedDownloading(with: error) }
-                        if self.needBuildHierarchy { self.hideLoadingView() }
-                        self.configuration = configuration
-                        self.renderLayout(with: configuration)
+            DispatchQueue.main.async {
+                switch result {
+                case .failure(let error):
+                    self.storage.loadData(named: self.processor.screenId) { [weak self] configuration in
+                        DispatchQueue.main.async {
+                            guard let self else { return }
+                            guard let configuration else { return self.failedDownloading(with: error) }
+                            if self.needBuildHierarchy { self.hideLoadingView() }
+                            self.configuration = configuration
+                            self.renderLayout(with: configuration)
+                        }
                     }
-                }
-
-            case .success(let configuration):
-                self.hideLoadingView()
-                self.renderLayout(with: configuration)
-                self.configuration = configuration
-                if configuration.cache {
-                    self.storage.saveData(configuration, named: self.processor.screenId)
-                }
+                    
+                case .success(let configuration):
+                    self.hideLoadingView()
+                    self.renderLayout(with: configuration)
+                    self.configuration = configuration
+                    if configuration.cache {
+                        self.storage.saveData(configuration, named: self.processor.screenId)
+                    }
+                }              
             }
         }
     }
 
+    open override func loadView() {
+        super.loadView()
+        view.backgroundColor = .white
+        showLoadingView()
+    }
+    
     public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -82,6 +90,13 @@ open class AUIViewController: UIViewController {
             showLoadingView()
         }
     }
+    
+    open override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if view.subviews.count > 4 {
+            hideLoadingView()
+        }
+    }
 
     // MARK: Open Methods
 
@@ -91,17 +106,16 @@ open class AUIViewController: UIViewController {
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(blurEffectView)
-        let activityIndicatorView = UIActivityIndicatorView()
-        activityIndicatorView.center = view.center
-        activityIndicatorView.startAnimating()
-        view.addSubview(activityIndicatorView)
-        activityIndicatorView.alpha = .zero
+        self.activityIndicatorView = UIActivityIndicatorView()
+        activityIndicatorView!.center = view.center
+        activityIndicatorView!.startAnimating()
+        view.addSubview(activityIndicatorView!)
+        activityIndicatorView!.alpha = .zero
         blurEffectView.alpha = .zero
         UIView.animate(withDuration: 0.5) {
             self.activityIndicatorView?.alpha = 1
             self.blurEffectView?.alpha = 1
         }
-        self.activityIndicatorView = activityIndicatorView
         self.blurEffectView = blurEffectView
     }
 
@@ -109,6 +123,7 @@ open class AUIViewController: UIViewController {
         blurEffectView?.alpha = .zero
         activityIndicatorView?.stopAnimating()
         activityIndicatorView?.isHidden = true
+        blurEffectView?.removeFromSuperview()
     }
 
     open func failedDownloading(with error: Error) {
@@ -134,6 +149,7 @@ open class AUIViewController: UIViewController {
 
         case .static:
             topView = UIView()
+            topView.backgroundColor = .white
 
         case .webView:
             guard let urlString = configuration.controller.webViewURL,

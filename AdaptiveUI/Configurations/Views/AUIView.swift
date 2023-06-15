@@ -40,6 +40,6 @@ public class AUIView: Serializable {
 
     // MARK: Action
 
-    @Convertible
-    public var actionHandler: AUIAction?
+    @Convertible(default: [])
+    public var actionHandler: [AUIAction]
 }

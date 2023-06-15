@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		870E213C2A21FF92008CA00C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E213B2A21FF92008CA00C /* CartViewController.swift */; };
+		870E21402A220041008CA00C /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E213F2A220041008CA00C /* DataProcessor.swift */; };
+		870E21422A22227C008CA00C /* SbolConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E21412A22227C008CA00C /* SbolConfigurationBuilder.swift */; };
+		870E21442A2240CC008CA00C /* CustomActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E21432A2240CC008CA00C /* CustomActionViewController.swift */; };
+		8773B55729FFB8D30013B27B /* RublePaymentNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8773B55629FFB8D30013B27B /* RublePaymentNative.swift */; };
 		8782F5A929EAC0010017CE86 /* CollectionViewScreenBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */; };
 		87B6E2F529EAC36000E92D55 /* CollectionViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */; };
+		87C01C4E2A13817000B7AB9F /* ListViewContoller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87C01C4D2A13817000B7AB9F /* ListViewContoller.swift */; };
 		87F582D729DAF64000710D4A /* ScreenMeasure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582D629DAF64000710D4A /* ScreenMeasure.swift */; };
 		87F582DC29DAF70700710D4A /* RAMServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */; };
 		87F582DD29DAF70700710D4A /* RAMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F582DB29DAF70600710D4A /* RAMService.swift */; };
@@ -47,8 +53,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		870E213B2A21FF92008CA00C /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		870E213F2A220041008CA00C /* DataProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataProcessor.swift; sourceTree = "<group>"; };
+		870E21412A22227C008CA00C /* SbolConfigurationBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SbolConfigurationBuilder.swift; sourceTree = "<group>"; };
+		870E21432A2240CC008CA00C /* CustomActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionViewController.swift; sourceTree = "<group>"; };
+		8773B55029FFB5340013B27B /* AdaptiveUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AdaptiveUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8773B55229FFB5340013B27B /* FPSCounter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FPSCounter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8773B55429FFB5340013B27B /* Pods_AdaptiveUI_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_AdaptiveUI_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8773B55629FFB8D30013B27B /* RublePaymentNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RublePaymentNative.swift; sourceTree = "<group>"; };
 		8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewScreenBuilder.swift; sourceTree = "<group>"; };
 		87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewDemoViewController.swift; sourceTree = "<group>"; };
+		87C01C4D2A13817000B7AB9F /* ListViewContoller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewContoller.swift; sourceTree = "<group>"; };
 		87F582D629DAF64000710D4A /* ScreenMeasure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMeasure.swift; sourceTree = "<group>"; };
 		87F582DA29DAF70600710D4A /* RAMServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMServiceProtocol.swift; path = Services/RAM/RAMServiceProtocol.swift; sourceTree = "<group>"; };
 		87F582DB29DAF70600710D4A /* RAMService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RAMService.swift; path = Services/RAM/RAMService.swift; sourceTree = "<group>"; };
@@ -109,9 +124,43 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		870E21392A21FF4C008CA00C /* Final */ = {
+			isa = PBXGroup;
+			children = (
+				870E213F2A220041008CA00C /* DataProcessor.swift */,
+				870E213D2A22000B008CA00C /* ViewControllers */,
+			);
+			path = Final;
+			sourceTree = "<group>";
+		};
+		870E213A2A21FF57008CA00C /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				E55328CF28F2C38400B941BD /* ViewController.swift */,
+				E544F015293D037B005F6BF9 /* UIBuilder */,
+				E5B8265F2986910E00C12EB9 /* Mocks */,
+				87F582D429DAED3600710D4A /* Native */,
+				E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */,
+				E5B826622986D70500C12EB9 /* TableViewController.swift */,
+				87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */,
+			);
+			path = Dev;
+			sourceTree = "<group>";
+		};
+		870E213D2A22000B008CA00C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				870E213B2A21FF92008CA00C /* CartViewController.swift */,
+				870E21432A2240CC008CA00C /* CustomActionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		87F582D429DAED3600710D4A /* Native */ = {
 			isa = PBXGroup;
 			children = (
+				8773B55629FFB8D30013B27B /* RublePaymentNative.swift */,
+				87C01C4D2A13817000B7AB9F /* ListViewContoller.swift */,
 			);
 			path = Native;
 			sourceTree = "<group>";
@@ -146,6 +195,9 @@
 		DBDAF5BF4C10625A6ABCC547 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8773B55029FFB5340013B27B /* AdaptiveUI.framework */,
+				8773B55229FFB5340013B27B /* FPSCounter.framework */,
+				8773B55429FFB5340013B27B /* Pods_AdaptiveUI_Example.framework */,
 				9E86A5809A4EE8DE48F0371B /* Pods_AdaptiveUI_Example.framework */,
 			);
 			name = Frameworks;
@@ -157,6 +209,7 @@
 				E544F018293D039E005F6BF9 /* RublePaymentConfigurationBuilder.swift */,
 				E5B826602986912800C12EB9 /* TableConfigurationBuilder.swift */,
 				8782F5A829EAC0010017CE86 /* CollectionViewScreenBuilder.swift */,
+				870E21412A22227C008CA00C /* SbolConfigurationBuilder.swift */,
 			);
 			path = UIBuilder;
 			sourceTree = "<group>";
@@ -185,13 +238,9 @@
 			isa = PBXGroup;
 			children = (
 				87F582D529DAF56C00710D4A /* Measure */,
-				87F582D429DAED3600710D4A /* Native */,
-				E5B8265F2986910E00C12EB9 /* Mocks */,
 				E5B8265C29868E6F00C12EB9 /* Demos */,
-				E544F015293D037B005F6BF9 /* UIBuilder */,
 				E55328CB28F2C38400B941BD /* AppDelegate.swift */,
 				E55328CD28F2C38400B941BD /* SceneDelegate.swift */,
-				E55328CF28F2C38400B941BD /* ViewController.swift */,
 				E55328D128F2C38400B941BD /* Main.storyboard */,
 				E55328D428F2C38B00B941BD /* Assets.xcassets */,
 				E55328D628F2C38B00B941BD /* LaunchScreen.storyboard */,
@@ -203,9 +252,8 @@
 		E5B8265C29868E6F00C12EB9 /* Demos */ = {
 			isa = PBXGroup;
 			children = (
-				E5B8265D29868E9000C12EB9 /* RublePaymentViewController.swift */,
-				E5B826622986D70500C12EB9 /* TableViewController.swift */,
-				87B6E2F429EAC36000E92D55 /* CollectionViewDemoViewController.swift */,
+				870E213A2A21FF57008CA00C /* Dev */,
+				870E21392A21FF4C008CA00C /* Final */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -376,18 +424,24 @@
 				87F582DD29DAF70700710D4A /* RAMService.swift in Sources */,
 				87F582E329DAF70C00710D4A /* StatisticHandlerProtocol.swift in Sources */,
 				87F582E129DAF70C00710D4A /* MonitoringService.swift in Sources */,
+				870E213C2A21FF92008CA00C /* CartViewController.swift in Sources */,
 				87F582DC29DAF70700710D4A /* RAMServiceProtocol.swift in Sources */,
 				87F582EA29DAF71700710D4A /* CPUServiceProtocol.swift in Sources */,
 				E5B8265E29868E9000C12EB9 /* RublePaymentViewController.swift in Sources */,
 				87F582E729DAF71100710D4A /* FPSService.swift in Sources */,
+				8773B55729FFB8D30013B27B /* RublePaymentNative.swift in Sources */,
 				87B6E2F529EAC36000E92D55 /* CollectionViewDemoViewController.swift in Sources */,
 				E5B826612986912800C12EB9 /* TableConfigurationBuilder.swift in Sources */,
+				870E21422A22227C008CA00C /* SbolConfigurationBuilder.swift in Sources */,
+				87C01C4E2A13817000B7AB9F /* ListViewContoller.swift in Sources */,
 				E55328D028F2C38400B941BD /* ViewController.swift in Sources */,
 				87F582E629DAF71100710D4A /* FPSServiceProtocol.swift in Sources */,
 				E5B826632986D70500C12EB9 /* TableViewController.swift in Sources */,
 				87F582D729DAF64000710D4A /* ScreenMeasure.swift in Sources */,
 				87F582EB29DAF71700710D4A /* CPUService.swift in Sources */,
+				870E21402A220041008CA00C /* DataProcessor.swift in Sources */,
 				E55328CC28F2C38400B941BD /* AppDelegate.swift in Sources */,
+				870E21442A2240CC008CA00C /* CustomActionViewController.swift in Sources */,
 				E55328CE28F2C38400B941BD /* SceneDelegate.swift in Sources */,
 				87F582E229DAF70C00710D4A /* MonitoringServiceProtocol.swift in Sources */,
 				E5A081B52940DD330017F24D /* MockAUIViewConfigurationProcessor.swift in Sources */,
@@ -432,6 +486,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9B9A6P36K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
@@ -450,6 +505,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9B9A6P36K2;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;

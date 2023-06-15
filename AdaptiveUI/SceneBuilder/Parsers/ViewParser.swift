@@ -26,31 +26,45 @@ enum BaseViewConfigurator {
             viewController.viewHierarchy[configuration.identifier] = .view(view)
         }
 
-        guard let action = configuration.actionHandler, !skipActions else { return }
-        let actionWrapper = AUIActionWrapper { [weak viewController] in
-            switch action {
-            case .custom(let id):
-                viewController?.actions[id]?()
-            case .standard(let type):
-                DispatchQueue.main.async {
-                    Self.defaultAction(type: type, viewController: viewController)
+        guard !configuration.actionHandler.isEmpty, !skipActions else { return }
+        
+        configuration.actionHandler.forEach { action in
+            let actionWrapper = AUIActionWrapper { [weak viewController] in
+                switch action {
+                case .custom(let id):
+                    viewController?.actions[id]?()
+                case .standard(let type):
+                    DispatchQueue.main.async {
+                        Self.defaultAction(type: type, viewController: viewController)
+                    }
                 }
             }
+            viewController.actionWrappers.append(actionWrapper)
+            let tapGestureRecognizer = UITapGestureRecognizer(
+                target: actionWrapper,
+                action: #selector(actionWrapper.action)
+            )
+            view.isUserInteractionEnabled = true
+            view.addGestureRecognizer(tapGestureRecognizer)
         }
-        viewController.actionWrappers.append(actionWrapper)
-        let tapGestureRecognizer = UITapGestureRecognizer(
-            target: actionWrapper,
-            action: #selector(actionWrapper.action)
-        )
-        view.isUserInteractionEnabled = true
-        view.addGestureRecognizer(tapGestureRecognizer)
     }
 
     static func defaultAction(type: AUIAction.StandardActionType, viewController: AUIViewController?) {
         switch type {
-        case .alert(let title, let message, let buttonText):
+        case .alert(let title, let message, let buttonText, let actions):
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-            alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.default, handler: nil))
+            alert.addAction(UIAlertAction(title: buttonText, style: UIAlertAction.Style.default, handler: { _ in
+                actions.forEach { action in
+                    switch action {
+                    case .custom(let id):
+                        viewController?.actions[id]?()
+                    case .standard(let type):
+                        DispatchQueue.main.async {
+                            Self.defaultAction(type: type, viewController: viewController)
+                        }
+                    }
+                }
+            }))
             viewController?.present(alert, animated: true)
 
         case .openWebURL(let url):
@@ -73,6 +87,11 @@ enum BaseViewConfigurator {
                 for param in content.params {
                     AUITransformHandler.applyTransform(for: viewEnum, transform: param, viewController: viewController)
                 }
+            }
+        case .dismiss(let time):
+            DispatchQueue.main.asyncAfter(deadline: .now() + time) {
+                viewController?.dismiss(animated: true)
+                viewController?.navigationController?.popViewController(animated: true)
             }
         }
     }
