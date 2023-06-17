@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FA070DCA9DAC62F659CD6A5 /* Pods_AdaptiveUI_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8773B55429FFB5340013B27B /* Pods_AdaptiveUI_Example.framework */; };
 		870E213C2A21FF92008CA00C /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E213B2A21FF92008CA00C /* CartViewController.swift */; };
 		870E21402A220041008CA00C /* DataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E213F2A220041008CA00C /* DataProcessor.swift */; };
 		870E21422A22227C008CA00C /* SbolConfigurationBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870E21412A22227C008CA00C /* SbolConfigurationBuilder.swift */; };
@@ -109,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F06E045A24C88361B20EAF0D /* Pods_AdaptiveUI_Example.framework in Frameworks */,
+				2FA070DCA9DAC62F659CD6A5 /* Pods_AdaptiveUI_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

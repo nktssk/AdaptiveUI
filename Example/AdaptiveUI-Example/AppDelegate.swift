@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             else { return }
 
             //print("--------------Configuration-Start--------------")
-            print(string)
+            // print(string)
             //print("--------------Configuration-End--------------")
         }
         log()

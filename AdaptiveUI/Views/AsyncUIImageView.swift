@@ -20,13 +20,13 @@ final class AsyncUIImageView: UIImageView {
 
     public override init(image: UIImage? = nil, highlightedImage: UIImage? = nil) {
         super.init(image: image, highlightedImage: highlightedImage)
-        tintColor = .systemGray6
+        tintColor = .systemGray
     }
 
     init(url: String) {
         super.init(frame: .zero)
 
-        self.tintColor = .systemGray6
+        self.tintColor = .systemGray
         self.url = url
     }
 
@@ -61,8 +61,8 @@ final class AsyncUIImageView: UIImageView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.endPoint = CGPoint(x: 1.0, y: 1.0)
         
-        let gradientColorOne = UIColor.systemGray6.withAlphaComponent(0.5).cgColor
-        let gradientColorTwo = UIColor.systemGray6.withAlphaComponent(0.8).cgColor
+        let gradientColorOne = UIColor.systemGray.withAlphaComponent(0.5).cgColor
+        let gradientColorTwo = UIColor.systemGray.withAlphaComponent(0.8).cgColor
         gradientLayer.colors = [gradientColorOne, gradientColorTwo, gradientColorOne]
         gradientLayer.locations = [0.0, 0.5, 1.0]
         layer.addSublayer(gradientLayer)

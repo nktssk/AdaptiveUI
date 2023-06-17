@@ -9,7 +9,12 @@ import UIKit
 
 enum ActivityIndicatorParser {
     static func configure(configuration: AUIActivityIndicator, viewController: AUIViewController) -> UIActivityIndicatorView {
-        let activityIndicator = UIActivityIndicatorView(style: configuration.isLarge ? .large : .medium)
+        let activityIndicator: UIActivityIndicatorView
+        if #available(iOS 13.0, *) {
+            activityIndicator = UIActivityIndicatorView(style: configuration.isLarge ? .large : .medium)
+        } else {
+            activityIndicator = UIActivityIndicatorView()
+        }
         activityIndicator.color = UIColor(from: configuration.color)
         if configuration.isAnimating {
             activityIndicator.startAnimating()

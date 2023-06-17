@@ -11,7 +11,7 @@ extension UIColor {
     convenience init?(from color: AUIColor?) {
         guard let color = color else { return nil }
 
-        guard #available(iOS 13, *) else { self.init(hex: color.lightThemeColor) }
+        guard #available(iOS 13, *) else { self.init(hex: color.lightThemeColor); return }
 
         self.init() { (UITraitCollection: UITraitCollection) -> UIColor in
             guard UITraitCollection.userInterfaceStyle == .dark else { return UIColor(hex: color.lightThemeColor) }

@@ -14,7 +14,9 @@ enum SearchBarParser {
         searchBar.text = configuration.text.content
         searchBar.placeholder = configuration.placeholder
         searchBar.isTranslucent = configuration.isTranslucent
-        searchBar.searchTextField.font = configuration.text.uiFont
+        if #available(iOS 13.0, *) {
+            searchBar.searchTextField.font = configuration.text.uiFont
+        }
         searchBar.tintColor = UIColor(from: configuration.tintColor)
         searchBar.barTintColor = UIColor(from: configuration.barTintColor)
         searchBar.searchBarStyle = configuration.searchBarStyle.uiKit

@@ -940,9 +940,9 @@
 			};
 			name = Debug;
 		};
-		1B70427B99A9D5622686200D8560109A /* Debug */ = {
+		19ADD22C8BD5D7E6F7E45F51DEE5EEE0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C8535F9985203A57BE890ACA32E8FF6E /* AdaptiveUI.debug.xcconfig */;
+			baseConfigurationReference = 1C675677675CECDF1E862A08DB26E085 /* AdaptiveUI.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -956,7 +956,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AdaptiveUI/AdaptiveUI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AdaptiveUI/AdaptiveUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -970,10 +970,11 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.5;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		2DE0D8898245310716431F92FA4989FF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1037,9 +1038,9 @@
 			};
 			name = Release;
 		};
-		742D34CF021526613C630DF8B61CDF6D /* Release */ = {
+		5738860D3D963CCA91CAC150EB8376D1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1C675677675CECDF1E862A08DB26E085 /* AdaptiveUI.release.xcconfig */;
+			baseConfigurationReference = C8535F9985203A57BE890ACA32E8FF6E /* AdaptiveUI.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1053,7 +1054,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/AdaptiveUI/AdaptiveUI-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/AdaptiveUI/AdaptiveUI-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1067,11 +1068,10 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 5.5;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		B10D62566519262849700647A3F52CCB /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1232,8 +1232,8 @@
 		5448DA16DF14C7A8CDD4A44D9D23C66F /* Build configuration list for PBXNativeTarget "AdaptiveUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1B70427B99A9D5622686200D8560109A /* Debug */,
-				742D34CF021526613C630DF8B61CDF6D /* Release */,
+				5738860D3D963CCA91CAC150EB8376D1 /* Debug */,
+				19ADD22C8BD5D7E6F7E45F51DEE5EEE0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

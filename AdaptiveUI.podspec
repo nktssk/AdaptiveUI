@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.source                = { :git => 'https://github.com/nktssk/AdaptiveUI.git', :tag => '1.0.0' }
   s.module_name           = 'AdaptiveUI'
   s.swift_version         = '5.5'
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '12.0'
   s.source_files          = "AdaptiveUI/**/*"
   s.framework             = 'AdaptiveUI'
   s.ios.framework         = 'UIKit'
